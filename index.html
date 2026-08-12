@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>VoiceReason.AI — You think you're good on the phone. Let's find out.</title>
-<meta name="description" content="VoiceReason.AI — practice the calls that decide deals against a buyer who's heard every pitch. Join the waitlist." />
+<title>VoiceReason.AI: You think you're good on the phone. Let's find out.</title>
+<meta name="description" content="VoiceReason.AI: practice the calls that decide deals against a buyer who's heard every pitch. Join the waitlist." />
 <style>
   :root{--bg:#0b0b12;--panel:#14141f;--ink:#f4f4f8;--muted:#a7a7b6;--accent:#6a3cff;--accent-2:#a98bff;--line:rgba(255,255,255,.08);--ok:#3ad29f}
   *{box-sizing:border-box} html,body{margin:0;padding:0}
@@ -62,7 +62,7 @@
     <button id="skipBtn" type="button">Skip →</button>
   </div>
   <p class="caption" id="caption" aria-live="polite">
-    "So. You think you're good on the phone. Let's find out. I'm the buyer who's heard every pitch — and I'm not easy. I'm gonna make you earn it. Talk to me."
+    "So. You think you're good on the phone. Let's find out. I'm the buyer who's heard every pitch, and I'm not easy. I'm gonna make you earn it. Talk to me."
   </p>
   <audio id="intro" preload="auto" src="assets/intro.mp3"></audio>
 </div>
@@ -71,7 +71,7 @@
 <header class="hero">
   <div class="wrap">
     <h1>You think you're good on the phone. Let's find out.</h1>
-    <p class="sub">VoiceReason.AI puts you across the table from a buyer who's heard every pitch — so the real calls stop being the ones you practice on.</p>
+    <p class="sub">VoiceReason.AI puts you across the table from a buyer who's heard every pitch, so the real calls stop being the ones you practice on.</p>
     <a class="cta" href="#waitlist">Get on the waitlist</a>
   </div>
 </header>
@@ -79,10 +79,10 @@
 <section>
   <div class="wrap">
     <h2>Practice the calls that actually decide deals.</h2>
-    <p class="lead">Reading a script is easy. Holding your ground when a skeptical buyer pushes back is not. VoiceReason.AI is a voice you talk to out loud — one that pressure-tests how you handle objections, stalls, and the moment a prospect goes quiet.</p>
+    <p class="lead">Reading a script is easy. Holding your ground when a skeptical buyer pushes back is not. VoiceReason.AI is a voice you talk to out loud, one that pressure-tests how you handle objections, stalls, and the moment a prospect goes quiet.</p>
     <div class="mech">
-      <div class="step"><div class="num">STEP 1</div><h3>Build your buyer</h3><p>Create the exact buyer you want to face — as tough and specific as your real deals.</p></div>
-      <div class="step"><div class="num">STEP 2</div><h3>Have the conversation</h3><p>Talk out loud. The buyer pushes back in real time — no menus, no scripts.</p></div>
+      <div class="step"><div class="num">STEP 1</div><h3>Build your buyer</h3><p>Create the exact buyer you want to face, as tough and specific as your real deals.</p></div>
+      <div class="step"><div class="num">STEP 2</div><h3>Have the conversation</h3><p>Talk out loud. The buyer pushes back in real time, no menus, no scripts.</p></div>
       <div class="step"><div class="num">STEP 3</div><h3>See where you held or folded</h3><p>Get an honest read on the moments that made or broke the call.</p></div>
     </div>
   </div>
@@ -91,7 +91,7 @@
 <section id="waitlist">
   <div class="wrap">
     <h2>Get early access.</h2>
-    <p class="lead" style="margin-bottom:22px">Tell us who you are and the toughest buyer you deal with. We'll reach out personally about early access — a real person, not an autoresponder.</p>
+    <p class="lead" style="margin-bottom:22px">Tell us who you are and the toughest buyer you deal with. We'll reach out personally about early access, a real person, not an autoresponder.</p>
 
     <div class="form-card">
       <form id="waitlistForm" novalidate>
@@ -129,7 +129,7 @@
 
 <footer>
   <div class="wrap">
-    VoiceReason.AI — a product of Pyrigen Incorporated. Built alongside ProveMastery.<br/>
+    VoiceReason.AI, a product of Pyrigen Incorporated. Built alongside ProveMastery.<br/>
     © <span id="yr"></span> Pyrigen Incorporated. · <a href="privacy.html">Privacy</a> · <a href="mailto:hello@pyrigen.com">Contact</a>
   </div>
 </footer>
@@ -179,8 +179,8 @@ form.addEventListener("submit",function(e){
     body:JSON.stringify(payload)
   }).then(function(r){
     if(r.ok){form.style.display="none";success.style.display="block";}
-    else{console.error("waitlist insert failed",r.status);alert("Something went wrong — please try again.");}
-  }).catch(function(err){console.error(err);alert("Something went wrong — please try again.");});
+    else{console.error("waitlist insert failed",r.status);alert("Something went wrong, please try again.");}
+  }).catch(function(err){console.error(err);alert("Something went wrong, please try again.");});
 });
 </script>
 </body>
