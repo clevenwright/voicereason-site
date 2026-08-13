@@ -4,134 +4,146 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>VoiceReason.AI: You think you're good on the phone. Let's find out.</title>
-<meta name="description" content="VoiceReason.AI: practice the calls that decide deals against a buyer who's heard every pitch. Join the waitlist." />
+<meta name="description" content="VoiceReason.AI: practice the calls that decide deals against a buyer who's heard every pitch. Start with a free 5-minute call, then a $20 pass." />
 <style>
-  :root{--bg:#0b0b12;--panel:#14141f;--ink:#f4f4f8;--muted:#a7a7b6;--accent:#6a3cff;--accent-2:#a98bff;--line:rgba(255,255,255,.08);--ok:#3ad29f}
-  *{box-sizing:border-box} html,body{margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
-  a{color:var(--accent-2)}
-  #gate{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(1200px 800px at 50% 30%,rgba(106,60,255,.25),transparent 60%),var(--bg);z-index:50;transition:opacity .6s ease}
-  #gate.hidden{opacity:0;pointer-events:none}
-  .orb{width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a63ff,#5a2cf0 60%,#3d1fb0);box-shadow:0 0 60px rgba(106,60,255,.6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative}
-  .orb:focus-visible{outline:3px solid var(--accent-2);outline-offset:6px}
-  .orb svg{width:96px;height:60px}
-  .gate-tag{margin-top:26px;color:var(--muted);font-size:15px;letter-spacing:.02em}
-  .gate-controls{margin-top:14px;display:flex;gap:16px}
-  .gate-controls button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:13px}
-  .caption{margin-top:20px;max-width:520px;text-align:center;color:var(--muted);font-size:14px;min-height:20px}
-  main{opacity:0;transition:opacity .7s ease .1s}
-  main.revealed{opacity:1}
-  header.hero{padding:120px 0 60px;text-align:center}
-  h1{font-size:clamp(30px,6vw,56px);line-height:1.05;margin:0 0 18px;font-weight:800;letter-spacing:-.02em}
-  .sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:640px;margin:0 auto 34px}
-  .cta{display:inline-block;background:linear-gradient(135deg,var(--accent),#4a1fd0);color:#fff;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:700;border:none;cursor:pointer;font-size:16px}
-  section{padding:48px 0;border-top:1px solid var(--line)}
-  h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 14px;font-weight:700}
-  .lead{color:var(--muted);max-width:680px}
-  .mech{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-  .mech .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
-  .mech .num{color:var(--accent-2);font-weight:800;font-size:14px;letter-spacing:.08em}
-  .mech h3{margin:8px 0 6px;font-size:18px}
-  .mech p{margin:0;color:var(--muted);font-size:14px}
-  .form-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;max-width:560px}
-  .form-row{margin-bottom:16px}
-  label{display:block;font-size:14px;margin-bottom:6px;color:var(--ink)}
-  input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#0f0f18;color:var(--ink);font-size:15px}
-  input:focus{outline:2px solid var(--accent)}
-  .hp{position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden}
-  .privacy{font-size:12px;color:var(--muted);margin-top:10px}
-  .submit{margin-top:8px;width:100%;background:linear-gradient(135deg,var(--accent),#4a1fd0);color:#fff;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer}
-  .success{display:none;background:rgba(58,210,159,.1);border:1px solid var(--ok);color:var(--ok);padding:16px;border-radius:12px;font-weight:600}
-  footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
-  @media(max-width:680px){.mech{grid-template-columns:1fr}}
+:root{--bg:#0b0b12;--panel:#14141f;--ink:#f4f4f8;--muted:#a7a7b6;--accent:#6a3cff;--accent-2:#a98bff;--line:rgba(255,255,255,.08);--ok:#3ad29f}
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+a{color:var(--accent-2)}
+#gate{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(1200px 800px at 50% 30%,rgba(106,60,255,.25),transparent 60%),var(--bg);z-index:50;transition:opacity .6s ease}
+#gate.hidden{opacity:0;pointer-events:none}
+.orb{width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a63ff,#5a2cf0 60%,#3d1fb0);box-shadow:0 0 60px rgba(106,60,255,.6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative}
+.orb:focus-visible{outline:3px solid var(--accent-2);outline-offset:6px}
+.orb svg{width:96px;height:60px}
+.gate-tag{margin-top:26px;color:var(--muted);font-size:15px;letter-spacing:.02em}
+.gate-controls{margin-top:14px;display:flex;gap:16px}
+.gate-controls button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:13px}
+.caption{margin-top:20px;max-width:520px;text-align:center;color:var(--muted);font-size:14px;min-height:20px}
+main{opacity:0;transition:opacity .7s ease .1s}
+main.revealed{opacity:1}
+header.hero{padding:120px 0 60px;text-align:center}
+h1{font-size:clamp(30px,6vw,56px);line-height:1.05;margin:0 0 18px;font-weight:800;letter-spacing:-.02em}
+.sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:640px;margin:0 auto 34px}
+.cta{display:inline-block;background:linear-gradient(135deg,var(--accent),#4a1fd0);color:#fff;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:700;border:none;cursor:pointer;font-size:16px}
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 14px;font-weight:700}
+.lead{color:var(--muted);max-width:680px}
+.mech{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.mech .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.mech .num{color:var(--accent-2);font-weight:800;font-size:14px;letter-spacing:.08em}
+.mech h3{margin:8px 0 6px;font-size:18px}
+.mech p{margin:0;color:var(--muted);font-size:14px}
+.form-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;max-width:560px}
+.form-row{margin-bottom:16px}
+label{display:block;font-size:14px;margin-bottom:6px;color:var(--ink)}
+input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#0f0f18;color:var(--ink);font-size:15px}
+input:focus{outline:2px solid var(--accent)}
+.hp{position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden}
+.privacy{font-size:12px;color:var(--muted);margin-top:10px}
+.submit{margin-top:8px;width:100%;background:linear-gradient(135deg,var(--accent),#4a1fd0);color:#fff;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer}
+.success{display:none;background:rgba(58,210,159,.1);border:1px solid var(--ok);color:var(--ok);padding:16px;border-radius:12px;font-weight:600}
+footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+@media(max-width:680px){.mech{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <div id="gate" role="dialog" aria-label="Intro">
-  <button class="orb" id="orb" aria-label="Tap to play the intro">
-    <svg id="wave" viewBox="0 0 96 60" aria-hidden="true">
-      <polyline id="wavepoly" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points=""/>
-    </svg>
-  </button>
-  <div class="gate-tag" id="gateTag">Tap to listen</div>
-  <div class="gate-controls" id="gateControls" style="display:none">
-    <button id="muteBtn" type="button">Mute</button>
-    <button id="replayBtn" type="button">Replay</button>
-    <button id="skipBtn" type="button">Skip →</button>
-  </div>
-  <p class="caption" id="caption" aria-live="polite">
-    "So. You think you're good on the phone. Let's find out. I'm the buyer who's heard every pitch, and I'm not easy. I'm gonna make you earn it. Talk to me."
-  </p>
-  <audio id="intro" preload="auto" src="assets/intro.mp3"></audio>
+<button class="orb" id="orb" aria-label="Tap to play the intro">
+<svg id="wave" viewBox="0 0 96 60" aria-hidden="true">
+<polyline id="wavepoly" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points=""/>
+</svg>
+</button>
+<div class="gate-tag" id="gateTag">Tap to listen</div>
+<div class="gate-controls" id="gateControls" style="display:none">
+<button id="muteBtn" type="button">Mute</button>
+<button id="replayBtn" type="button">Replay</button>
+<button id="skipBtn" type="button">Skip →</button>
+</div>
+<p class="caption" id="caption" aria-live="polite">
+"So. You think you're good on the phone. Let's find out. I'm the buyer who's heard every pitch, and I'm not easy. I'm gonna make you earn it. Talk to me."
+</p>
+<audio id="intro" preload="auto" src="assets/intro.mp3"></audio>
 </div>
 
 <main id="main" aria-hidden="true">
 <header class="hero">
-  <div class="wrap">
-    <h1>You think you're good on the phone. Let's find out.</h1>
-    <p class="sub">VoiceReason.AI puts you across the table from a buyer who's heard every pitch, so the real calls stop being the ones you practice on.</p>
-    <a class="cta" href="#waitlist">Get on the waitlist</a>
-  </div>
+<div class="wrap">
+<h1>You think you're good on the phone. Let's find out.</h1>
+<p class="sub">VoiceReason.AI puts you across the table from a buyer who's heard every pitch. Start with a free 5-minute call, then a $20 pass gets you a full session.</p>
+<a class="cta" href="#waitlist">Claim your founding spot</a>
+</div>
 </header>
 
 <section>
-  <div class="wrap">
-    <h2>Practice the calls that actually decide deals.</h2>
-    <p class="lead">Reading a script is easy. Holding your ground when a skeptical buyer pushes back is not. VoiceReason.AI is a voice you talk to out loud, one that pressure-tests how you handle objections, stalls, and the moment a prospect goes quiet.</p>
-    <div class="mech">
-      <div class="step"><div class="num">STEP 1</div><h3>Build your buyer</h3><p>Create the exact buyer you want to face, as tough and specific as your real deals.</p></div>
-      <div class="step"><div class="num">STEP 2</div><h3>Have the conversation</h3><p>Talk out loud. The buyer pushes back in real time, no menus, no scripts.</p></div>
-      <div class="step"><div class="num">STEP 3</div><h3>See where you held or folded</h3><p>Get an honest read on the moments that made or broke the call.</p></div>
-    </div>
-  </div>
+<div class="wrap">
+<h2>Practice the calls that actually decide deals.</h2>
+<p class="lead">Reading a script is easy. Holding your ground when a skeptical buyer pushes back is not. VoiceReason.AI is a voice you talk to out loud, one that pressure-tests how you handle objections, stalls, and the moment a prospect goes quiet.</p>
+<div class="mech">
+<div class="step"><div class="num">STEP 1</div><h3>Build your buyer</h3><p>Create the exact buyer you want to face, as tough and specific as your real deals.</p></div>
+<div class="step"><div class="num">STEP 2</div><h3>Have the conversation</h3><p>Talk out loud. The buyer pushes back in real time, no menus, no scripts.</p></div>
+<div class="step"><div class="num">STEP 3</div><h3>See where you held or folded</h3><p>Get an honest read on the moments that made or broke the call.</p></div>
+</div>
+</div>
+</section>
+
+<section id="offer">
+<div class="wrap">
+<h2>Start free. Go all in for $20.</h2>
+<p class="lead">Try it with a free 5-minute call against a buyer who won't go easy. When you're ready, a $20 pass gets you a full session and an honest coaching read on how you handled it.</p>
+<div class="mech">
+<div class="step"><div class="num">FREE</div><h3>Your first 5 minutes</h3><p>One real exchange with the buyer, plus a short read on how you handled it. No cost.</p></div>
+<div class="step"><div class="num">$20 PASS</div><h3>The full session</h3><p>45 minutes of talk time to practice the calls that decide your deals.</p></div>
+<div class="step"><div class="num">FOUNDING</div><h3>First 100 get 45 min</h3><p>The first 100 passes get the full 45 minutes. After that it's 30, same $20.</p></div>
+</div>
+</div>
 </section>
 
 <section id="waitlist">
-  <div class="wrap">
-    <h2>Get early access.</h2>
-    <p class="lead" style="margin-bottom:22px">Tell us who you are and the toughest buyer you deal with. We'll reach out personally about early access, a real person, not an autoresponder.</p>
+<div class="wrap">
+<h2>Claim your founding spot.</h2>
+<p class="lead" style="margin-bottom:22px">Tell us who you are and the toughest buyer you deal with, and we'll set you up with your free call and founding access. A real person, not an autoresponder.</p>
 
-    <div class="form-card">
-      <form id="waitlistForm" novalidate>
-        <div class="hp" aria-hidden="true"><label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+<div class="form-card">
+<form id="waitlistForm" novalidate>
+<div class="hp" aria-hidden="true"><label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
 
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" />
-        </div>
-        <div class="form-row">
-          <label for="email">Email <span style="color:var(--accent-2)">*</span></label>
-          <input id="email" name="email" type="email" required autocomplete="email" />
-        </div>
-        <div class="form-row">
-          <label for="phone">Phone (optional)</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" />
-        </div>
-        <div class="form-row">
-          <label for="company">Company (optional)</label>
-          <input id="company" name="company" type="text" autocomplete="organization" />
-        </div>
-        <div class="form-row">
-          <label for="persona_type">Who's the toughest buyer you deal with? (optional)</label>
-          <input id="persona_type" name="persona_type" type="text" placeholder="e.g. the skeptic who's heard every pitch" />
-        </div>
+<div class="form-row">
+<label for="name">Name</label>
+<input id="name" name="name" type="text" autocomplete="name" />
+</div>
+<div class="form-row">
+<label for="email">Email <span style="color:var(--accent-2)">*</span></label>
+<input id="email" name="email" type="email" required autocomplete="email" />
+</div>
+<div class="form-row">
+<label for="phone">Phone (optional)</label>
+<input id="phone" name="phone" type="tel" autocomplete="tel" />
+</div>
+<div class="form-row">
+<label for="company">Company (optional)</label>
+<input id="company" name="company" type="text" autocomplete="organization" />
+</div>
+<div class="form-row">
+<label for="persona_type">Who's the toughest buyer you deal with? (optional)</label>
+<input id="persona_type" name="persona_type" type="text" placeholder="e.g. the skeptic who's heard every pitch" />
+</div>
 
-        <button class="submit" type="submit">Request early access</button>
+<button class="submit" type="submit">Claim my founding spot</button>
 
-        <p class="privacy">By joining, you agree we can contact you about early access. We won't sell your info. See our <a href="privacy.html">Privacy Policy</a> · <a href="mailto:hello@pyrigen.com">Contact</a>.</p>
-      </form>
-      <div class="success" id="success">You're on the list. We'll be in touch personally about early access.</div>
-    </div>
-  </div>
+<p class="privacy">By joining, you agree we can contact you about early access. We won't sell your info. See our <a href="privacy.html">Privacy Policy</a> · <a href="mailto:hello@pyrigen.com">Contact</a>.</p>
+</form>
+<div class="success" id="success">You're in. We'll be in touch personally to set up your free call and founding access.</div>
+</div>
+</div>
 </section>
 
 <footer>
-  <div class="wrap">
-    VoiceReason.AI, a product of Pyrigen Incorporated. Built alongside ProveMastery.<br/>
-    © <span id="yr"></span> Pyrigen Incorporated. · <a href="privacy.html">Privacy</a> · <a href="mailto:hello@pyrigen.com">Contact</a>
-  </div>
+<div class="wrap">
+VoiceReason.AI, a product of Pyrigen Incorporated. Built alongside ProveMastery.<br/>
+© <span id="yr"></span> Pyrigen Incorporated. · <a href="privacy.html">Privacy</a> · <a href="mailto:hello@pyrigen.com">Contact</a>
+</div>
 </footer>
 </main>
 
@@ -159,28 +171,28 @@ document.getElementById("skipBtn").addEventListener("click",reveal);
 
 var form=document.getElementById("waitlistForm"),success=document.getElementById("success");
 form.addEventListener("submit",function(e){
-  e.preventDefault();
-  if(form.company_website.value){return;}
-  var email=form.email.value.trim();
-  if(!email||email.indexOf("@")<1){form.email.focus();return;}
-  var payload={
-    email:email,
-    name:form.name.value.trim()||null,
-    phone:form.phone.value.trim()||null,
-    company:form.company.value.trim()||null,
-    persona_type:form.persona_type.value.trim()||null,
-    consent_to_contact:true,
-    consent_text:"By joining, you agree we can contact you about early access.",
-    source:"voicereason-coming-soon"
-  };
-  fetch(SUPABASE_URL+"/rest/v1/waitlist_leads",{
-    method:"POST",
-    headers:{"Content-Type":"application/json","apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Prefer":"return=minimal"},
-    body:JSON.stringify(payload)
-  }).then(function(r){
-    if(r.ok){form.style.display="none";success.style.display="block";}
-    else{console.error("waitlist insert failed",r.status);alert("Something went wrong, please try again.");}
-  }).catch(function(err){console.error(err);alert("Something went wrong, please try again.");});
+e.preventDefault();
+if(form.company_website.value){return;}
+var email=form.email.value.trim();
+if(!email||email.indexOf("@")<1){form.email.focus();return;}
+var payload={
+email:email,
+name:form.name.value.trim()||null,
+phone:form.phone.value.trim()||null,
+company:form.company.value.trim()||null,
+persona_type:form.persona_type.value.trim()||null,
+consent_to_contact:true,
+consent_text:"By joining, you agree we can contact you about early access.",
+source:"voicereason-launch"
+};
+fetch(SUPABASE_URL+"/rest/v1/waitlist_leads",{
+method:"POST",
+headers:{"Content-Type":"application/json","apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Prefer":"return=minimal"},
+body:JSON.stringify(payload)
+}).then(function(r){
+if(r.ok){form.style.display="none";success.style.display="block";}
+else{console.error("waitlist insert failed",r.status);alert("Something went wrong, please try again.");}
+}).catch(function(err){console.error(err);alert("Something went wrong, please try again.");});
 });
 </script>
 </body>
