@@ -131,13 +131,13 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;b
 <section id="why">
 <div class="wrap">
 <h2>The call comes once. Make your mistakes here.</h2>
-<p class="lead">Every high-stakes profession rehearses before it performs — pilots in the simulator, surgeons on models, athletes in the scrimmage. The research is blunt about why: skill comes from deliberate practice with honest feedback, and composure comes from rehearsing under real pressure, not from winging it live. Sales is the last place we still send people in cold. A winnable deal you lose costs you the quarter. Practicing the moment costs you twenty dollars.</p>
+<p class="lead">Every high-stakes profession rehearses before it performs: pilots in the simulator, surgeons on models, athletes in the scrimmage. The research is blunt about why: skill comes from deliberate practice with honest feedback, and composure comes from rehearsing under real pressure, not from winging it live. Sales is the last place we still send people in cold. A winnable deal you lose costs you the quarter. Practicing the moment costs you twenty dollars.</p>
 <div class="mech">
 <div class="step"><div class="num">DELIBERATE PRACTICE</div><h3>Reps beat talent</h3><p>Expertise isn't a gift or a count of years on the job. Decades of research trace it to focused practice with real feedback. That's the loop here: rep, read, refine.</p></div>
 <div class="step"><div class="num">PRESSURE</div><h3>Train the nerves, not just the script</h3><p>You perform the way you rehearse. Practicing under real pressure is what keeps the stall, the pushback, and the silence from rattling you when the deal is on the line.</p></div>
 <div class="step"><div class="num">THE STAKES</div><h3>Fail here, not there</h3><p>The live prospect is the worst place to find out what you'd say. Make the fumble against an AI buyer, where a mistake costs nothing and the next rep is one tap away.</p></div>
 </div>
-<p class="compare-note">Grounded in the science of deliberate practice and pressure training — the same principles behind flight simulators and medical sim labs, pointed at the call that decides your deal.</p>
+<p class="compare-note">Grounded in the science of deliberate practice and pressure training. The same principles behind flight simulators and medical sim labs, pointed at the call that decides your deal.</p>
 </div>
 </section>
 
@@ -259,7 +259,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;b
 <p class="privacy">By joining, you agree we can contact you about early access. We won't sell your info. See our <a href="privacy.html">Privacy Policy</a> · <a href="mailto:hello@pyrigen.com">Contact</a>.</p>
 </form>
 <div class="success" id="success">You're in. We'll be in touch personally to set up your free call and founding access.</div>
-<div class="failnote" id="failNote">We couldn't save your spot just now — that's on us, not you. Your details are still in the form above. <a id="failMail" href="mailto:Support@pyrigen.com">Email them to us instead</a> and we'll claim your spot by hand. We'll also retry automatically if you come back.</div>
+<div class="failnote" id="failNote">We couldn't save your spot just now. That's on us, not you. Your details are still in the form above. <a id="failMail" href="mailto:Support@pyrigen.com">Email them to us instead</a> and we'll claim your spot by hand. We'll also retry automatically if you come back.</div>
 </div>
 </div>
 </section>
@@ -279,7 +279,7 @@ var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm
 document.getElementById("yr").textContent = new Date().getFullYear();
 
 var heroVariant="A";try{heroVariant=sessionStorage.getItem("vr_hero");if(heroVariant!=="A"&&heroVariant!=="B"){heroVariant=Math.random()<0.5?"A":"B";sessionStorage.setItem("vr_hero",heroVariant);}}catch(e){heroVariant=Math.random()<0.5?"A":"B";}
-if(heroVariant==="B"){var hs=document.getElementById("heroSub");if(hs)hs.textContent="Great closers aren't born — they drill. VoiceReason is your rep before the real one: a buyer who fights back, so your instincts are sharp when the deal is on the line. Start with a free 5-minute call, then $20 for a full session.";}
+if(heroVariant==="B"){var hs=document.getElementById("heroSub");if(hs)hs.textContent="Great closers aren't born. They drill. VoiceReason is your rep before the real one: a buyer who fights back, so your instincts are sharp when the deal is on the line. Start with a free 5-minute call, then $20 for a full session.";}
 
 var gate=document.getElementById("gate"),main=document.getElementById("main"),orb=document.getElementById("orb"),audio=document.getElementById("intro"),tag=document.getElementById("gateTag"),controls=document.getElementById("gateControls"),poly=document.getElementById("wavepoly"),revealed=false;
 function reveal(){if(revealed)return;revealed=true;gate.classList.add("hidden");main.classList.add("revealed");main.setAttribute("aria-hidden","false");gate.setAttribute("aria-hidden","true");var bl=document.getElementById("brandLogo");if(bl)bl.classList.add("show");}
