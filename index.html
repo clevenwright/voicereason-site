@@ -96,7 +96,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;b
 <header class="hero">
 <div class="wrap">
 <h1>You think you're good on the phone. Let's find out.</h1>
-<p class="sub">The call that decides the deal happens once — no rewind, no second first impression. VoiceReason is where you earn it first, across the table from a buyer who fights back. Start with a free 5-minute call, then $20 for a full session.</p>
+<p class="sub" id="heroSub">The call that decides the deal happens once — no rewind, no second first impression. VoiceReason is where you earn it first, across the table from a buyer who fights back. Start with a free 5-minute call, then $20 for a full session.</p>
 <a class="cta" href="#waitlist">Claim your founding spot</a>
 </div>
 </header>
@@ -275,6 +275,9 @@ var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm
 
 document.getElementById("yr").textContent = new Date().getFullYear();
 
+var heroVariant="A";try{heroVariant=sessionStorage.getItem("vr_hero");if(heroVariant!=="A"&&heroVariant!=="B"){heroVariant=Math.random()<0.5?"A":"B";sessionStorage.setItem("vr_hero",heroVariant);}}catch(e){heroVariant=Math.random()<0.5?"A":"B";}
+if(heroVariant==="B"){var hs=document.getElementById("heroSub");if(hs)hs.textContent="Great closers aren't born — they drill. VoiceReason is your rep before the real one: a buyer who fights back, so your instincts are sharp when the deal is on the line. Start with a free 5-minute call, then $20 for a full session.";}
+
 var gate=document.getElementById("gate"),main=document.getElementById("main"),orb=document.getElementById("orb"),audio=document.getElementById("intro"),tag=document.getElementById("gateTag"),controls=document.getElementById("gateControls"),poly=document.getElementById("wavepoly"),revealed=false;
 function reveal(){if(revealed)return;revealed=true;gate.classList.add("hidden");main.classList.add("revealed");main.setAttribute("aria-hidden","false");gate.setAttribute("aria-hidden","true");var bl=document.getElementById("brandLogo");if(bl)bl.classList.add("show");}
 var safety=setTimeout(reveal,20000);
@@ -309,7 +312,7 @@ company:form.company.value.trim()||null,
 persona_type:form.persona_type.value.trim()||null,
 consent_to_contact:true,
 consent_text:"By joining, you agree we can contact you about early access.",
-source:"voicereason-launch"
+source:"voicereason-launch-"+heroVariant
 };
 fetch(SUPABASE_URL+"/rest/v1/waitlist_leads",{
 method:"POST",
