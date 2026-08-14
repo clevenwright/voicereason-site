@@ -43,6 +43,8 @@ input:focus{outline:2px solid var(--accent)}
 .privacy{font-size:12px;color:var(--muted);margin-top:10px}
 .submit{margin-top:8px;width:100%;background:linear-gradient(135deg,var(--accent),#4a1fd0);color:#fff;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer}
 .success{display:none;background:rgba(58,210,159,.1);border:1px solid var(--ok);color:var(--ok);padding:16px;border-radius:12px;font-weight:600}
+.failnote{display:none;background:rgba(255,176,32,.09);border:1px solid #ffb020;color:#ffcf7a;padding:16px;border-radius:12px;margin-top:16px;font-size:14px;line-height:1.5}
+.failnote a{color:#ffcf7a;font-weight:700}
 footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
 .brand-logo{position:fixed;top:18px;left:18px;width:48px;height:48px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a63ff,#5a2cf0 60%,#3d1fb0);box-shadow:0 0 22px rgba(106,60,255,.55);border:none;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:40;padding:0;opacity:0;transition:opacity .5s ease,transform .18s ease}
 .brand-logo.show{display:flex;opacity:1}
@@ -257,6 +259,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;b
 <p class="privacy">By joining, you agree we can contact you about early access. We won't sell your info. See our <a href="privacy.html">Privacy Policy</a> · <a href="mailto:hello@pyrigen.com">Contact</a>.</p>
 </form>
 <div class="success" id="success">You're in. We'll be in touch personally to set up your free call and founding access.</div>
+<div class="failnote" id="failNote">We couldn't save your spot just now — that's on us, not you. Your details are still in the form above. <a id="failMail" href="mailto:Support@pyrigen.com">Email them to us instead</a> and we'll claim your spot by hand. We'll also retry automatically if you come back.</div>
 </div>
 </div>
 </section>
@@ -298,7 +301,27 @@ if(brandLogo){brandLogo.addEventListener("click",function(){try{playing=true;aud
 audio.addEventListener("ended",function(){if(brandLogo)brandLogo.classList.remove("playing");});
 audio.addEventListener("pause",function(){if(brandLogo)brandLogo.classList.remove("playing");});
 
-var form=document.getElementById("waitlistForm"),success=document.getElementById("success");
+var form=document.getElementById("waitlistForm"),success=document.getElementById("success"),failNote=document.getElementById("failNote"),failMail=document.getElementById("failMail");
+var VR_Q="vr_lead_queue",VR_Q_MAX=604800000;
+function vrPost(p){
+return fetch(SUPABASE_URL+"/rest/v1/waitlist_leads",{
+method:"POST",
+headers:{"Content-Type":"application/json","apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Prefer":"return=minimal"},
+body:JSON.stringify(p)
+}).then(function(r){return !!r.ok;}).catch(function(){return false;});
+}
+function vrSend(p,n){
+return vrPost(p).then(function(ok){
+if(ok||n>=3)return ok;
+return new Promise(function(go){setTimeout(go,n*1500);}).then(function(){return vrSend(p,n+1);});
+});
+}
+function vrQueue(p){try{localStorage.setItem(VR_Q,JSON.stringify({t:Date.now(),p:p}));}catch(e){}}
+function vrUnqueue(){try{localStorage.removeItem(VR_Q);}catch(e){}}
+function vrMailto(p){
+var b="My founding-spot form on voicereason.ai didn't go through. Details below.\n\nEmail: "+(p.email||"")+"\nName: "+(p.name||"")+"\nPhone: "+(p.phone||"")+"\nCompany: "+(p.company||"")+"\nToughest buyer: "+(p.persona_type||"")+"\nRef: "+(p.source||"");
+return "mailto:Support@pyrigen.com?subject="+encodeURIComponent("VoiceReason founding spot")+"&body="+encodeURIComponent(b);
+}
 form.addEventListener("submit",function(e){
 e.preventDefault();
 if(form.company_website.value){return;}
@@ -314,15 +337,15 @@ consent_to_contact:true,
 consent_text:"By joining, you agree we can contact you about early access.",
 source:"voicereason-launch-"+heroVariant
 };
-fetch(SUPABASE_URL+"/rest/v1/waitlist_leads",{
-method:"POST",
-headers:{"Content-Type":"application/json","apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Prefer":"return=minimal"},
-body:JSON.stringify(payload)
-}).then(function(r){
-if(r.ok){form.style.display="none";success.style.display="block";}
-else{console.error("waitlist insert failed",r.status);alert("Something went wrong, please try again.");}
-}).catch(function(err){console.error(err);alert("Something went wrong, please try again.");});
+var btn=form.querySelector(".submit"),label=btn.textContent;
+btn.disabled=true;btn.textContent="Claiming…";failNote.style.display="none";
+vrSend(payload,1).then(function(ok){
+btn.disabled=false;btn.textContent=label;
+if(ok){vrUnqueue();form.style.display="none";success.style.display="block";}
+else{vrQueue(payload);failMail.href=vrMailto(payload);failNote.style.display="block";failNote.scrollIntoView({behavior:"smooth",block:"nearest"});}
 });
+});
+try{var qr=localStorage.getItem(VR_Q);if(qr){var qo=JSON.parse(qr);if(qo&&qo.p&&qo.t&&(Date.now()-qo.t)<VR_Q_MAX){vrPost(qo.p).then(function(ok){if(ok)vrUnqueue();});}else{vrUnqueue();}}}catch(e){vrUnqueue();}
 </script>
 </body>
 </html>
