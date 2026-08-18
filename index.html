@@ -28,6 +28,8 @@ header.hero{padding:120px 0 60px;text-align:center}
 h1{font-size:clamp(30px,6vw,56px);line-height:1.05;margin:0 0 18px;font-weight:800;letter-spacing:-.02em}
 .sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:640px;margin:0 auto 34px}
 .cta{display:inline-block;background:linear-gradient(135deg,var(--accent),#4a1fd0);color:#fff;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:700;border:none;cursor:pointer;font-size:16px}
+.cta.ghost{background:none;border:1px solid var(--line);color:var(--ink)}
+.ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 section{padding:48px 0;border-top:1px solid var(--line)}
 h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 14px;font-weight:700}
 .lead{color:var(--muted);max-width:680px}
@@ -103,7 +105,8 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;b
 <div class="wrap">
 <h1>You think you're good on the phone. Let's find out.</h1>
 <p class="sub" id="heroSub">The call that decides the deal happens once. No rewind, no second first impression. VoiceReason is where you earn it first, across the table from a buyer who fights back. Ten full sessions a month with a scored read after each one. Plans from $49.</p>
-<a class="cta" href="#waitlist">Claim your founding spot</a>
+<div class="ctas"><a class="cta" href="#waitlist">Claim your founding spot</a>
+<a class="cta ghost" href="https://app.voicereason.ai/?src=site">Or create your account</a></div>
 </div>
 </header>
 
@@ -149,6 +152,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;b
 <section id="offer">
 <div class="wrap">
 <h2>Three plans. The only question is how long your real calls run.</h2>
+<p class="lead" style="margin-bottom:12px"><strong>Pricing at launch.</strong> There is nothing to pay today, and the waitlist does not ask for a card.</p>
 <p class="lead">Every plan is a monthly set of sessions with a live buyer, and a scored read after each one. Starter and Pro give you the same number of sessions; the difference is three times the room to work. Sessions reset each month and don't carry over.</p>
 <div class="mech">
 <div class="step"><div class="num">STARTER</div><h3>$49 a month</h3><p>Ten sessions, fifteen minutes each. Room for an opener, a hard objection, or the stretch of the call you keep losing.</p></div>
