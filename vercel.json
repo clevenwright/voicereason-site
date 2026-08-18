@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/demo",
+      "destination": "/?src=demoline",
+      "permanent": false
+    },
+    {
+      "source": "/r/:token",
+      "destination": "https://app.voicereason.ai/r/:token",
+      "permanent": false
+    }
+  ]
+}
