@@ -367,5 +367,32 @@ else{vrQueue(payload);failMail.href=vrMailto(payload);failNote.style.display="bl
 });
 try{var qr=localStorage.getItem(VR_Q);if(qr){var qo=JSON.parse(qr);if(qo&&qo.p&&qo.t&&(Date.now()-qo.t)<VR_Q_MAX){vrPost(qo.p).then(function(ok){if(ok)vrUnqueue();});}else{vrUnqueue();}}}catch(e){vrUnqueue();}
 </script>
+<script>
+/* Intro gate auto-dismiss. Added 18 Aug 2026, Website lane.
+   The gate hid the whole page from anyone who did not realise they had to tap,
+   and from crawlers, which rendered the homepage as a black rectangle.
+   Reveals the page after 8 seconds, or on the first scroll, wheel, key or touch.
+   If the visitor plays the intro, auto-dismiss is cancelled and the existing
+   Mute / Replay / Skip controls take over so the audio is never cut off. */
+(function(){
+  var fired=false,t;
+  function autoReveal(){
+    if(fired)return;fired=true;
+    var g=document.getElementById("gate");
+    if(!g||g.classList.contains("hidden"))return;
+    var s=document.getElementById("skipBtn");
+    if(s){s.click();return;}
+    g.classList.add("hidden");
+    var m=document.getElementById("main");
+    if(m){m.classList.add("revealed");m.setAttribute("aria-hidden","false");}
+  }
+  t=setTimeout(autoReveal,8000);
+  ["scroll","wheel","keydown","touchmove"].forEach(function(ev){
+    window.addEventListener(ev,function(){clearTimeout(t);autoReveal();},{once:true,passive:true});
+  });
+  var a=document.getElementById("intro");
+  if(a){a.addEventListener("play",function(){clearTimeout(t);fired=true;},{once:true});}
+})();
+</script>
 </body>
 </html>
