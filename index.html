@@ -25,13 +25,6 @@ body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMac
 .wrap{max-width:920px;margin:0 auto;padding:0 20px}
 a{color:var(--accent-2)}
 #gate{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;height:320px;margin:0 auto 8px;background:radial-gradient(600px 320px at 50% 45%,rgba(106,60,255,.20),transparent 70%);transition:align-items .45s ease,justify-content .45s ease}
-#gate.hidden{align-items:flex-start;justify-content:flex-start;padding-top:6px}
-#gate.hidden .orb{width:56px;height:56px;box-shadow:0 0 18px rgba(106,60,255,.5)}
-#gate.hidden .orb svg{width:30px;height:19px}
-#gate.hidden .gate-tag{margin-top:10px;font-size:13px}
-#gate.hidden .gate-controls{margin-top:8px}
-#gate.hidden .caption{margin-top:12px;text-align:left}
-.orb{transition:width .45s ease,height .45s ease,box-shadow .45s ease}
 @media (max-width:640px){#gate{height:250px}}
 .orb{width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a63ff,#5a2cf0 60%,#3d1fb0);box-shadow:0 0 60px rgba(106,60,255,.6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative}
 .orb:focus-visible{outline:3px solid var(--accent-2);outline-offset:6px}
