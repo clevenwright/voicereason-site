@@ -24,9 +24,9 @@
 body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{max-width:920px;margin:0 auto;padding:0 20px}
 a{color:var(--accent-2)}
-#gate{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;height:320px;margin:0 auto 8px;background:radial-gradient(600px 320px at 50% 45%,rgba(106,60,255,.20),transparent 70%);transition:align-items .45s ease,justify-content .45s ease}
-@media (max-width:640px){#gate{height:250px}}
-.orb{width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a63ff,#5a2cf0 60%,#3d1fb0);box-shadow:0 0 60px rgba(106,60,255,.6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative}
+#gate{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:360px;margin:0 auto 8px;background:radial-gradient(600px 320px at 50% 45%,rgba(106,60,255,.20),transparent 70%);transition:align-items .45s ease,justify-content .45s ease}
+
+.orb{flex-shrink:0;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a63ff,#5a2cf0 60%,#3d1fb0);box-shadow:0 0 60px rgba(106,60,255,.6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative}
 .orb:focus-visible{outline:3px solid var(--accent-2);outline-offset:6px}
 .orb svg{width:96px;height:60px}
 .gate-tag{margin-top:26px;color:var(--muted);font-size:15px;letter-spacing:.02em}
@@ -106,7 +106,6 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;b
 <div class="gate-controls" id="gateControls" style="display:none">
 <button id="muteBtn" type="button">Mute</button>
 <button id="replayBtn" type="button">Replay</button>
-<button id="skipBtn" type="button">Skip →</button>
 </div>
 <p class="caption" id="caption" aria-live="polite">
 "So. You think you're good on the phone. Let's find out. I'm the buyer who's heard every pitch, and I'm not easy. I'm gonna make you earn it. Talk to me."
@@ -314,7 +313,6 @@ audio.addEventListener("ended",function(){playing=false;tag.textContent="Enter �
 audio.addEventListener("error",function(){tag.textContent="Enter →";});
 document.getElementById("muteBtn").addEventListener("click",function(){audio.muted=!audio.muted;this.textContent=audio.muted?"Unmute":"Mute";});
 document.getElementById("replayBtn").addEventListener("click",function(){audio.currentTime=0;playIntro();});
-document.getElementById("skipBtn").addEventListener("click",reveal);
 var brandLogo=document.getElementById("brandLogo");
 if(brandLogo){brandLogo.addEventListener("click",function(){try{playing=true;audio.currentTime=0;var bp=audio.play();if(bp&&bp.catch)bp.catch(function(){});brandLogo.classList.add("playing");}catch(e){}});}
 audio.addEventListener("ended",function(){if(brandLogo)brandLogo.classList.remove("playing");});
