@@ -1,24 +1,27 @@
 *{box-sizing:border-box}
 :root{
-  --bg:#EEF0EC;--surface:#FFFFFF;--surface-2:#F6F7F4;
-  --ink:#141A18;--ink-2:#3A4441;--muted:#66716D;--line:#D6DBD4;--line-strong:#B9C1B7;
-  --accent:#0E5A5E;--accent-ink:#0A4448;--accent-wash:#DCE9E8;--on-accent:#FFFFFF;
-  --sig-strong:#1F6B3A;--sig-dev:#8A6206;--sig-needs:#96341C;
-  --sig-strong-bg:#E1EFE4;--sig-dev-bg:#F4EBD6;--sig-needs-bg:#F6E2DB;
+  --bg:#F5F4FA;--surface:#FFFFFF;--surface-2:#ECEAF6;
+  --ink:#14141F;--ink-2:#3D3B52;--muted:#6D6A85;--line:#DCD9EA;--line-strong:#BDB8D6;
+  --accent:#5A2CF0;--accent-ink:#4A1FD0;--accent-wash:#EAE3FF;--on-accent:#FFFFFF;
+  --band:#0B0B12;--band-ink:#ECEAF6;--band-muted:#8B87A5;--band-line:#26243A;
+  --sig-strong:#0F7A57;--sig-dev:#8A6206;--sig-needs:#B2381F;
+  --sig-strong-bg:#D9F2E8;--sig-dev-bg:#F6EDD9;--sig-needs-bg:#FAE3DD;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#101513;--surface:#181E1C;--surface-2:#1E2523;
-  --ink:#E8EDE9;--ink-2:#BFC8C3;--muted:#8B958F;--line:#2C3532;--line-strong:#3D4744;
-  --accent:#5FBDB8;--accent-ink:#8FD6D1;--accent-wash:#16302F;--on-accent:#0B1211;
-  --sig-strong:#78C894;--sig-dev:#DCB65E;--sig-needs:#E39377;
-  --sig-strong-bg:#16291D;--sig-dev-bg:#2A2415;--sig-needs-bg:#2C1B15;
+  --bg:#0B0B12;--surface:#14141F;--surface-2:#1C1B2A;
+  --ink:#ECEAF6;--ink-2:#C3BFD9;--muted:#8B87A5;--line:#2A2839;--line-strong:#3C3950;
+  --accent:#9B7BFF;--accent-ink:#B9A3FF;--accent-wash:#221B3D;--on-accent:#0B0B12;
+  --band:#050509;--band-ink:#ECEAF6;--band-muted:#8B87A5;--band-line:#26243A;
+  --sig-strong:#3AD29F;--sig-dev:#E0B95F;--sig-needs:#F0907A;
+  --sig-strong-bg:#0F2A22;--sig-dev-bg:#2A2415;--sig-needs-bg:#2C1A16;
 }}
 :root[data-theme="dark"]{
-  --bg:#101513;--surface:#181E1C;--surface-2:#1E2523;
-  --ink:#E8EDE9;--ink-2:#BFC8C3;--muted:#8B958F;--line:#2C3532;--line-strong:#3D4744;
-  --accent:#5FBDB8;--accent-ink:#8FD6D1;--accent-wash:#16302F;--on-accent:#0B1211;
-  --sig-strong:#78C894;--sig-dev:#DCB65E;--sig-needs:#E39377;
-  --sig-strong-bg:#16291D;--sig-dev-bg:#2A2415;--sig-needs-bg:#2C1B15;
+  --bg:#0B0B12;--surface:#14141F;--surface-2:#1C1B2A;
+  --ink:#ECEAF6;--ink-2:#C3BFD9;--muted:#8B87A5;--line:#2A2839;--line-strong:#3C3950;
+  --accent:#9B7BFF;--accent-ink:#B9A3FF;--accent-wash:#221B3D;--on-accent:#0B0B12;
+  --band:#050509;--band-ink:#ECEAF6;--band-muted:#8B87A5;--band-line:#26243A;
+  --sig-strong:#3AD29F;--sig-dev:#E0B95F;--sig-needs:#F0907A;
+  --sig-strong-bg:#0F2A22;--sig-dev-bg:#2A2415;--sig-needs-bg:#2C1A16;
 }
 body{background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.62;margin:0;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
@@ -122,3 +125,42 @@ details p{margin-top:12px;color:var(--ink-2);font-size:.96rem;max-width:66ch}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #submitBtn[disabled]{opacity:.55;cursor:progress}
 .err{color:var(--sig-needs);font-size:.86rem}
+
+
+/* ---- Colour pass, 26 Aug 2026 ----
+   Brand violet #5A2CF0 with the mint #3AD29F as the positive signal.
+   Boldness is spent in two places only: the CTA, and the report header band.
+   Everything else stays quiet so those two carry maximum contrast. */
+
+/* The report is the most important object on the page, so it gets the brand ground. */
+.report-head{background:var(--band);border-bottom:1px solid var(--band-line)}
+.report-meta{color:var(--band-muted)}
+.report-meta b{color:var(--band-ink)}
+.stamp{border-color:var(--sig-strong);color:var(--sig-strong);background:rgba(58,210,159,.07)}
+
+/* A hairline of brand above every section heading group, like a waveform baseline. */
+.eyebrow{position:relative;padding-top:14px}
+.eyebrow::before{content:"";position:absolute;top:0;left:0;width:26px;height:2px;background:var(--accent);border-radius:2px}
+.report-body .eyebrow,.twoup .eyebrow,.dim .eyebrow{padding-top:0}
+.report-body .eyebrow::before,.twoup .eyebrow::before,.dim .eyebrow::before{display:none}
+
+/* CTA carries the only saturated fill on the page. */
+.btn-primary{box-shadow:0 1px 2px rgba(90,44,240,.28),0 6px 18px -8px rgba(90,44,240,.45)}
+.btn-primary:hover{box-shadow:0 1px 2px rgba(90,44,240,.34),0 10px 24px -8px rgba(90,44,240,.55)}
+
+/* The honest-status note and the price get a tint so they read as deliberate, not empty. */
+.honest{background:var(--accent-wash);border-color:var(--accent);border-left-width:3px}
+.price-num{color:var(--accent)}
+.step-n{color:var(--accent)}
+.mark span{color:var(--accent)}
+
+/* Alternate section grounds so the page has rhythm rather than one flat field. */
+#report{background:var(--surface-2)}
+#pricing{background:var(--surface-2)}
+#access{background:var(--surface-2)}
+.card{border-top:2px solid var(--accent)}
+
+/* Score chips keep semantic colour independent of the brand accent. */
+.s-strong{border:1px solid color-mix(in srgb,var(--sig-strong) 30%,transparent)}
+.s-dev{border:1px solid color-mix(in srgb,var(--sig-dev) 30%,transparent)}
+.s-needs{border:1px solid color-mix(in srgb,var(--sig-needs) 30%,transparent)}
