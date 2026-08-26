@@ -1,410 +1,341 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>VoiceReason.AI: Make the practice count. Then make the call.</title>
-<meta name="description" content="VoiceReason.AI: practice the calls that decide deals against a buyer who's heard every pitch. Up to 200 minutes of practice a month with a read on every call. Plans from $49." />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-<meta name="theme-color" content="#5a2cf0" />
-<link rel="canonical" href="https://www.voicereason.ai/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="VoiceReason.AI" />
-<meta property="og:url" content="https://www.voicereason.ai/" />
-<meta property="og:title" content="Make the practice count. Then make the call." />
-<meta property="og:description" content="Practice the calls that decide deals against a buyer who is not hostile, just unconvinced. You build the buyer, you talk out loud, and you get an honest read on where you held and where you folded." />
-<meta property="og:locale" content="en_US" />
-<meta property="og:image" content="https://www.voicereason.ai/assets/og.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:image" content="https://www.voicereason.ai/assets/og.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Make the practice count. Then make the call." />
-<meta name="twitter:description" content="Practice the calls that decide deals against a buyer who is not hostile, just unconvinced. You build the buyer, you talk out loud, and you get an honest read on where you held and where you folded." />
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.voicereason.ai/#organization","name":"Pyrigen Incorporated","url":"https://www.pyrigen.com/","email":"hello@pyrigen.com"},{"@type":"WebSite","@id":"https://www.voicereason.ai/#website","url":"https://www.voicereason.ai/","name":"VoiceReason.AI","inLanguage":"en-US","publisher":{"@id":"https://www.voicereason.ai/#organization"}},{"@type":"SoftwareApplication","@id":"https://www.voicereason.ai/#product","name":"VoiceReason.AI","applicationCategory":"BusinessApplication","operatingSystem":"Web browser and telephone","description":"VoiceReason.AI is sales call practice by phone. You build a buyer persona through the web application, then telephone a real number and hold a spoken conversation with that persona, which is guarded rather than hostile, has competing priorities, and has not yet decided the caller is worth its time. The call is recorded and transcribed, and you receive a written coaching report on how you handled it.","publisher":{"@id":"https://www.voicereason.ai/#organization"},"offers":[{"@type":"Offer","name":"Starter","price":"49","priceCurrency":"USD","availability":"https://schema.org/PreOrder","description":"Up to 80 practice calls and 200 minutes a month, calls up to 30 minutes."},{"@type":"Offer","name":"Pro","price":"149","priceCurrency":"USD","availability":"https://schema.org/PreOrder","description":"Up to 240 practice calls and 600 minutes a month, calls up to 45 minutes."},{"@type":"Offer","name":"Team","price":"349","priceCurrency":"USD","availability":"https://schema.org/PreOrder","description":"Up to 560 practice calls and 1400 minutes a month, calls up to 45 minutes."}]}]}</script>
-<style>
-:root{--bg:#0b0b12;--panel:#14141f;--ink:#f4f4f8;--muted:#a7a7b6;--accent:#6a3cff;--accent-2:#a98bff;--line:rgba(255,255,255,.08);--ok:#3ad29f}
-*{box-sizing:border-box} html,body{margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:920px;margin:0 auto;padding:0 20px}
-a{color:var(--accent-2)}
-#gate{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:360px;margin:0 auto 8px;background:radial-gradient(600px 320px at 50% 45%,rgba(106,60,255,.20),transparent 70%);transition:align-items .45s ease,justify-content .45s ease}
-
-.orb{flex-shrink:0;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a63ff,#5a2cf0 60%,#3d1fb0);box-shadow:0 0 60px rgba(106,60,255,.6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative}
-.orb:focus-visible{outline:3px solid var(--accent-2);outline-offset:6px}
-.orb svg{width:96px;height:60px}
-.gate-tag{margin-top:26px;color:var(--muted);font-size:15px;letter-spacing:.02em}
-.gate-controls{margin-top:14px;display:flex;gap:16px}
-.gate-controls button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:13px}
-.caption{margin-top:20px;max-width:520px;text-align:center;color:var(--muted);font-size:14px;min-height:20px}
-header.hero{padding:40px 0 60px;text-align:center}
-h1{font-size:clamp(30px,6vw,56px);line-height:1.05;margin:0 0 18px;font-weight:800;letter-spacing:-.02em}
-.sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:640px;margin:0 auto 34px}
-.cta{display:inline-block;background:linear-gradient(135deg,var(--accent),#4a1fd0);color:#fff;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:700;border:none;cursor:pointer;font-size:16px}
-.cta.ghost{background:none;border:1px solid var(--line);color:var(--ink)}
-.ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-section{padding:48px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 14px;font-weight:700}
-.lead{color:var(--muted);max-width:680px}
-.mech{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-.mech .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
-.mech .num{color:var(--accent-2);font-weight:800;font-size:14px;letter-spacing:.08em}
-.mech h3{margin:8px 0 6px;font-size:18px}
-.mech p{margin:0;color:var(--muted);font-size:14px}
-.form-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;max-width:560px}
-.form-row{margin-bottom:16px}
-label{display:block;font-size:14px;margin-bottom:6px;color:var(--ink)}
-input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#0f0f18;color:var(--ink);font-size:15px}
-input:focus{outline:2px solid var(--accent)}
-.hp{position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden}
-.privacy{font-size:12px;color:var(--muted);margin-top:10px}
-.submit{margin-top:8px;width:100%;background:linear-gradient(135deg,var(--accent),#4a1fd0);color:#fff;border:none;padding:14px;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer}
-.success{display:none;background:rgba(58,210,159,.1);border:1px solid var(--ok);color:var(--ok);padding:16px;border-radius:12px;font-weight:600}
-.failnote{display:none;background:rgba(255,176,32,.09);border:1px solid #ffb020;color:#ffcf7a;padding:16px;border-radius:12px;margin-top:16px;font-size:14px;line-height:1.5}
-.failnote a{color:#ffcf7a;font-weight:700}
-footer{padding:40px 0 60px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
-.brand-logo{position:fixed;top:18px;left:18px;width:48px;height:48px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8a63ff,#5a2cf0 60%,#3d1fb0);box-shadow:0 0 22px rgba(106,60,255,.55);border:none;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:40;padding:0;opacity:0;transition:opacity .5s ease,transform .18s ease}
-.brand-logo.show{display:flex;opacity:1}
-.brand-logo:hover{transform:scale(1.07)}
-.brand-logo:active{transform:scale(.95)}
-.brand-logo:focus-visible{outline:3px solid var(--accent-2);outline-offset:4px}
-.brand-logo svg{width:30px;height:18px}
-.brand-logo.playing{animation:brandpulse 1.1s ease-in-out infinite}
-@keyframes brandpulse{0%,100%{box-shadow:0 0 22px rgba(106,60,255,.55)}50%{box-shadow:0 0 36px rgba(106,60,255,.95)}}
-.compare{margin-top:28px;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:16px}
-.compare table{border-collapse:collapse;width:100%;min-width:460px;font-size:14px}
-.compare th,.compare td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-.compare thead th{background:var(--panel);font-weight:700;font-size:13px}
-.compare tbody th{font-weight:600;color:var(--ink);width:30%}
-.compare td{color:var(--muted)}
-.compare .us,.compare td.us{background:rgba(106,60,255,.10);color:var(--ink)}
-.compare thead th.us{background:linear-gradient(135deg,var(--accent),#4a1fd0);color:#fff}
-.compare td.us{font-weight:600}
-.compare tr:last-child th,.compare tr:last-child td{border-bottom:none}
-.yes{color:var(--ok);font-weight:800}
-.no{color:#e0607a;font-weight:700}
-.compare-note{font-size:12px;color:var(--muted);margin-top:14px}
-.founder-note{margin-top:26px;padding-left:14px;border-left:2px solid var(--accent-2);font-size:14px;color:var(--muted);max-width:640px}
-.founder-note strong{color:var(--ink)}
-@media(max-width:680px){.mech{grid-template-columns:1fr}}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VoiceReason.AI: practice for teams that sell in person</title>
+<meta name="description" content="Give every field rep a buyer to practise on and get a written read on every call. No app, no login, works on any phone.">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#0E5A5E">
+<link rel="canonical" href="https://www.voicereason.ai/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VoiceReason.AI">
+<meta property="og:url" content="https://www.voicereason.ai/">
+<meta property="og:title" content="VoiceReason.AI: practice for teams that sell in person">
+<meta property="og:description" content="Give every field rep a buyer to practise on and get a written read on every call. No app, no login, works on any phone.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.voicereason.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VoiceReason.AI: practice for teams that sell in person">
+<meta name="twitter:description" content="Give every field rep a buyer to practise on and get a written read on every call. No app, no login, works on any phone.">
+<meta name="twitter:image" content="https://www.voicereason.ai/assets/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<header class="top"><div class="wrap">
+  <a class="mark" href="/">VoiceReason<span>.AI</span></a>
+  <nav class="navlinks">
+    <a href="#report">The report</a><a href="#how">How it works</a><a href="#who">Who it's for</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-primary" href="#access">Get founding access</a>
+</div></header>
 
+<section class="hero" style="border-top:none"><div class="wrap stack">
+  <p class="eyebrow">Practice for teams that sell in person</p>
+  <h1>Give every rep a buyer to practice on.<br>Get a read on every call.</h1>
+  <p class="lede">Your team dials one number from any phone. No app, no login, no data connection. They practise against a buyer who knows their sale and does not go easy. You get a written read on every conversation.</p>
+  <div class="ctarow">
+    <a class="btn btn-primary" href="#access">Get founding access</a>
+    <a class="btn btn-ghost" href="#report">See a real coaching report</a>
+  </div>
+  <p class="btn-note">Nothing to pay today. We are opening accounts to a first group of teams.</p>
+</div></section>
 
+<section><div class="wrap stack">
+  <div class="honest">
+    <strong>Where we actually are.</strong> VoiceReason is new. We have no customer logos to show you and we are not going to borrow anyone else's. What we have instead is a published price, a product that works, and a real coaching report below. Judge us on those.
+  </div>
+</div></section>
 
-<button class="brand-logo" id="brandLogo" aria-label="Tap to hear the buyer again" title="Tap to hear the buyer">
-<svg viewBox="0 0 96 60" aria-hidden="true"><polyline fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="6,30 14,27 20,21 26,37 32,15 38,43 44,9 50,45 56,17 62,41 68,25 74,33 82,30 90,30"/></svg>
-</button>
+<section id="report"><div class="wrap stack-lg">
+  <div class="stack col">
+    <p class="eyebrow">What lands in the inbox</p>
+    <h2>This is the whole product, and nobody else will show you theirs.</h2>
+    <p class="lede">Every coaching tool in this category shows you dashboards. Here is the actual artifact: what a rep receives after a practice call. This example is built on an in-home HVAC appointment. The format, the scoring and the grounding audit are exactly what the product produces.</p>
+  </div>
 
-<main id="main">
-<header class="hero">
-<div class="wrap">
-<div id="gate">
-<button class="orb" id="orb" aria-label="Tap to play the intro">
-<svg id="wave" viewBox="0 0 96 60" aria-hidden="true">
-<polyline id="wavepoly" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points=""/>
-</svg>
-</button>
-<div class="gate-tag" id="gateTag">Tap to listen</div>
-<div class="gate-controls" id="gateControls" style="display:none">
-<button id="muteBtn" type="button">Mute</button>
-<button id="replayBtn" type="button">Replay</button>
-</div>
-<p class="caption" id="caption" aria-live="polite">
-"So. You think you're good on the phone. Let's find out. I'm the buyer who's heard every pitch, and I'm not easy. I'm gonna make you earn it. Talk to me."
-</p>
-<audio id="intro" preload="auto" src="assets/intro.mp3"></audio>
-</div>
-<h1>Make the practice count. Then make the call.</h1>
-<p class="sub" id="heroSub">Whether you're new to sales or a twenty-year veteran, stay at peak performance by practicing against buyers who know your sale and will not go easy on you. Up to 200 minutes of practice a month with a read on every call. Plans from $49.</p>
-<div class="ctas"><a class="cta" href="#waitlist">Claim your founding spot</a>
-<a class="cta ghost" href="https://app.voicereason.ai/?src=site">Or create your account</a></div>
-</div>
-</header>
+  <div class="report">
+    <div class="report-head">
+      <div class="report-meta">
+        <b>Practice call</b> &middot; 6 min 12 sec &middot; Tue 25 Aug, 7:41am<br>
+        <b>Rep</b> &middot; seat 04, Dawson<br>
+        <b>Buyer</b> &middot; homeowner, 19-year-old system, two prior quotes in hand<br>
+        <b>Scenario</b> &middot; in-home replacement, price objection expected
+      </div>
+      <div class="stamp">
+        <b>GROUNDING AUDIT</b>
+        31 of 31 coaching claims traced to a line in the transcript.<br>
+        0 unsupported. 0 contradicted.
+      </div>
+    </div>
 
-<section>
-<div class="wrap">
-<h2>Practice the calls that actually decide deals.</h2>
-<p class="lead">Reading a script is easy. Earning the room from someone who has other priorities is not. VoiceReason.AI is a voice you talk to out loud, one that pressure-tests how you handle objections, stalls, and the moment a prospect goes quiet.</p>
-<div class="mech">
-<div class="step"><div class="num">STEP 1</div><h3>Build your buyer</h3><p>Create the exact buyer you want to face, as tough and specific as your real deals.</p></div>
-<div class="step"><div class="num">STEP 2</div><h3>Have the conversation</h3><p>Talk out loud. The buyer makes you earn it in real time, no menus, no scripts.</p></div>
-<div class="step"><div class="num">STEP 3</div><h3>See where you held or folded</h3><p>Get an honest read on the moments that made or broke the call.</p></div>
-</div>
-</div>
-</section>
+    <div class="report-body stack">
+      <p class="eyebrow">Headline</p>
+      <p class="report-h">Strong build of the problem, then the price came out before the value did and the discount followed within a minute.</p>
 
-<section id="research">
-<div class="wrap">
-<h2>Built on real research, not a generic bot.</h2>
-<p class="lead">Your buyer isn't generic, so your practice shouldn't be. You build the buyer from your own inputs, then review and refine the persona before you ever dial.</p>
-<div class="mech">
-<div class="step"><div class="num">YOUR INPUT</div><h3>Feed it what you know</h3><p>Add the role, the details that matter, and links to sources you're authorized to use.</p></div>
-<div class="step"><div class="num">THE RESEARCH</div><h3>It does the homework</h3><p>It pulls the industry's real phrases, acronyms, and terms, and reads your links a few layers deep, so the buyer sounds real.</p></div>
-<div class="step"><div class="num">DIFFICULTY</div><h3>Dial it 1 to 5</h3><p>Set the buyer from a warm-up to one who gives you nothing.</p></div>
-</div>
-<p class="privacy">Only point it at links and data you're authorized to use.</p>
-</div>
-</section>
+      <p class="eyebrow" style="margin-top:10px">Summary</p>
+      <p style="color:var(--ink-2);font-size:.98rem">Dawson opened well and got the homeowner talking about the two cold rooms upstairs before touching equipment. The turn came at minute four: asked what it would run, he gave the number immediately and then filled the silence himself by offering to see what he could do on the price. The homeowner never had to ask. From there the conversation was about money rather than about the house, and the two competing quotes were never brought into the open.</p>
 
-<section id="why">
-<div class="wrap">
-<h2>Why we built this.</h2>
-<p class="founder-note" style="margin-top:18px;margin-bottom:26px">For twenty-five years I trained sales professionals. Some of the best time I ever spent was role-playing across a desk with a rep, and I would do it again tomorrow.<br><br>So we built that into the technology, and made it richer. A buyer who knows the intricacies of your sale, carries real context into the call, and pushes back the way a real one does, so you have somewhere to sharpen before it counts.<br><br>Whether you are new to this or you have been selling for decades, it is here to help you hone the craft, reach your peak, and then raise it.<br><br><strong>Cleven Wright, founder</strong></p>
-<p class="lead">Every high-stakes profession rehearses before it performs: pilots in the simulator, surgeons on models, athletes in the scrimmage. Not because the stakes are lower there. Because they're higher, and nobody wants to find out live. Sales is the last place we still send people in cold. A winnable deal you lose costs you the quarter. A practice call costs less than a dollar.</p>
-<div class="mech">
-<div class="step"><div class="num">REHEARSAL</div><h3>You don't rise to the occasion</h3><p>You fall to the level of your preparation. Everyone accepts that about soldiers and athletes. Nobody applies it to the call that decides the quarter. That's the loop here: rep, read, refine.</p></div>
-<div class="step"><div class="num">PRESSURE</div><h3>Train the nerves, not just the script</h3><p>You perform the way you rehearse. Practicing under real pressure is what keeps the stall, the pushback, and the silence from rattling you when the deal is on the line.</p></div>
-<div class="step"><div class="num">THE STAKES</div><h3>Fail here, not there</h3><p>The live prospect is the worst place to find out what you'd say. Make the fumble against an AI buyer, where a mistake costs nothing and the next rep is one tap away.</p></div>
-</div>
-<p class="compare-note">The same discipline behind flight simulators and medical sim labs, pointed at the call that decides your deal.</p>
-</div>
-</section>
+      <p class="eyebrow" style="margin-top:10px">Coaching</p>
+      <p style="color:var(--ink-2);font-size:.98rem">You are good at the part most people are bad at. You built the problem in the homeowner's own words and you did not rush it. Protect that. The habit to break is what you do with silence after you say a number: you discounted before anyone pushed back, which taught the homeowner that the price moves. Say the number, then stop talking. Let it sit. And when somebody tells you they have two other quotes, that is an invitation, not a threat. Ask what they liked about them.</p>
 
-<section id="offer">
-<div class="wrap">
-<h2>Three plans. The difference is how long you get, and how often.</h2>
-<p class="lead" style="margin-bottom:12px"><strong>Pricing at launch.</strong> There is nothing to pay today, and the waitlist does not ask for a card.</p>
-<p class="lead">Every plan gives you a monthly allowance of practice calls and practice time, with a live buyer and a read on every call. You are limited by whichever one you use up first. A call counts once you have been talking with the buyer for 60 seconds, so a misdial or a hang-up in the first minute costs you nothing. Both allowances reset every month, nothing carries over, and there are no overage charges. When you reach a limit, practice simply pauses until your next month begins.</p>
-<div class="mech">
-<div class="step"><div class="num">STARTER</div><h3>$49 a month</h3><p><ul style="list-style:none;padding:0;margin:0 0 14px;font-size:15px"><li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)"><span style="color:var(--muted)">Practice calls a month</span><strong>Up to 80</strong></li><li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)"><span style="color:var(--muted)">Longest call</span><strong>30 min</strong></li><li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0"><span style="color:var(--muted)">Practice time a month</span><strong>200 min</strong></li></ul>Room for an opener, a hard objection, or the stretch of the call you keep losing. Long enough to be a real conversation, not a drill.</p></div>
-<div class="step"><div class="num">PRO</div><h3>$149 a month</h3><p><ul style="list-style:none;padding:0;margin:0 0 14px;font-size:15px"><li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)"><span style="color:var(--muted)">Practice calls a month</span><strong>Up to 240</strong></li><li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)"><span style="color:var(--muted)">Longest call</span><strong>45 min</strong></li><li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0"><span style="color:var(--muted)">Practice time a month</span><strong>600 min</strong></li></ul>The whole call: discovery, the pushback, and the middle where it turns or it does not.</p></div>
-<div class="step"><div class="num">TEAM</div><h3>$349 a month</h3><p><ul style="list-style:none;padding:0;margin:0 0 14px;font-size:15px"><li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)"><span style="color:var(--muted)">Practice calls a month</span><strong>Up to 560</strong></li><li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)"><span style="color:var(--muted)">Longest call</span><strong>45 min</strong></li><li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0"><span style="color:var(--muted)">Practice time a month</span><strong>1400 min</strong></li></ul>Everything in Pro, on a single account, with enough room for a small team to share. For sales professionals who live on the phone.</p></div>
-</div>
-</div>
-</section>
+      <div class="grid-dims">
+        <div class="dim">
+          <div class="dim-top"><span class="dim-name">Discovery</span>
+            <span class="score s-strong"><span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i></span>Strong</span></div>
+          <ul class="obs">
+            <li>Opened on the house rather than the equipment: <span class="quote">"Which rooms never get comfortable?"</span></li>
+            <li>Let the homeowner describe the two cold upstairs bedrooms without interrupting, then repeated it back before moving on.</li>
+            <li>Established the system age, last service and that a previous repair had failed within a year.</li>
+          </ul>
+        </div>
+        <div class="dim">
+          <div class="dim-top"><span class="dim-name">Building value</span>
+            <span class="score s-dev"><span class="bars"><i class="on"></i><i class="on"></i><i></i></span>Developing</span></div>
+          <ul class="obs">
+            <li>Connected the new system to the cold bedrooms, which was the right link to make.</li>
+            <li>Did not connect it to the failed repair or the money already spent on it, which the homeowner had raised twice.</li>
+            <li>Efficiency was described in equipment terms rather than in what the homeowner would notice.</li>
+          </ul>
+        </div>
+        <div class="dim">
+          <div class="dim-top"><span class="dim-name">Price and objections</span>
+            <span class="score s-needs"><span class="bars"><i class="on"></i><i></i><i></i></span>Needs work</span></div>
+          <ul class="obs">
+            <li>Discounted unprompted, eleven seconds after stating the price, with no objection raised: <span class="quote">"and I can probably see what I can do on that number."</span></li>
+            <li>The homeowner mentioned two other quotes twice. Neither was ever asked about.</li>
+            <li>When asked <span class="quote">"why is yours higher?"</span> the answer described the brand rather than the install.</li>
+          </ul>
+        </div>
+        <div class="dim">
+          <div class="dim-top"><span class="dim-name">Close and next step</span>
+            <span class="score s-dev"><span class="bars"><i class="on"></i><i class="on"></i><i></i></span>Developing</span></div>
+          <ul class="obs">
+            <li>Asked for the business directly rather than trailing off, which many reps do not do.</li>
+            <li>Accepted <span class="quote">"let me talk to my wife"</span> without establishing when or what would decide it.</li>
+            <li>Left a written quote but no agreed date to follow up.</li>
+          </ul>
+        </div>
+      </div>
 
-<section id="compare">
-<div class="wrap">
-<h2>Not built like the rest of the category.</h2>
-<p class="lead">This category is built either for an enterprise rollout or for volume drilling. This is built for the sales professional with a real call on the calendar and one shot to get it right.</p>
-<div class="compare">
-<table>
-<thead>
-<tr>
-<th scope="col"></th>
-<th scope="col" class="us">VoiceReason.AI</th>
-<th scope="col">Most tools in this space</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th scope="row">Who it's for</th>
-<td class="us">Individual sales professionals &amp; small teams</td>
-<td>Enterprise &amp; large teams</td>
-</tr>
-<tr>
-<th scope="row">How you get started</th>
-<td class="us">Sign up and start, no sales call</td>
-<td>Book a demo with sales</td>
-</tr>
-<tr>
-<th scope="row">Pricing</th>
-<td class="us">$49 to $349 a month</td>
-<td>Per-seat subscriptions &amp; annual contracts</td>
-</tr>
-<tr>
-<th scope="row">How long one practice call runs</th>
-<td class="us">Up to 45 minutes</td>
-<td>Usually a few minutes</td>
-</tr>
-<tr>
-<th scope="row">Try it without talking to sales</th>
-<td class="us"><span class="yes">✓</span></td>
-<td><span class="no">✗</span></td>
-</tr>
-<tr>
-<th scope="row">Spoken call with an AI buyer who makes you earn it</th>
-<td class="us"><span class="yes">✓</span></td>
-<td><span class="yes">✓</span></td>
-</tr>
-<tr>
-<th scope="row">Buyer built from your own inputs + industry research</th>
-<td class="us"><span class="yes">✓</span></td>
-<td><span class="yes">✓</span></td>
-</tr>
-<tr>
-<th scope="row">Honest coaching read after the call</th>
-<td class="us"><span class="yes">✓</span></td>
-<td><span class="yes">✓</span></td>
-</tr>
-<tr>
-<th scope="row">Time to first practice</th>
-<td class="us">Minutes</td>
-<td>Days to weeks</td>
-</tr>
-<tr>
-<th scope="row">Enterprise CRM / LMS integrations &amp; team admin</th>
-<td class="us"><span class="no">✗</span></td>
-<td><span class="yes">✓</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="compare-note">Reflects how most sales-roleplay tools in this category are typically sold and set up, based on publicly available information as of August 2026. Some tools differ. If you need CRM integrations and team dashboards across a large org, an enterprise platform may fit you better, and that's an honest answer.</p>
-</div>
-</section>
+      <div class="twoup">
+        <div><p class="eyebrow">Did well</p>
+          <ul class="obs">
+            <li>Spent the first four minutes on the house, not the equipment.</li>
+            <li>Repeated the homeowner's own words back before moving on.</li>
+            <li>Asked for the business plainly.</li>
+          </ul></div>
+        <div><p class="eyebrow">Work on next</p>
+          <ul class="obs">
+            <li>Say the price, then stop talking. Do not fill the silence.</li>
+            <li>Ask about the competing quotes rather than pretending they are not there.</li>
+            <li>Tie the value to the failed repair, which is the thing that already cost them money.</li>
+          </ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="btn-note" style="max-width:66ch">Example report. The scenario is illustrative. The structure, the scoring language and the grounding audit are produced by the live product.</p>
+</div></section>
 
-<section id="waitlist">
-<div class="wrap">
-<h2>Claim your founding spot.</h2>
-<p class="lead" style="margin-bottom:22px">Tell us who you are and the toughest buyer you deal with, and we'll set you up with founding access. You'll get a confirmation email straight away, and we'll email you again as soon as your access is open.</p>
+<section><div class="wrap split">
+  <div class="stack">
+    <p class="eyebrow">Why the report can be trusted</p>
+    <h2>Every claim is checked against the transcript before you see it.</h2>
+    <p style="color:var(--ink-2)">The fair objection to any AI coach is that it makes things up, and then a rep gets told they did something they did not do. So before a report is sent, every individual claim in it is traced back to a specific line in the transcript. Claims that cannot be traced are removed rather than softened.</p>
+    <p style="color:var(--ink-2)">The count is printed on the report. You can see how many claims were made and how many were grounded. If that number is ever less than the total, you will see that too.</p>
+  </div>
+  <div class="stack">
+    <div class="card">
+      <h3>What it will not do</h3>
+      <p>It will not rank your reps against each other. The rating language is deliberately coarse, and a coarse scale is honest about what a single conversation can tell you. It is not a leaderboard and we are not going to pretend it is one until we can defend the anchors.</p>
+    </div>
+    <div class="card">
+      <h3>What it will not learn from</h3>
+      <p>Your calls are not used to train models for anyone else. Practice conversations belong to your account. See <a href="/privacy.html">privacy</a>.</p>
+    </div>
+  </div>
+</div></section>
 
-<div class="form-card">
-<form id="waitlistForm" novalidate>
-<div class="hp" aria-hidden="true"><label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+<section id="how"><div class="wrap stack-lg">
+  <div class="stack col">
+    <p class="eyebrow">How it works</p>
+    <h2>Three steps, and none of them involve installing anything.</h2>
+  </div>
+  <div class="cards cards-3">
+    <div class="card"><p class="step-n">STEP 01</p><h3>You issue a code</h3>
+      <p>One access code per rep, from your account. Label it with their name and the address their feedback should go to. Add or remove seats whenever the team changes.</p></div>
+    <div class="card"><p class="step-n">STEP 02</p><h3>They call the number</h3>
+      <p>From the truck, the driveway, a hotel room, a flip phone. They give the code and get a buyer who knows their sale and pushes back the way a real one does. Nothing to download, no account, no signal beyond a phone call.</p></div>
+    <div class="card"><p class="step-n">STEP 03</p><h3>The report writes itself</h3>
+      <p>The rep gets their read by email. You see every call, every transcript and every report on your account, in order, without chasing anybody for it.</p></div>
+  </div>
+</div></section>
 
-<div class="form-row">
-<label for="name">Name</label>
-<input id="name" name="name" type="text" autocomplete="name" />
-</div>
-<div class="form-row">
-<label for="email">Email <span style="color:var(--accent-2)">*</span></label>
-<input id="email" name="email" type="email" required autocomplete="email" />
-</div>
-<div class="form-row">
-<label for="phone">Phone (optional)</label>
-<input id="phone" name="phone" type="tel" autocomplete="tel" />
-</div>
-<div class="form-row">
-<label for="company">Company (optional)</label>
-<input id="company" name="company" type="text" autocomplete="organization" />
-</div>
-<div class="form-row">
-<label for="persona_type">Who's the toughest buyer you deal with? (optional)</label>
-<input id="persona_type" name="persona_type" type="text" placeholder="e.g. the skeptic who's heard every pitch" />
-</div>
+<section id="who"><div class="wrap split">
+  <div class="stack">
+    <p class="eyebrow">Built for</p>
+    <h2>Managers whose team sells where no software is watching.</h2>
+    <ul class="tick">
+      <li>In-home services: HVAC, roofing, windows, remodel, solar.</li>
+      <li>In-home insurance: final expense, Medicare, life.</li>
+      <li>Field and territory sales: building products, distribution, industrial, medical.</li>
+      <li>Anyone whose most important conversation happens across a kitchen table, and therefore never becomes a recording somebody can review.</li>
+    </ul>
+    <p style="color:var(--ink-2);font-size:.96rem">Recording tools coach from the appointment your rep already spent. This is practice before that appointment, and nobody has to be recorded for it to work.</p>
+  </div>
+  <div class="stack">
+    <p class="eyebrow">Probably not for</p>
+    <ul class="tick no">
+      <li>Inside sales teams whose calls already land in a dialer and get scored. You are better served by a conversation intelligence tool.</li>
+      <li>Anyone wanting a leaderboard on day one. See above.</li>
+      <li>Teams looking for a course. This is repetition against a buyer, not curriculum.</li>
+    </ul>
+  </div>
+</div></section>
 
-<button class="submit" type="submit">Claim my founding spot</button>
+<section id="pricing"><div class="wrap stack-lg">
+  <div class="stack col">
+    <p class="eyebrow">Pricing at launch</p>
+    <h2>One price. Published, because you should not have to ask.</h2>
+  </div>
+  <div class="price-card">
+    <div class="price-fig">
+      <span class="price-num">$69</span>
+      <span class="price-unit">per seat, per month &middot; billed monthly &middot; cancel any time</span>
+    </div>
+    <p style="color:var(--ink-2);max-width:60ch">Or <strong>$50 per seat per month</strong> billed once for the year. Add and remove seats whenever your team changes and the bill adjusts itself. No minimum, no maximum, and no call to schedule.</p>
+    <ul class="incl">
+      <li>280 practice minutes per seat, every month</li>
+      <li>Up to 45 minutes on any single call</li>
+      <li>A written report on every call</li>
+      <li>Full transcript on every call</li>
+      <li>The grounding audit on every report</li>
+      <li>Manager account with every rep's calls in one place</li>
+      <li>Feedback emailed to each rep directly</li>
+      <li>Seats added or removed at any time</li>
+    </ul>
+    <div class="ctarow">
+      <a class="btn btn-primary" href="#access">Get founding access</a>
+      <span class="btn-note">There is nothing to pay today. Founding access opens accounts before general availability.</span>
+    </div>
+    <div class="invoice">
+      Need to pay by invoice, or buying for a larger team? Email <a href="mailto:billing@voicereason.ai">billing@voicereason.ai</a> and we will sort it out. Everyone else, the button above is the whole process.
+    </div>
+  </div>
+</div></section>
 
-<p class="privacy">By joining, you agree we can contact you about early access. We won't sell your info. See our <a href="privacy.html">Privacy Policy</a> · <a href="mailto:hello@pyrigen.com">Contact</a>.</p>
-</form>
-<div class="success" id="success">You're in. We'll be in touch personally to set up your founding access.</div>
-<div class="failnote" id="failNote">We couldn't save your spot just now. That's on us, not you. Your details are still in the form above. <a id="failMail" href="mailto:Support@pyrigen.com">Email them to us instead</a> and we'll claim your spot by hand. We'll also retry automatically if you come back.</div>
-</div>
-</div>
-</section>
+<section id="faq"><div class="wrap stack-lg">
+  <div class="stack col"><p class="eyebrow">Questions</p><h2>The things a manager actually asks.</h2></div>
+  <div>
+    <details><summary>What counts as a seat?</summary><p>One seat is one person who makes practice calls, and one access code. Your own manager login does not consume a seat. If you have eight reps, you buy eight seats.</p></details>
+    <details><summary>Do my reps have to log in to anything?</summary><p>No. That is the point. A rep never creates an account, never downloads anything and never needs a smartphone. They dial a number and give an access code. Their feedback arrives by email.</p></details>
+    <details><summary>Is the call recorded, and is that legal?</summary><p>Yes it is recorded, and the first thing the line says on every call, before anything else, is that the call is being recorded. Nobody's customer is ever recorded, because this is practice and not a real appointment. The full detail is on the <a href="/recording.html">recording and consent</a> page.</p></details>
+    <details><summary>Will my reps actually use it?</summary><p>Honestly, that depends on you, and any vendor who tells you otherwise is selling. What we have done is remove every excuse: no app, no password, no laptop, no signal required, and it works in the four minutes between appointments. You still have to ask them to do it.</p></details>
+    <details><summary>What does it score them on, and is that fair?</summary><p>Discovery, building value, price and objections, and the close. Every claim on the report is traced back to a line in the transcript before it is sent, and the count is printed on the report. It deliberately does not produce a single number or rank reps against each other.</p></details>
+    <details><summary>How long does setup take?</summary><p>You issue codes and send them out. There is nothing to integrate and no CRM to connect.</p></details>
+    <details><summary>Do you train on our calls?</summary><p>No. Your practice conversations belong to your account and are not used to train models for anyone else.</p></details>
+    <details><summary>Can I change how many seats I have?</summary><p>Yes, in either direction, and the bill prorates. Teams grow and shrink, and you should not have to call somebody about it.</p></details>
+    <details><summary>What does founding access mean?</summary><p>We are opening accounts to a first group of teams rather than switching everything on at once. Tell us who you are and the buyer you sell to, and we will email you when your access is open. Nothing to pay and no card.</p></details>
+  </div>
+</div></section>
 
-<footer>
-<div class="wrap">
-VoiceReason.AI, a product of Pyrigen Incorporated. Built alongside ProveMastery.<br/>
-© <span id="yr"></span> Pyrigen Incorporated. · <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> · <a href="mailto:hello@pyrigen.com">Contact</a>
-</div>
-</footer>
-</main>
+<section id="access"><div class="wrap stack-lg">
+  <div class="stack col">
+    <p class="eyebrow">Founding access</p>
+    <h2>Tell us who you are and the buyer you sell to.</h2>
+    <p class="lede">You will get a confirmation email straight away, and we will email you again as soon as your access is open. Nothing to pay and no card.</p>
+  </div>
+
+  <div class="form-card">
+    <form id="waitlistForm" novalidate>
+      <div class="hp" aria-hidden="true"><label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+      <div class="form-row"><label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name"></div>
+      <div class="form-row"><label for="email">Email <span style="color:var(--accent)">*</span></label>
+        <input id="email" name="email" type="email" required autocomplete="email"></div>
+      <div class="form-row"><label for="phone">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="form-row"><label for="company">Company (optional)</label>
+        <input id="company" name="company" type="text" autocomplete="organization"></div>
+      <div class="form-row full"><label for="persona_type">Who is the toughest buyer your team deals with? (optional)</label>
+        <input id="persona_type" name="persona_type" type="text" placeholder="Homeowner with two other quotes in hand"></div>
+      <div class="form-row full consent">
+        <label for="consent"><input id="consent" name="consent" type="checkbox"> <span>Email me about founding access and my account. We will not sell your details or add you to a marketing list.</span></label>
+      </div>
+      <div class="form-row full">
+        <button class="btn btn-primary" type="submit" id="submitBtn">Get founding access</button>
+        <p class="btn-note" id="formNote" style="margin-top:12px">We reply from voicereason.ai. Your details are covered by our <a href="/privacy.html">privacy page</a>.</p>
+      </div>
+    </form>
+    <div id="success" hidden>
+      <h3 style="margin-bottom:8px">You are on the list.</h3>
+      <p style="color:var(--ink-2)">Check your email for a confirmation. As soon as your access is open we will email you again with a link to set up your account and make your first practice call. Nothing to do until then.</p>
+    </div>
+    <div id="failNote" hidden>
+      <h3 style="margin-bottom:8px">That did not go through, and it is on our end.</h3>
+      <p style="color:var(--ink-2)">Nothing you did caused this. Email <a href="mailto:hello@voicereason.ai">hello@voicereason.ai</a> and we will add you by hand.</p>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="fcol" style="max-width:34ch">
+    <a class="mark" href="/" style="margin-bottom:8px">VoiceReason<span>.AI</span></a>
+    <p style="font-size:.86rem;color:var(--muted)">Practice against a buyer who knows your sale. Built for teams that sell in person.</p>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:10px">Pyrigen Incorporated &middot; Texas, USA</p>
+  </div>
+  <div class="fcol"><p class="eyebrow">Product</p>
+    <a href="/#report">The report</a><a href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a></div>
+  <div class="fcol"><p class="eyebrow">Contact</p>
+    <a href="mailto:hello@voicereason.ai">hello@voicereason.ai</a><a href="mailto:billing@voicereason.ai">billing@voicereason.ai</a><a href="mailto:privacy@voicereason.ai">privacy@voicereason.ai</a></div>
+  <div class="fcol"><p class="eyebrow">Legal</p>
+    <a href="/terms.html">Terms of service</a><a href="/privacy.html">Privacy</a><a href="/recording.html">Recording and consent</a></div>
+</div></footer>
 
 <script>
-var SUPABASE_URL = "https://mhtwhhlzykfrvtytmtds.supabase.co";
-var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1odHdoaGx6eWtmcnZ0eXRtdGRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU1MjQ5MjksImV4cCI6MjEwMTEwMDkyOX0.u5-FIvG7UYqi0dB1A0BRp3bhheik1VyYY0HGXt7QvQU";
-
-document.getElementById("yr").textContent = new Date().getFullYear();
-
-var heroVariant="A";try{heroVariant=sessionStorage.getItem("vr_hero");if(heroVariant!=="A"&&heroVariant!=="B"){heroVariant=Math.random()<0.5?"A":"B";sessionStorage.setItem("vr_hero",heroVariant);}}catch(e){heroVariant=Math.random()<0.5?"A":"B";}
-if(heroVariant==="B"){var hs=document.getElementById("heroSub");if(hs)hs.textContent="Great closers aren't born. They drill. VoiceReason is your rehearsal before the real one: a buyer who has no reason to care yet, so your instincts are sharp when the deal is on the line. Up to 200 minutes of practice a month with a read on every call. Plans from $49.";}
-
-var gate=document.getElementById("gate"),main=document.getElementById("main"),orb=document.getElementById("orb"),audio=document.getElementById("intro"),tag=document.getElementById("gateTag"),controls=document.getElementById("gateControls"),poly=document.getElementById("wavepoly"),revealed=false;
-function reveal(){if(revealed)return;revealed=true;gate.classList.add("hidden");main.classList.add("revealed");main.setAttribute("aria-hidden","false");gate.setAttribute("aria-hidden","true");var bl=document.getElementById("brandLogo");if(bl)bl.classList.add("show");}
-var safety=setTimeout(function(){},0);
-var t=0,playing=false,analyser=null,dataArr=null,audioCtx=null;
-function draw(){var pts=[],N=32;for(var i=0;i<N;i++){var x=(i/(N-1))*96,amp;if(playing&&analyser){analyser.getByteTimeDomainData(dataArr);amp=((dataArr[Math.floor(i/N*dataArr.length)]-128)/128)*26;}else{amp=Math.sin(t/6+i/2)*6*Math.sin(i/3+t/20);}pts.push(x.toFixed(1)+","+(30+amp).toFixed(1));}poly.setAttribute("points",pts.join(" "));t++;requestAnimationFrame(draw);}
-draw();
-function tryAnalyser(){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();var src=audioCtx.createMediaElementSource(audio);analyser=audioCtx.createAnalyser();analyser.fftSize=64;dataArr=new Uint8Array(analyser.frequencyBinCount);src.connect(analyser);analyser.connect(audioCtx.destination);}catch(e){analyser=null;}}
-function playIntro(){clearTimeout(safety);controls.style.display="flex";tag.textContent="Playing…";if(!analyser)tryAnalyser();if(audioCtx&&audioCtx.state==="suspended")audioCtx.resume();var p=audio.play();if(p&&p.catch){p.catch(function(){tag.textContent="Tap the orb to play";});}}
-orb.addEventListener("click",function(){playing=true;playIntro();});
-audio.addEventListener("playing",function(){playing=true;tag.textContent="Playing…";});
-audio.addEventListener("ended",function(){playing=false;tag.textContent="Enter →";setTimeout(reveal,600);});
-audio.addEventListener("error",function(){tag.textContent="Enter →";});
-document.getElementById("muteBtn").addEventListener("click",function(){audio.muted=!audio.muted;this.textContent=audio.muted?"Unmute":"Mute";});
-document.getElementById("replayBtn").addEventListener("click",function(){audio.currentTime=0;playIntro();});
-var brandLogo=document.getElementById("brandLogo");
-if(brandLogo){brandLogo.addEventListener("click",function(){try{playing=true;audio.currentTime=0;var bp=audio.play();if(bp&&bp.catch)bp.catch(function(){});brandLogo.classList.add("playing");}catch(e){}});}
-audio.addEventListener("ended",function(){if(brandLogo)brandLogo.classList.remove("playing");});
-audio.addEventListener("pause",function(){if(brandLogo)brandLogo.classList.remove("playing");});
-
-var form=document.getElementById("waitlistForm"),success=document.getElementById("success"),failNote=document.getElementById("failNote"),failMail=document.getElementById("failMail");
-var VR_Q="vr_lead_queue",VR_Q_MAX=604800000;
-function vrPost(p){
-return fetch(SUPABASE_URL+"/rest/v1/waitlist_leads",{
-method:"POST",
-headers:{"Content-Type":"application/json","apikey":SUPABASE_ANON_KEY,"Authorization":"Bearer "+SUPABASE_ANON_KEY,"Prefer":"return=minimal"},
-body:JSON.stringify(p)
-}).then(function(r){return !!r.ok;}).catch(function(){return false;});
-}
-function vrSend(p,n){
-return vrPost(p).then(function(ok){
-if(ok||n>=3)return ok;
-return new Promise(function(go){setTimeout(go,n*1500);}).then(function(){return vrSend(p,n+1);});
-});
-}
-function vrQueue(p){try{localStorage.setItem(VR_Q,JSON.stringify({t:Date.now(),p:p}));}catch(e){}}
-function vrUnqueue(){try{localStorage.removeItem(VR_Q);}catch(e){}}
-function vrMailto(p){
-var b="My founding-spot form on voicereason.ai didn't go through. Details below.\n\nEmail: "+(p.email||"")+"\nName: "+(p.name||"")+"\nPhone: "+(p.phone||"")+"\nCompany: "+(p.company||"")+"\nToughest buyer: "+(p.persona_type||"")+"\nRef: "+(p.source||"");
-return "mailto:Support@pyrigen.com?subject="+encodeURIComponent("VoiceReason founding spot")+"&body="+encodeURIComponent(b);
-}
-form.addEventListener("submit",function(e){
-e.preventDefault();
-if(form.company_website.value){return;}
-var email=form.email.value.trim();
-if(!email||email.indexOf("@")<1){form.email.focus();return;}
-var payload={
-email:email,
-name:form.name.value.trim()||null,
-phone:form.phone.value.trim()||null,
-company:form.company.value.trim()||null,
-persona_type:form.persona_type.value.trim()||null,
-consent_to_contact:true,
-consent_text:"By joining, you agree we can contact you about early access.",
-source:"voicereason-launch-"+heroVariant
-};
-var btn=form.querySelector(".submit"),label=btn.textContent;
-btn.disabled=true;btn.textContent="Claiming…";failNote.style.display="none";
-vrSend(payload,1).then(function(ok){
-btn.disabled=false;btn.textContent=label;
-if(ok){vrUnqueue();form.style.display="none";success.style.display="block";}
-else{vrQueue(payload);failMail.href=vrMailto(payload);failNote.style.display="block";failNote.scrollIntoView({behavior:"smooth",block:"nearest"});}
-});
-});
-try{var qr=localStorage.getItem(VR_Q);if(qr){var qo=JSON.parse(qr);if(qo&&qo.p&&qo.t&&(Date.now()-qo.t)<VR_Q_MAX){vrPost(qo.p).then(function(ok){if(ok)vrUnqueue();});}else{vrUnqueue();}}}catch(e){vrUnqueue();}
-</script>
-<script>
-/* Intro gate auto-dismiss. Added 18 Aug 2026, Website lane.
-   The gate hid the whole page from anyone who did not realise they had to tap,
-   and from crawlers, which rendered the homepage as a black rectangle.
-   Reveals the page after 8 seconds, or on the first scroll, wheel, key or touch.
-   If the visitor plays the intro, auto-dismiss is cancelled and the existing
-   Mute / Replay / Skip controls take over so the audio is never cut off. */
 (function(){
-  var fired=false,t;
-  function autoReveal(){
-    if(fired)return;fired=true;
-    var g=document.getElementById("gate");
-    if(!g||g.classList.contains("hidden"))return;
-    var s=document.getElementById("skipBtn");
-    if(s){s.click();return;}
-    g.classList.add("hidden");
-    var m=document.getElementById("main");
-    if(m){m.classList.add("revealed");m.setAttribute("aria-hidden","false");}
+  var SB="https://mhtwhhlzykfrvtytmtds.supabase.co";
+  var AK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1odHdoaGx6eWtmcnZ0eXRtdGRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU1MjQ5MjksImV4cCI6MjEwMTEwMDkyOX0.u5-FIvG7UYqi0dB1A0BRp3bhheik1VyYY0HGXt7QvQU";
+  var form=document.getElementById("waitlistForm");
+  if(!form) return;
+  var ok=document.getElementById("success"), bad=document.getElementById("failNote"),
+      btn=document.getElementById("submitBtn"), note=document.getElementById("formNote");
+  var CONSENT="Email me about founding access and my account. We will not sell your details or add you to a marketing list.";
+  function val(n){var e=form.elements[n];return e&&e.value?e.value.trim():null;}
+  function post(p){
+    return fetch(SB+"/rest/v1/waitlist_leads",{method:"POST",
+      headers:{"Content-Type":"application/json","apikey":AK,"Authorization":"Bearer "+AK,"Prefer":"return=minimal"},
+      body:JSON.stringify(p)}).then(function(r){return !!r.ok;}).catch(function(){return false;});
   }
-  t=setTimeout(function(){},0);
-  ["scroll","wheel","keydown","touchmove"].forEach(function(ev){
-    window.addEventListener(ev,function(){clearTimeout(t);autoReveal();},{once:true,passive:true});
+  function send(p,n){
+    return post(p).then(function(good){
+      if(good||n>=3) return good;
+      return new Promise(function(res){setTimeout(res,600*(n+1));}).then(function(){return send(p,n+1);});
+    });
+  }
+  form.addEventListener("submit",function(ev){
+    ev.preventDefault();
+    if(val("company_website")){form.hidden=true;ok.hidden=false;return;}
+    var email=val("email");
+    if(!email||email.indexOf("@")<1){
+      note.innerHTML='<span class="err">We need a working email address so we can tell you when your access is open.</span>';
+      form.elements["email"].focus();return;
+    }
+    btn.disabled=true;btn.textContent="Sending";
+    var payload={email:email,name:val("name"),phone:val("phone"),company:val("company"),
+      persona_type:val("persona_type"),
+      consent_to_contact:!!(form.elements["consent"]&&form.elements["consent"].checked),
+      consent_text:CONSENT, source:"site-founding-access"};
+    send(payload,0).then(function(good){
+      if(good){form.hidden=true;ok.hidden=false;}
+      else{form.hidden=true;bad.hidden=false;}
+    });
   });
-  var a=document.getElementById("intro");
-  if(a){a.addEventListener("play",function(){clearTimeout(t);fired=true;},{once:true});}
-})();
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
-<script>
-(function(){
-function vrTrack(n,d){try{if(window.va)window.va("event",{name:n,data:d||undefined});}catch(e){}}
-var a=document.getElementById("intro"),o=document.getElementById("orb"),played=false,done=false;
-if(o)o.addEventListener("click",function(){vrTrack("orb_play",{state:played?"replay":"first"});played=true;done=false;});
-if(a){
-a.addEventListener("ended",function(){done=true;vrTrack("orb_complete");});
-a.addEventListener("pause",function(){if(done||a.ended)return;var p=(a.duration&&isFinite(a.duration))?Math.round((a.currentTime/a.duration)*100):0;vrTrack("orb_abandon",{pct:p});});
-}
 })();
 </script>
 </body>
