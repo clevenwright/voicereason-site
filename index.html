@@ -44,16 +44,62 @@
 .fsteps{margin:0;padding-left:1.4em;max-width:64ch}
 .fsteps li{margin:0 0 8px}
 .btn[aria-disabled="true"]{background:var(--surface-2);color:var(--muted);border-color:var(--line-strong);box-shadow:none;cursor:default;pointer-events:none}
+/* header v2 */
+.top{background:var(--bg);background:color-mix(in srgb,var(--bg) 78%,transparent);-webkit-backdrop-filter:saturate(170%) blur(16px);backdrop-filter:saturate(170%) blur(16px);border-bottom:1px solid transparent;transition:border-color .25s ease,box-shadow .25s ease}
+.top.is-scrolled{border-bottom-color:var(--line);box-shadow:0 10px 30px -22px rgba(20,20,31,.35)}
+.top .wrap{padding-block:14px;transition:padding .25s ease}
+.top.is-scrolled .wrap{padding-block:9px}
+.navlinks{position:relative;gap:2px;padding:4px;border:1px solid var(--line);border-radius:999px;background:var(--surface);background:color-mix(in srgb,var(--surface) 70%,transparent);font-size:.88rem}
+.navlinks a{position:relative;z-index:1;padding:7px 13px;border-radius:999px;color:var(--ink-2);white-space:nowrap;font-weight:500}
+.navlinks a:hover{color:var(--ink)}
+.navlinks a.is-active{color:var(--accent)}
+.nav-ind{position:absolute;z-index:0;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:var(--accent-wash);opacity:0;transition:transform .35s cubic-bezier(.2,.8,.2,1),width .35s cubic-bezier(.2,.8,.2,1),opacity .2s ease}
+.nav-new::after{content:"";display:inline-block;width:6px;height:6px;margin-left:7px;vertical-align:2px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(90,44,240,.5);animation:vrPulse 2.4s infinite}
+@keyframes vrPulse{0%{box-shadow:0 0 0 0 rgba(90,44,240,.45)}70%{box-shadow:0 0 0 7px rgba(90,44,240,0)}100%{box-shadow:0 0 0 0 rgba(90,44,240,0)}}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-cta{padding:10px 18px;font-size:.9rem;border-radius:999px}
+.nav-progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none}
+.nav-progress i{display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--accent),#0f9d6b)}
+.nav-toggle{display:none;width:42px;height:42px;border-radius:999px;border:1px solid var(--line-strong);background:transparent;cursor:pointer;position:relative}
+.nav-toggle span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--ink);border-radius:2px;transition:transform .25s ease,top .25s ease}
+.nav-toggle span:first-child{top:16px}.nav-toggle span:last-child{top:24px}
+.nav-toggle[aria-expanded="true"] span:first-child{top:20px;transform:rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:last-child{top:20px;transform:rotate(-45deg)}
+.navsheet{border-top:1px solid var(--line);padding:14px 24px 22px;display:flex;flex-direction:column;gap:14px;max-width:1080px;margin:0 auto}
+.navsheet[hidden]{display:none}
+.navsheet-links{display:grid;grid-template-columns:1fr 1fr;gap:2px 16px}
+.navsheet-links a{padding:10px 0;color:var(--ink);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
+.navsheet .btn{justify-content:center;border-radius:999px}
+.navsheet-tel{display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);text-decoration:none;font-size:.92rem;justify-content:center}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#0f9d6b;box-shadow:0 0 0 3px rgba(15,157,107,.18)}
+html{scroll-padding-top:84px}
+@media(max-width:920px){.top .navlinks{display:none}.nav-toggle{display:inline-block}}
+@media(max-width:480px){.nav-cta{display:none}.navsheet-links{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.nav-ind,.top,.top .wrap{transition:none}.nav-new::after{animation:none}}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap">
+<header class="top" id="siteTop">
+<div class="wrap">
   <a class="mark" href="/"><svg viewBox="8 8 48 48" width="24" height="24" aria-hidden="true" focusable="false" style="vertical-align:-5px;margin-right:8px"><circle cx="32" cy="32" r="23" fill="#5A2CF0"/><polyline points="17,32 21,29 24,24 28,41 32,19 36,45 40,26 44,34 47,32" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>VoiceReason<span>.AI</span></a>
-  <nav class="navlinks">
-    <a href="#adoption">Adoption</a><a href="#debrief">The debrief</a><a href="#call">A real phone call</a><a href="#report">The report</a><a href="#how">How it works</a><a href="#who">Who it's for</a><a href="#plans">Plans</a><a href="#founding">Founding members</a><a href="#faq">FAQ</a>
+  <nav class="navlinks" aria-label="Main">
+    <span class="nav-ind" aria-hidden="true"></span>
+    <a href="#debrief">The debrief</a><a href="#call">Hear a call</a><a href="#how">How it works</a><a href="#plans">Plans</a><a href="#founding" class="nav-new">Founding members</a><a href="#faq">FAQ</a>
   </nav>
+  <div class="nav-right">
+    <a class="btn btn-primary nav-cta" href="#call">Hear a real call</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navSheet" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</div>
+<div class="nav-progress" aria-hidden="true"><i></i></div>
+<div class="navsheet" id="navSheet" hidden>
+  <div class="navsheet-links">
+    <a href="#adoption">Adoption</a><a href="#debrief">The debrief</a><a href="#call">A real phone call</a><a href="#report">The report</a><a href="#how">How it works</a><a href="#who">Who it's for</a><a href="#plans">Plans</a><a href="#founding">Founding members</a><a href="#faq">FAQ</a>
+  </div>
   <a class="btn btn-primary" href="#call">Hear a real phone call</a>
-</div></header>
+  <a class="navsheet-tel" href="tel:+19452626224"><span class="live-dot" aria-hidden="true"></span>Coach line (945) 26-COACH</a>
+</div>
+</header>
 
 <section class="hero" style="border-top:none"><div class="wrap stack">
   <p class="eyebrow">One phone number &middot; a lifelike buyer &middot; a sales coach on the same call</p>
@@ -461,6 +507,37 @@
 
 
 <!-- Vercel Web Analytics. Cookieless and no cross-site identifier, which is what the privacy page already describes. Counts page views, visitors, referring source, approximate region and device type. Collects nothing until Web Analytics is enabled on the Vercel project. -->
+<script>
+(function(){
+  var top=document.getElementById('siteTop');if(!top)return;
+  var nav=top.querySelector('.navlinks'),ind=top.querySelector('.nav-ind'),bar=top.querySelector('.nav-progress i');
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  var toggle=top.querySelector('.nav-toggle'),sheet=document.getElementById('navSheet');
+  function moveInd(a){
+    if(!a){ind.style.opacity=0;links.forEach(function(l){l.classList.remove('is-active')});return;}
+    links.forEach(function(l){l.classList.toggle('is-active',l===a)});
+    ind.style.width=a.offsetWidth+'px';ind.style.transform='translateX('+a.offsetLeft+'px)';ind.style.opacity=1;
+  }
+  var ticking=false;
+  function onScroll(){
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(function(){
+      var y=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+      top.classList.toggle('is-scrolled',y>8);
+      if(bar)bar.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')';
+      var mark=y+window.innerHeight*0.35,cur=null;
+      secs.forEach(function(sec,i){if(sec&&sec.offsetTop<=mark)cur=links[i];});
+      moveInd(cur);ticking=false;
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);onScroll();
+  function setSheet(open){toggle.setAttribute('aria-expanded',open?'true':'false');toggle.setAttribute('aria-label',open?'Close menu':'Open menu');sheet.hidden=!open;}
+  toggle.addEventListener('click',function(){setSheet(sheet.hidden);});
+  sheet.addEventListener('click',function(e){if(e.target.closest('a'))setSheet(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setSheet(false);});
+})();
+</script>
 <script>
 (function(){
   var btn=document.getElementById('foundingBtn'),note=document.getElementById('foundingNote');
