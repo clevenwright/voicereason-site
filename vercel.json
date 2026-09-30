@@ -10,6 +10,16 @@
       "source": "/r/:token",
       "destination": "https://app.voicereason.ai/r/:token",
       "permanent": false
+    },
+    {
+      "source": "/terms",
+      "destination": "https://app.voicereason.ai/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "https://app.voicereason.ai/terms",
+      "permanent": true
     }
   ]
 }
