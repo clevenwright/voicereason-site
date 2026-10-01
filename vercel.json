@@ -16,6 +16,16 @@
       "permanent": true
     },
     {
+      "source": "/privacy",
+      "destination": "https://app.voicereason.ai/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "https://app.voicereason.ai/privacy",
+      "permanent": true
+    },
+    {
       "source": "/demo",
       "destination": "/",
       "permanent": true
