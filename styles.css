@@ -164,3 +164,51 @@ details p{margin-top:12px;color:var(--ink-2);font-size:.96rem;max-width:66ch}
 .s-strong{border:1px solid color-mix(in srgb,var(--sig-strong) 30%,transparent)}
 .s-dev{border:1px solid color-mix(in srgb,var(--sig-dev) 30%,transparent)}
 .s-needs{border:1px solid color-mix(in srgb,var(--sig-needs) 30%,transparent)}
+
+/* ---- Scorecard, added 6 Oct 2026 ----
+   The report section now prints the real artefact: a named rulebook, a key,
+   the deal-killer line, three counts, and every principle as a card holding its
+   own questions with a mark and the reason underneath.
+   Semantic colour comes from the existing --sig-* tokens, so this follows light and
+   dark like the rest of the page, and keeps those tokens in use after the
+   Strong / Developing / Needs work chips come out. */
+
+.mk{font-family:"IBM Plex Mono",ui-monospace,monospace;font-style:normal;font-weight:600;line-height:1}
+.mk-ok{color:var(--sig-strong)}
+.mk-no{color:var(--sig-needs)}
+.mk-na{color:var(--muted)}
+
+.sc-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:10px}
+.sc-rule{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.82rem;color:var(--accent)}
+
+.sc-key{display:flex;gap:18px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-2);margin:0}
+.sc-key span{display:inline-flex;align-items:center;gap:6px}
+
+.sc-killer{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;margin:0;
+  background:var(--sig-strong-bg);border:1px solid color-mix(in srgb,var(--sig-strong) 30%,transparent);
+  border-radius:2px;padding:12px 15px;font-size:.93rem;color:var(--ink-2)}
+.sc-killer b{color:var(--ink);font-weight:600}
+
+.sc-counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line)}
+.sc-count{background:var(--surface);padding:14px 16px;min-width:0}
+.sc-count b{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:1.5rem;
+  font-variant-numeric:tabular-nums;line-height:1.1;font-weight:600}
+.sc-count span{font-size:.8rem;color:var(--ink-2)}
+
+/* Each principle is a card in the report's existing grid, so the breakdown reads the
+   way the four groups used to, with the real marks and reasons inside it. */
+.dim-name i{font-style:normal;color:var(--accent);margin-right:8px}
+.pr-wide{grid-column:1/-1}
+.pr-list{list-style:none;padding-left:0;gap:12px}
+.pr-list li{display:grid;grid-template-columns:19px minmax(0,1fr);gap:10px;align-items:start}
+.pr-list .mk{font-size:1rem;line-height:1.5}
+.pr-list b{color:var(--ink);font-weight:500;display:block;margin-bottom:3px}
+.pr-list div{color:var(--ink-2);font-size:.9rem}
+
+.pr-foot{border-top:1px solid var(--line);padding-top:16px;margin:0;font-size:.85rem;color:var(--muted)}
+
+@media (max-width:560px){
+  .sc-counts{grid-template-columns:1fr}
+  .pr-list li{grid-template-columns:17px minmax(0,1fr);gap:9px}
+}
