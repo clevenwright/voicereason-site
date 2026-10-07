@@ -1,0 +1,10 @@
+name: schema-price-guard
+on:
+  push:
+  pull_request:
+jobs:
+  prices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check_schema_prices.py
