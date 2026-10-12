@@ -39,6 +39,16 @@
       "source": "/favicon.ico",
       "destination": "/assets/favicon.svg",
       "permanent": true
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/how-it-works.html",
+      "permanent": false
+    },
+    {
+      "source": "/onboarding",
+      "destination": "/onboarding.html",
+      "permanent": false
     }
   ]
 }
