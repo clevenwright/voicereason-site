@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Getting started with VoiceReason</title>
+<meta name="description" content="What getting started with VoiceReason looks like: what you need, a setup checklist with typical times, your team's first calls and first reports, and your first week.">
+<meta name="theme-color" content="#0B0B12">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#0B0B12; --surface:#14141F; --surface-2:#1B1A2A; --ink:#ECEAF6; --ink-2:#C9C6DC; --muted:#8B87A5;
+  --line:#26243A; --line-strong:#3A3756; --accent:#9B7BFF; --accent-ink:#B9A3FF; --accent-wash:#221B3F; --on-accent:#0B0B12;
+  --coach:#F0B545; --coach-wash:#2E2512; --good:#5FD3A6; --good-wash:#12291F;
+  --display:"Archivo", ui-sans-serif, system-ui, sans-serif;
+  --body:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink)}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.12;text-wrap:balance}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero .eyebrow::before{content:"";display:block;width:28px;height:2px;background:var(--accent);margin-bottom:12px}
+
+.top{position:sticky;top:0;z-index:20;background:rgba(11,11,18,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font:700 17px var(--display)}
+.mark{width:26px;height:26px;border-radius:7px;background:var(--accent);display:grid;place-items:center}
+.mark svg{width:16px;height:16px}
+.toplinks{display:flex;gap:8px;align-items:center}
+.toplinks a{font:500 14px var(--body);color:var(--ink-2);text-decoration:none;padding:6px 12px;border-radius:999px}
+.toplinks a:hover{color:var(--ink);background:var(--surface)}
+.cta{white-space:nowrap;background:var(--accent);color:var(--on-accent)!important;font-weight:600!important}
+@media (max-width:640px){.toplinks .hide-sm{display:none}.brand{font-size:15px}}
+
+.hero{padding-block:56px 20px;display:grid;gap:18px;max-width:820px}
+.hero h1{font-size:clamp(2.1rem,5.4vw,3.5rem);font-weight:800;letter-spacing:-.015em}
+.hero p{margin:0;color:var(--ink-2);font-size:1.12rem;max-width:64ch}
+.who{display:flex;flex-wrap:wrap;gap:10px}
+.whocard{flex:1 1 260px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:15px;color:var(--ink-2)}
+.whocard b{display:block;color:var(--ink);font-family:var(--display);font-size:16px;margin-bottom:2px}
+
+.layout{margin-top:32px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:32px;align-items:start;padding-bottom:20px}
+@media (max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}}
+.navcol{position:sticky;top:84px}
+@media (max-width:860px){.navcol{position:static}}
+.navhead{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px 56px}
+ol.line{list-style:none;margin:0;padding:0;position:relative}
+ol.line::before{content:"";position:absolute;left:20px;top:24px;bottom:24px;width:2px;background:repeating-linear-gradient(var(--accent) 0 8px,transparent 8px 14px);opacity:.5}
+.stop button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:14px;align-items:center;width:100%;padding:10px 10px 10px 0;cursor:pointer;border-radius:12px}
+.stop button:focus-visible,.chip:focus-visible,.check input:focus-visible+span{outline:3px solid var(--accent-ink);outline-offset:2px}
+.stop button:hover .t{color:var(--accent-ink)}
+.node{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:2px solid var(--line-strong);font:700 15px var(--display);color:var(--ink-2);position:relative;z-index:1}
+.stop[aria-current="step"] .node{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.stop.soon .node{border-style:dashed}
+.label{display:grid;gap:1px;min-width:0}
+.t{font-family:var(--display);font-size:17px;font-weight:700}
+.sub{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mins{font:500 12px var(--mono);color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 9px;white-space:nowrap}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px;background:var(--accent-wash);color:var(--accent-ink)}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;min-width:0;position:sticky;top:84px}
+@media (max-width:860px){.panel{position:static}}
+.meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.timechip{display:inline-flex;align-items:center;gap:7px;font:600 13px var(--mono);color:var(--accent-ink);background:var(--accent-wash);border-radius:999px;padding:4px 11px}
+.timechip svg{width:14px;height:14px}
+.panel h2{font-size:clamp(1.6rem,3.2vw,2.15rem);font-weight:800;margin-top:12px}
+.lede{color:var(--ink-2);margin:10px 0 0}
+.panel h3{font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:24px 0 10px}
+.panel ul{margin:0;padding-left:18px;display:grid;gap:7px;color:var(--ink-2)}
+.panel li::marker{color:var(--accent)}
+.note{margin-top:18px;font-size:14.5px;color:var(--muted);border-left:2px solid var(--line-strong);padding-left:12px}
+.soonbox{margin-top:22px;background:var(--accent-wash);border:1px dashed var(--accent);border-radius:14px;padding:14px 16px;font-size:15px;color:var(--ink-2)}
+.soonbox b{color:var(--ink)}
+
+.checks{display:grid;gap:8px;margin-top:6px}
+.check{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:start;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.check input{position:absolute;opacity:0;width:1px;height:1px}
+.check .box{width:22px;height:22px;border-radius:6px;border:2px solid var(--line-strong);display:grid;place-items:center;margin-top:1px}
+.check .box svg{width:14px;height:14px;opacity:0}
+.check input:checked+.box{background:var(--good);border-color:var(--good)}
+.check input:checked+.box svg{opacity:1}
+.check .txt b{display:block;color:var(--ink);font-family:var(--display);font-size:16px}
+.check .txt span{font-size:14.5px;color:var(--muted)}
+.check.done .txt b{text-decoration:line-through;text-decoration-color:var(--muted)}
+.progress{display:flex;align-items:center;gap:12px;margin-top:16px;font:500 13px var(--mono);color:var(--ink-2)}
+.track{flex:1;height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+.fill{height:100%;background:var(--good);width:0;transition:width .25s}
+
+.faq details{border-top:1px solid var(--line);padding:12px 0}
+.faq details:first-of-type{border-top:0}
+.faq summary{cursor:pointer;font-family:var(--display);font-weight:700;color:var(--ink);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";display:inline-block;width:20px;color:var(--accent)}
+.faq details[open] summary::before{content:"-"}
+.faq p{margin:8px 0 0 20px;color:var(--ink-2);font-size:15.5px}
+
+.navrow{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.chip{font:600 15px var(--display);background:transparent;color:var(--ink);border:1px solid var(--line-strong);border-radius:999px;padding:9px 18px;cursor:pointer}
+.chip.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.chip[disabled]{opacity:.35;cursor:default}
+
+.closing{margin-top:56px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.closing h2{font-size:clamp(1.4rem,3vw,1.9rem)}
+.closing p{margin:6px 0 0;color:var(--ink-2)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;font:600 15px var(--display);text-decoration:none;border-radius:999px;padding:11px 20px;border:1px solid var(--line-strong);color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+footer{margin-top:48px;padding-block:28px 48px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;color:var(--muted);font-size:14px}
+footer a{color:var(--ink-2);text-decoration:none}
+footer nav{display:flex;flex-wrap:wrap;gap:16px}
+@media (prefers-reduced-motion: no-preference){.rise{animation:rise .28s ease-out}@keyframes rise{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://www.voicereason.ai/"><span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M2 8h1.5M5 5v6M8 3v10M11 5v6M14 8h-1.5" stroke="#0B0B12" stroke-width="1.8" stroke-linecap="round"/></svg></span>VoiceReason.AI</a>
+    <nav class="toplinks" aria-label="Site">
+      <a class="hide-sm" href="how-it-works.html">How it works</a>
+      <a class="hide-sm" href="https://www.voicereason.ai/#plans">Plans</a>
+      <a class="cta" href="tel:+19452626224"><span class="hide-sm">Call </span>(945) 26-COACH</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Getting started</div>
+    <h1>From sign-up to your team's first practice call, in about 15 minutes.</h1>
+    <p>Here is what getting started looks like, start to finish. What you need, a setup checklist with typical times, what your people hear on their first call, and how to get the most out of the first week.</p>
+    <div class="who">
+      <div class="whocard"><b>Still deciding?</b>Walk through it to see how little work it is before you sign up.</div>
+      <div class="whocard"><b>Just signed up?</b>Use the checklist in step 2. It remembers what you have ticked on this device.</div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <div class="navcol">
+      <div class="navhead">Jump to a part</div>
+      <ol class="line" id="line"></ol>
+    </div>
+    <aside class="panel" aria-live="polite"><div id="panel"></div></aside>
+  </div>
+
+  <section class="closing">
+    <div>
+      <h2>Want to hear it first?</h2>
+      <p>Call <b>(945) 26-COACH</b>. Our front desk answers in an AI voice that sounds like a real person.</p>
+    </div>
+    <div class="btns">
+      <a class="btn primary" href="tel:+19452626224">Call (945) 26-COACH</a>
+      <a class="btn" href="how-it-works.html">See how it works</a>
+      <a class="btn" href="https://www.voicereason.ai/#plans">See the plans</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>VoiceReason.AI · Pyrigen Incorporated · Texas, USA</span>
+    <span>Questions? <a href="mailto:hello@voicereason.ai">hello@voicereason.ai</a></span>
+    <nav aria-label="Legal"><a href="https://app.voicereason.ai/terms">Terms</a><a href="https://app.voicereason.ai/privacy">Privacy</a><a href="https://www.voicereason.ai/recording.html">Recording and consent</a></nav>
+  </footer>
+</main>
+
+<script>
+const clockSVG='<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.6V8l2.3 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+const tick='<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="#0B0B12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+/* Typical times. Edit here. */
+const CHECKLIST=[
+ {id:"plan",t:"Pick a plan and check out",d:"Practice or Coach, how many seats, pay by card.",m:"2 to 3 min"},
+ {id:"buyer",t:"Build your buyer",d:"Describe who your people talk to, in a sentence or a page. Add your website or a document if you like.",m:"5 min or less"},
+ {id:"team",t:"Set up your team",d:"Name and report email for each person, then their buyer, scenario and level.",m:"3 to 5 min"},
+ {id:"playbook",t:"Bring your playbook (optional)",d:"Use our standard checklist, or bring your own and review it.",m:"0 to 10 min"},
+ {id:"test",t:"Make a test call yourself",d:"Dial in on one seat so you know what your people will hear.",m:"7 to 15 min"},
+ {id:"send",t:"Send the codes",d:"Press Send to email each person their code, and their brief if you added one.",m:"1 min"}
+];
+const PARTS=[
+ {k:"need",t:"What you need",sub:"Before you start",m:"Nothing to install",
+  lede:"Less than you would think. There is nothing to install and nothing to connect.",
+  body:`<h3>Have ready</h3><ul><li>A phone for each person who will practice. Any phone works.</li><li>An email address for each person, so their reports have somewhere to go.</li><li>A card to check out with.</li><li>About 15 minutes.</li></ul>
+  <h3>Nice to have</h3><ul><li>Your sales or service playbook, if you have one. If not, our standard checklist works on day one.</li><li>Your website or a short document about the customers your people talk to. It helps the buyer feel like your world.</li></ul>
+  <h3>What you do not need</h3><ul><li>No app for your team, and no login for anyone but the manager.</li><li>No CRM to connect and nothing for IT to set up.</li></ul>`},
+ {k:"setup",t:"Day one setup",sub:"Manager",m:"About 15 min",checklist:true,
+  lede:"Tick these off as you go. Typical times are shown; going deeper or adding more people takes longer.",
+  body:""},
+ {k:"first",t:"Your team's first call",sub:"Team member",m:"7 to 15 min",
+  lede:"Here is what your people hear, so you can tell them what to expect.",
+  body:`<h3>On the call</h3><ul><li>They dial the practice number and say or type their six-digit code.</li><li>The line says the call is recorded, then the buyer picks up, in an AI voice that sounds like a real person.</li><li>They talk it through like a real call. A full practice call is often 7 to 15 minutes.</li><li>On the Coach plan, a coach joins the same call when it ends, to talk it over while it is fresh.</li></ul>
+  <h3>Tips to pass on</h3><ul><li>Find a quiet spot. A parked truck works well.</li><li>Treat it like the real thing. The buyer reacts to what they actually say.</li><li>It is practice. Nobody is ranked against anyone else.</li></ul>`},
+ {k:"reports",t:"The first reports",sub:"Manager and team member",m:"Within minutes",
+  lede:"A written report lands in the inbox you chose for each person, a few minutes after the call.",
+  body:`<h3>In each report</h3><ul><li>A headline and a short note from the coach.</li><li>What went well, and the one thing to work on next.</li><li>Your playbook's questions, each marked done, missed, did not come up, or not checked, with a count of each.</li></ul>
+  <h3>If something looks wrong</h3><ul><li>Each line can be marked Right or Not right from a link in the report.</li><li>We review what comes in. A mark changes only after a person approves it, and the manager can see what was sent.</li></ul>
+  <h3>For the manager</h3><ul><li>The Calls page has every report, the transcript and the audio while we keep it.</li><li>You can run a report again against a different playbook or coach, and send any report to anyone who should see it.</li></ul>`},
+ {k:"week",t:"Your first week",sub:"Manager",m:"A few minutes a day",
+  lede:"A simple rhythm that gets the most out of the first week.",
+  body:`<h3>Days 1 to 2</h3><ul><li>Get everyone through one call. The first call is the hardest to start.</li><li>Read the reports as they land. Look for the same missed moment across people.</li></ul>
+  <h3>Days 3 to 5</h3><ul><li>Adjust what is not landing: make the buyer tougher or easier, or try a different scenario.</li><li>If a playbook question keeps coming back "not checked", reword it. We suggest a better one when we can.</li><li>Ask your people for a second call on the one thing their report said to work on.</li></ul>
+  <h3>End of the week</h3><ul><li>Compare each person's first and latest call on the Calls page.</li><li>Keep a steady habit. A couple of short calls a week goes a long way.</li></ul>
+  <p class="note">Each seat includes 280 practice minutes a month on Practice and 420 on Coach. Coaching time counts toward the same minutes.</p>`},
+ {k:"products",t:"Your products",sub:"Manager",soon:true,m:"",
+  lede:"A page where you list the products your team sells, and the facts they need to get right.",
+  body:`<ul><li>Add each product and approve it.</li><li>List the facts your team must get right, one per line, with where each one came from.</li><li>Practice calls can then use your real products.</li></ul>
+  <div class="soonbox"><b>Coming soon.</b> This is not in the product yet. It shows here so you can see where it will fit.</div>`},
+ {k:"help",t:"Questions and help",sub:"Any time",m:"",
+  lede:"Answers to what people usually ask first.",
+  body:`<div class="faq">
+  <details><summary>Do my people need an app or a login?</summary><p>No. A phone and their six-digit code is all they need. Only the manager logs in.</p></details>
+  <details><summary>Is the call recorded?</summary><p>Yes, and the line says so before the call starts. How long we keep recordings is in our <a href="https://app.voicereason.ai/privacy">Privacy Notice</a>. More on <a href="https://www.voicereason.ai/recording.html">recording and consent</a>.</p></details>
+  <details><summary>Can I change things after setup?</summary><p>Yes. You can change a person's buyer, scenario, level, playbook or report email any time on the Team page.</p></details>
+  <details><summary>How long can a call be?</summary><p>Up to 45 minutes a call on Practice and 60 on Coach. Most practice calls are much shorter.</p></details>
+  <details><summary>What if a report gets something wrong?</summary><p>The person who made the call can mark any line Not right from the report. We review it, and a mark changes only after a person approves it.</p></details>
+  <details><summary>Who do I talk to?</summary><p>Email <a href="mailto:hello@voicereason.ai">hello@voicereason.ai</a>, or call (945) 26-COACH.</p></details>
+  </div>`}
+];
+let cur=0, done={};
+try{done=JSON.parse(localStorage.getItem("vr-onboard")||"{}")||{};}catch(e){done={};}
+const line=document.getElementById("line"), panel=document.getElementById("panel");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function save(){try{localStorage.setItem("vr-onboard",JSON.stringify(done));}catch(e){}}
+function checklistHTML(){
+  const n=CHECKLIST.filter(c=>done[c.id]).length;
+  return `<div class="checks">${CHECKLIST.map(c=>`<label class="check${done[c.id]?" done":""}"><input type="checkbox" data-id="${c.id}" ${done[c.id]?"checked":""}><span class="box">${tick}</span><span class="txt"><b>${esc(c.t)}</b><span>${esc(c.d)}</span></span><span class="mins">${esc(c.m)}</span></label>`).join("")}</div>
+  <div class="progress"><span>${n} of ${CHECKLIST.length} done</span><div class="track"><div class="fill" style="width:${Math.round(100*n/CHECKLIST.length)}%"></div></div></div>
+  <p class="note">Typical times. It depends on how deep you go and how many people you add. Bigger teams take longer.</p>`;
+}
+function render(scroll){
+  line.innerHTML="";
+  PARTS.forEach((p,i)=>{const li=document.createElement("li");li.className="stop"+(p.soon?" soon":"");
+    if(i===cur) li.setAttribute("aria-current","step");
+    li.innerHTML=`<button type="button" aria-controls="panel"><span class="node">${i+1}</span><span class="label"><span class="t">${esc(p.t)}${p.soon?'<span class="tag">Coming soon</span>':''}</span><span class="sub">${esc(p.sub)}</span></span>${p.m?`<span class="mins">${esc(p.m)}</span>`:''}</button>`;
+    li.querySelector("button").addEventListener("click",()=>{cur=i;render(true);});line.appendChild(li);});
+  const p=PARTS[cur];
+  panel.innerHTML=`<div class="rise"><div class="meta"><span class="eyebrow">Part ${cur+1} of ${PARTS.length} · ${esc(p.sub)}</span>${p.m?`<span class="timechip">${clockSVG}${esc(p.m)}</span>`:''}</div>
+    <h2>${esc(p.t)}</h2><p class="lede">${esc(p.lede)}</p>${p.checklist?checklistHTML():p.body}
+    <div class="navrow"><button type="button" class="chip" id="prev" ${cur===0?"disabled":""}>Back</button><button type="button" class="chip primary" id="next" ${cur===PARTS.length-1?"disabled":""}>Next</button></div></div>`;
+  panel.querySelectorAll("input[type=checkbox]").forEach(cb=>cb.addEventListener("change",()=>{done[cb.dataset.id]=cb.checked;save();render();}));
+  document.getElementById("prev").onclick=()=>{cur--;render(true);};
+  document.getElementById("next").onclick=()=>{cur++;render(true);};
+  try{history.replaceState(null,"","#"+p.k);}catch(e){}
+  if(scroll && matchMedia("(max-width:860px)").matches){panel.scrollIntoView({behavior:"smooth",block:"start"});}
+}
+const h=(location.hash||"").slice(1); const hi=PARTS.findIndex(p=>p.k===h); if(hi>=0) cur=hi;
+render();
+</script>
+</body>
+</html>
