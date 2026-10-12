@@ -188,7 +188,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
       <div>
         <div class="bar" id="setup-bar"></div>
         <div class="legend" id="setup-legend"></div>
-        <p>Typical times. It depends on how deep you go and how many people you add. Bigger teams take longer.</p>
+        <p>Typical times. It depends on how deep you go and how many people you add. Larger teams take a little more time.</p>
       </div>
     </div>
   </section>
@@ -197,7 +197,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
     <span class="lbl">Show the journey for</span>
     <div class="toggle" role="group" aria-label="Plan">
       <button type="button" id="plan-practice" aria-pressed="true">Practice</button>
-      <button type="button" id="plan-coach" aria-pressed="false">Coach</button>
+      <button type="button" id="plan-coach" aria-pressed="false">Practice + Coach</button>
     </div>
     <div class="plan-card" id="plan-card"></div>
   </div>
@@ -215,7 +215,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
     <h2 id="trust-h" style="font-size:clamp(1.5rem,3vw,2rem);margin-top:4px">Built to coach your people, not to rank them</h2>
     <div class="trustgrid">
       <div><h3>Feedback on the call, not a ranking</h3><p>Reports show what went well, what to work on next, and a checklist of moments: done, missed, did not come up, or not checked. People are not ranked against each other.</p></div>
-      <div><h3>Checked against the call</h3><p>Coaching in the written report is checked against the transcript of what was actually said. If a question cannot be checked from the call, the report says so and leaves it out of the count.</p></div>
+      <div><h3>Checked against the call</h3><p>Coaching in the written report is checked against the transcript of what was actually said. If a question is not something a call can show, the report says so and leaves it out of the count.</p></div>
       <div><h3>Your team can tell us</h3><p>Each line on a report can be marked Right or Not right from a link in the report. We review what comes in, a mark changes only after a person approves it, and the manager can see what was sent.</p></div>
       <div><h3>Recorded, and the line says so</h3><p>Practice calls are recorded, and the line tells you before the call starts. How long we keep recordings is in our <a href="https://app.voicereason.ai/privacy">Privacy Notice</a>.</p></div>
       <div><h3>Your playbook stays yours</h3><p>Bring your own playbook and your reports reflect it. You can edit your own material any time.</p></div>
@@ -251,18 +251,18 @@ const TIMES = {
   playbook: {label:"0 to 10 min", lo:0, hi:10, setup:true, note:"No time at all with our standard checklist. 5 to 10 minutes to bring and review your own."},
   products: {label:"Coming soon"},
   dial:     {label:"Seconds"},
-  call:     {label:"7 to 15 min", note:"Up to 45 minutes on Practice and 60 on Coach, if the conversation needs it."},
+  call:     {label:"7 to 15 min", note:"Up to 45 minutes on Practice and 60 on Practice + Coach, if the conversation needs it."},
   coach:    {label:"3 to 5 min"},
   report:   {label:"Within minutes"},
   review:   {label:"Any time"}
 };
 const PLANS = {
   practice:"<b>Practice</b> · $69 per seat a month, or $759 a year (one month free). 280 practice minutes per seat each month, up to 45 minutes a call, and a written report after every call.",
-  coach:"<b>Coach</b> · $129 per seat a month. Everything in Practice, plus 420 minutes per seat each month, up to 60 minutes a call, and a live coach on the same phone call when the practice call ends."
+  coach:"<b>Practice + Coach</b> · $129 per seat a month. Everything in Practice, plus 420 minutes per seat each month, up to 60 minutes a call, and a live coach on the same phone call when the practice call ends."
 };
 const STEPS=[
- {k:"plan",t:"Pick a plan",who:"Manager",lede:"Choose Practice or Coach, pick how many seats you need, and check out by card.",
-  you:["Create your account with your email and a password. That is the only login anybody needs.","Pick Practice or Coach, and how many seats.","Pay securely by card at checkout."],
+ {k:"plan",t:"Pick a plan",who:"Manager",lede:"Choose Practice or Practice + Coach, pick how many seats you need, and check out by card.",
+  you:["Create your account with your email and a password. That is the only login anybody needs.","Pick Practice or Practice + Coach, and how many seats.","Pay securely by card at checkout."],
   next:["Your plan and seats switch on once payment goes through.","You get a welcome email.","Your Team page is ready to fill in."]},
  {k:"buyer",t:"Build your buyer",who:"Manager",lede:"Describe the customer your people face, in a sentence or a page. Or start from one of ours.",
   you:["Describe who your people talk to: their job, their situation, what they push back on.","Add your website or a document if you want the buyer to know your market.","Pick how challenging the call should be."],
@@ -272,18 +272,18 @@ const STEPS=[
   next:["Each seat gets its own six-digit access code.","Press Send to email the code, and the brief if you like, to that person. You can ask for a copy too.","Your people do not need an app or a login, just a phone."]},
  {k:"playbook",t:"Bring your playbook",who:"Manager, optional",lede:"Use our standard checklist, or bring your own sales or service playbook.",
   you:["Start from ours, or bring your playbook document on the Playbook page.","Read through the checklist it creates and adjust anything in your own material."],
-  next:["Your document becomes a checklist of the moments that matter to you, each with what good looks like in your own words.","If a question cannot be checked from a phone call, we tell you why and suggest a better one.","Every report from then on is measured against your checklist."]},
+  next:["Your document becomes a checklist of the moments that matter to you, each with what good looks like in your own words.","If a question is not something a phone call can show, we explain why and suggest a better one.","Every report from then on is measured against your checklist."]},
  {k:"products",t:"Tell us what you sell",who:"Manager",soon:true,lede:"A page where you list the products your team sells, and the facts they need to get right.",
   you:["Add each product and approve it.","List the facts your team must get right, one per line. For example: mix 1 part to 5 parts water."],
   next:["Practice calls can then use your real products.","We will add more here when it is ready."]},
  {k:"dial",t:"Your person dials in",who:"Team member",lede:"From their own phone, wherever they work. A truck cab counts.",
-  you:["Call the practice number.","Say the six-digit access code, or type it on the keypad."],
-  next:["The line says the call is recorded and asks for the code.","On the Coach plan, they hear they can stay on for the coach afterwards.","Then the buyer picks up, ready for the scenario you chose."]},
+  you:["Call the practice number.","Say the six-digit access code out loud."],
+  next:["The line says the call is recorded and asks for the code.","On Practice + Coach, they hear they can stay on for the coach afterwards.","Then the buyer picks up, ready for the scenario you chose."]},
  {k:"call",t:"The conversation",who:"Team member",lede:"A buyer who reacts to what your person actually says, like a real call.",
-  you:["Talk it through: open, ask questions, handle the pushback, agree the next step.","Hang up when the conversation is done, or the buyer wraps it up."],
+  you:["Talk it through like a real call: open, ask questions, respond to what the buyer says, agree the next step.","Hang up when the conversation is done, or the buyer wraps it up."],
   next:["The call is recorded and turned into a transcript of what was said."],
   ex:{cap:"Example moment (sample company)",lines:[["buyer","Buyer","Honestly, we already have someone for this. Why would I switch?"],["member","Your team member","Fair question. What would have to be true for you to consider a second option?"],["buyer","Buyer","If it saved my crew a day a week, I'd listen."]]}},
- {k:"coach",t:"The coach comes on",who:"Team member",coachOnly:true,lede:"On the Coach plan, a coach joins the same phone call right after the practice call ends.",
+ {k:"coach",t:"The coach comes on",who:"Team member",coachOnly:true,lede:"On Practice + Coach, a coach joins the same phone call right after the practice call ends.",
   you:["Stay on the line when the practice call ends.","Talk it over with the coach and ask what to try next time."],
   next:["The coach talks through what worked and one thing to work on, while the call is still fresh.","No new number to dial and nothing to click.","Coaching time counts toward the same monthly minutes."],
   ex:{cap:"Example moment (sample coaching)",lines:[["coachv","Coach","Nice job asking what would have to be true. Next time, ask how much time they lose today before you mention yours."]]}},
@@ -319,7 +319,7 @@ function render(focusPanel){
   vis.forEach((i,n)=>{const s=STEPS[i];const li=document.createElement("li");
     li.className="stop"+(s.coachOnly?" coach":"")+(s.soon?" soon":"");
     if(i===cur) li.setAttribute("aria-current","step");
-    const tag=s.coachOnly?'<span class="tag coach">Coach plan</span>':s.soon?'<span class="tag soon">Coming soon</span>':'';
+    const tag=s.coachOnly?'<span class="tag coach">Practice + Coach</span>':s.soon?'<span class="tag soon">Coming soon</span>':'';
     li.innerHTML=`<button type="button" aria-controls="panel"><span class="node">${n+1}</span><span class="label"><span class="t">${esc(s.t)}${tag}</span><span class="who">${esc(s.who)}</span></span>${s.soon?'':`<span class="mins">${esc(TIMES[s.k].label)}</span>`}</button>`;
     li.querySelector("button").addEventListener("click",()=>{cur=i;render(true);});line.appendChild(li);});
   const s=STEPS[cur], pos=vis.indexOf(cur), tm=TIMES[s.k];

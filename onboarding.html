@@ -176,7 +176,7 @@ const clockSVG='<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle 
 const tick='<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" stroke="#0B0B12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 /* Typical times. Edit here. */
 const CHECKLIST=[
- {id:"plan",t:"Pick a plan and check out",d:"Practice or Coach, how many seats, pay by card.",m:"2 to 3 min"},
+ {id:"plan",t:"Pick a plan and check out",d:"Practice or Practice + Coach, how many seats, pay by card.",m:"2 to 3 min"},
  {id:"buyer",t:"Build your buyer",d:"Describe who your people talk to, in a sentence or a page. Add your website or a document if you like.",m:"5 min or less"},
  {id:"team",t:"Set up your team",d:"Name and report email for each person, then their buyer, scenario and level.",m:"3 to 5 min"},
  {id:"playbook",t:"Bring your playbook (optional)",d:"Use our standard checklist, or bring your own and review it.",m:"0 to 10 min"},
@@ -194,19 +194,19 @@ const PARTS=[
   body:""},
  {k:"first",t:"Your team's first call",sub:"Team member",m:"7 to 15 min",
   lede:"Here is what your people hear, so you can tell them what to expect.",
-  body:`<h3>On the call</h3><ul><li>They dial the practice number and say or type their six-digit code.</li><li>The line says the call is recorded, then the buyer picks up, in an AI voice that sounds like a real person.</li><li>They talk it through like a real call. A full practice call is often 7 to 15 minutes.</li><li>On the Coach plan, a coach joins the same call when it ends, to talk it over while it is fresh.</li></ul>
+  body:`<h3>On the call</h3><ul><li>They dial the practice number and say their six-digit code out loud.</li><li>The line says the call is recorded, then the buyer picks up, in an AI voice that sounds like a real person.</li><li>They talk it through like a real call. A full practice call is often 7 to 15 minutes.</li><li>On Practice + Coach, a coach joins the same call when it ends, to talk it over while it is fresh.</li></ul>
   <h3>Tips to pass on</h3><ul><li>Find a quiet spot. A parked truck works well.</li><li>Treat it like the real thing. The buyer reacts to what they actually say.</li><li>It is practice. Nobody is ranked against anyone else.</li></ul>`},
  {k:"reports",t:"The first reports",sub:"Manager and team member",m:"Within minutes",
   lede:"A written report lands in the inbox you chose for each person, a few minutes after the call.",
   body:`<h3>In each report</h3><ul><li>A headline and a short note from the coach.</li><li>What went well, and the one thing to work on next.</li><li>Your playbook's questions, each marked done, missed, did not come up, or not checked, with a count of each.</li></ul>
-  <h3>If something looks wrong</h3><ul><li>Each line can be marked Right or Not right from a link in the report.</li><li>We review what comes in. A mark changes only after a person approves it, and the manager can see what was sent.</li></ul>
+  <h3>Your team's say</h3><ul><li>Each line can be marked Right or Not right from a link in the report.</li><li>We review what comes in. A mark changes only after a person approves it, and the manager can see what was sent.</li></ul>
   <h3>For the manager</h3><ul><li>The Calls page has every report, the transcript and the audio while we keep it.</li><li>You can run a report again against a different playbook or coach, and send any report to anyone who should see it.</li></ul>`},
  {k:"week",t:"Your first week",sub:"Manager",m:"A few minutes a day",
   lede:"A simple rhythm that gets the most out of the first week.",
-  body:`<h3>Days 1 to 2</h3><ul><li>Get everyone through one call. The first call is the hardest to start.</li><li>Read the reports as they land. Look for the same missed moment across people.</li></ul>
-  <h3>Days 3 to 5</h3><ul><li>Adjust what is not landing: make the buyer tougher or easier, or try a different scenario.</li><li>If a playbook question keeps coming back "not checked", reword it. We suggest a better one when we can.</li><li>Ask your people for a second call on the one thing their report said to work on.</li></ul>
+  body:`<h3>Days 1 to 2</h3><ul><li>Next step: everyone makes their first call. It takes a few minutes from any phone.</li><li>Read the reports as they land. Look for the same missed moment across people.</li></ul>
+  <h3>Days 3 to 5</h3><ul><li>Tune the practice: set the buyer's level up or down, or try a different scenario.</li><li>If a playbook question keeps coming back "not checked", reword it. We suggest a better one when we can.</li><li>Ask your people for a second call on the one thing their report said to work on.</li></ul>
   <h3>End of the week</h3><ul><li>Compare each person's first and latest call on the Calls page.</li><li>Keep a steady habit. A couple of short calls a week goes a long way.</li></ul>
-  <p class="note">Each seat includes 280 practice minutes a month on Practice and 420 on Coach. Coaching time counts toward the same minutes.</p>`},
+  <p class="note">Each seat includes 280 practice minutes a month on Practice and 420 on Practice + Coach. Coaching time counts toward the same minutes.</p>`},
  {k:"products",t:"Your products",sub:"Manager",soon:true,m:"",
   lede:"A page where you list the products your team sells, and the facts they need to get right.",
   body:`<ul><li>Add each product and approve it.</li><li>List the facts your team must get right, one per line, with where each one came from.</li><li>Practice calls can then use your real products.</li></ul>
@@ -217,8 +217,8 @@ const PARTS=[
   <details><summary>Do my people need an app or a login?</summary><p>No. A phone and their six-digit code is all they need. Only the manager logs in.</p></details>
   <details><summary>Is the call recorded?</summary><p>Yes, and the line says so before the call starts. How long we keep recordings is in our <a href="https://app.voicereason.ai/privacy">Privacy Notice</a>. More on <a href="https://www.voicereason.ai/recording.html">recording and consent</a>.</p></details>
   <details><summary>Can I change things after setup?</summary><p>Yes. You can change a person's buyer, scenario, level, playbook or report email any time on the Team page.</p></details>
-  <details><summary>How long can a call be?</summary><p>Up to 45 minutes a call on Practice and 60 on Coach. Most practice calls are much shorter.</p></details>
-  <details><summary>What if a report gets something wrong?</summary><p>The person who made the call can mark any line Not right from the report. We review it, and a mark changes only after a person approves it.</p></details>
+  <details><summary>How long can a call be?</summary><p>Up to 45 minutes a call on Practice and 60 on Practice + Coach. Most practice calls are much shorter.</p></details>
+  <details><summary>Can my team give feedback on a report?</summary><p>Yes. The person who made the call can mark any line Right or Not right from the report. We review what comes in, and a mark changes only after a person approves it.</p></details>
   <details><summary>Who do I talk to?</summary><p>Email <a href="mailto:hello@voicereason.ai">hello@voicereason.ai</a>, or call (945) 26-COACH.</p></details>
   </div>`}
 ];
@@ -231,7 +231,7 @@ function checklistHTML(){
   const n=CHECKLIST.filter(c=>done[c.id]).length;
   return `<div class="checks">${CHECKLIST.map(c=>`<label class="check${done[c.id]?" done":""}"><input type="checkbox" data-id="${c.id}" ${done[c.id]?"checked":""}><span class="box">${tick}</span><span class="txt"><b>${esc(c.t)}</b><span>${esc(c.d)}</span></span><span class="mins">${esc(c.m)}</span></label>`).join("")}</div>
   <div class="progress"><span>${n} of ${CHECKLIST.length} done</span><div class="track"><div class="fill" style="width:${Math.round(100*n/CHECKLIST.length)}%"></div></div></div>
-  <p class="note">Typical times. It depends on how deep you go and how many people you add. Bigger teams take longer.</p>`;
+  <p class="note">Typical times. It depends on how deep you go and how many people you add. Larger teams take a little more time.</p>`;
 }
 function render(scroll){
   line.innerHTML="";
