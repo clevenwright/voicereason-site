@@ -16,6 +16,7 @@ VoiceReason.AI is made by Pyrigen Incorporated.
 ## Plans (per seat)
 
 - Practice: $69 per seat per month, or $759 per seat per year. 280 minutes a seat each month, up to 45 minutes on one call. Includes a written feedback report emailed after every call, once the team member has an email on file.
+- All the seats on a plan share one pool of minutes.
 - Practice + Coach: $129 per seat per month. 420 minutes a seat each month, up to 60 minutes on one call. Adds a live AI coach on the line right after every call. Coaching time uses the same minutes.
 - One seat is one person who makes practice calls, with one access code. The manager login does not use a seat.
 - Customers can cancel at any time. Canceling stops the next charge, and the plan stays active through the period already paid for.
@@ -25,6 +26,9 @@ VoiceReason.AI is made by Pyrigen Incorporated.
 - [Home](https://www.voicereason.ai/): what it is, plans, a real example report, and frequently asked questions.
 - [How it works](https://www.voicereason.ai/how-it-works.html): step by step, from picking a plan to your team's first practice call.
 - [Getting started](https://www.voicereason.ai/onboarding.html): what you need, a setup checklist, and your team's first week.
+- [Pricing](https://www.voicereason.ai/pricing.html): both plans, what a seat is, shared minutes, and pricing questions.
+- [Use cases](https://www.voicereason.ai/use-cases.html): sales, field and in-home sales, customer service, remote teams and new hires.
+- [Compare](https://www.voicereason.ai/compare.html): VoiceReason vs Hyperbound vs Cold Call Gym.
 - [Recording and consent](https://www.voicereason.ai/recording.html): how practice calls are recorded and what callers are told.
 - [Terms of service](https://app.voicereason.ai/terms)
 - [Privacy policy](https://app.voicereason.ai/privacy)
