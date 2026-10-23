@@ -1,6 +1,6 @@
 """Fail when the published plan-card prices and the JSON-LD offer prices differ.
 
-The plan cards in index.html (#plans) are the source of truth a person reads.
+The plan cards in sales-coach.html (#plans; it held the home page until 22 Oct 2026) are the source of truth a person reads.
 The SoftwareApplication offers in the JSON-LD are what search engines quote.
 A stale schema price is a published price we are not honouring, so this check
 fails loudly on any difference. Standard library only.
@@ -10,7 +10,7 @@ import re
 import sys
 from pathlib import Path
 
-html = Path(__file__).resolve().parent.parent.joinpath("index.html").read_text(encoding="utf-8")
+html = Path(__file__).resolve().parent.parent.joinpath("sales-coach.html").read_text(encoding="utf-8")
 
 
 def card_prices():
