@@ -1,6 +1,6 @@
 # VoiceReason.AI
 
-> VoiceReason.AI is practice phone calls with an AI voice that sounds like a real person. It has two products. Sales Coach: sales and service teams practice a real conversation with an AI buyer. Interview Coach (opening soon): a job seeker adds their resume and a job posting, and an AI hiring manager runs a structured, behavioral practice interview for that role. In both, the caller dials one phone number and says an access code. On the Practice + Coach plan, an AI coach comes on the same phone call right after the practice call ends. After every call, a written feedback report is emailed once the person has an email on file.
+> VoiceReason.AI is practice phone calls with an AI voice that sounds like a real person. It has two products. Sales Coach: sales and service teams practice a real conversation with an AI buyer. Interview Coach: a job seeker adds their resume and a job posting, and an AI hiring manager runs a structured, behavioral practice interview for that role. In both, the caller dials one phone number and says an access code. On the Practice + Coach plan, an AI coach comes on the same phone call right after the practice call ends. After every call, a written feedback report is emailed once the person has an email on file.
 
 VoiceReason.AI is made by Pyrigen Incorporated.
 
@@ -25,7 +25,7 @@ VoiceReason.AI is made by Pyrigen Incorporated.
 
 - [Home](https://www.voicereason.ai/): the two products, Sales Coach and Interview Coach, how every call works, and the plans.
 - [Sales Coach](https://www.voicereason.ai/sales-coach.html): AI sales call practice for teams, a real example call and report, plans and frequently asked questions.
-- [Interview Coach](https://www.voicereason.ai/interview-coach.html): job interview practice on a real phone call, built from your resume and the job posting. Opening soon; plans are shown but cannot be bought yet.
+- [Interview Coach](https://www.voicereason.ai/interview-coach.html): job interview practice on a real phone call, built from your resume and the job posting. Practice ($69 a month) and Practice + Coach ($129 a month) can be bought now; a smaller Starter plan is coming soon.
 - [Pricing](https://www.voicereason.ai/pricing.html): both plans, what a seat is, shared minutes, and pricing questions.
 - [Use cases](https://www.voicereason.ai/use-cases.html): sales, field and in-home sales, customer service, remote teams and new hires.
 - [Compare](https://www.voicereason.ai/compare.html): VoiceReason vs Hyperbound vs Cold Call Gym.
