@@ -192,23 +192,31 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 <meta name="twitter:title" content="Practice the &quot;your price is too high&quot; call with an AI customer | VoiceReason">
 <meta name="twitter:description" content="Losing deals on price? Your team practices the price objection on a real phone call with an AI customer that pushes back, then gets a written report and, on Practice + Coach, a coach on the same call.">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "My new hires keep losing deals on price. What training fixes that fastest?", "description": "Losing deals on price? Your team practices the price objection on a real phone call with an AI customer that pushes back, then gets a written report and, on Practice + Coach, a coach on the same call.", "url": "https://www.voicereason.ai/price-objection-practice.html", "author": {"@type": "Organization", "name": "VoiceReason.AI"}, "publisher": {"@type": "Organization", "name": "VoiceReason.AI", "url": "https://www.voicereason.ai/"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What training helps new reps stop losing deals on price?", "acceptedAnswer": {"@type": "Answer", "text": "Practice on the exact moment the customer pushes on price. With VoiceReason, your team member calls an AI customer who says the price is too high, answers it out loud, and gets a written report after every call. On Practice + Coach, a coach talks it through with them on the same call."}}, {"@type": "Question", "name": "Can I use our own way of handling price?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add your playbook, and every report measures the call against the way your team sells."}}, {"@type": "Question", "name": "Will the practice customer give in easily?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is built to push back like a real customer would."}}, {"@type": "Question", "name": "How much does VoiceReason cost?", "acceptedAnswer": {"@type": "Answer", "text": "Practice is $69 per seat per month, or $759 per seat per year. Practice + Coach is $129 per seat per month."}}]}]</script>
-<style id="vr-brand">
-/* vr-brand: shared top bar, mark, container, cards and buttons, matched to index.html */
-.wrap{max-width:1120px;margin:0 auto;padding-inline:16px}
-@media (min-width:700px){.wrap{padding-inline:24px}}
+<style id="vr-head">
+/* vr-head: shared top bar, matched to index.html, with a phone link row */
 .top{position:sticky;top:0;z-index:20;background:rgba(11,11,18,.94);backdrop-filter:blur(10px);border-bottom:1px solid #26243A}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px;max-width:1120px;margin:0 auto;padding-inline:16px}
+@media (min-width:700px){.top .wrap{padding-inline:24px}}
 .top .brand{display:inline-flex;align-items:center;gap:10px;color:#ECEAF6;text-decoration:none;font:700 17px 'Archivo',ui-sans-serif,system-ui,sans-serif}
-.mark{width:26px;height:26px;display:grid;place-items:center;background:none;border-radius:0}
-.mark svg{width:16px;height:16px}
+.top .mark{width:26px;height:26px;display:grid;place-items:center;background:none;border-radius:0;margin:0;padding:0}
+.top .mark svg{width:16px;height:16px}
 .toplinks{display:flex;gap:4px;align-items:center}
 .toplinks a{font:500 14px 'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;color:#C9C6DC;text-decoration:none;padding:6px 11px;border-radius:999px}
-.toplinks a:hover,.toplinks a[aria-current]{color:#ECEAF6;background:#14141F}
+.toplinks a:hover,.toplinks a[aria-current],.mnav a:hover,.mnav a[aria-current]{color:#ECEAF6;background:#14141F}
 .toplinks .cta{white-space:nowrap;background:#9B7BFF;color:#0B0B12!important;font-weight:600!important}
-@media (max-width:640px){.toplinks .hide-sm{display:none}.top .brand{font-size:15px}}
+.toplinks a:focus-visible,.mnav a:focus-visible{outline:3px solid #B9A3FF;outline-offset:2px}
+.mnav{display:none}
+@media (max-width:640px){.toplinks .hide-sm{display:none}.top .brand{font-size:15px}
+.mnav{display:flex;justify-content:center;gap:2px;padding:0 10px 10px}
+.mnav a{font:500 14px 'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;color:#C9C6DC;text-decoration:none;padding:6px 11px;border-radius:999px;white-space:nowrap}}
+</style>
+<style id="vr-brand">
+/* vr-brand: home container, cards and buttons on content pages */
+.wrap{max-width:1120px;margin:0 auto;padding-inline:16px}
+@media (min-width:700px){.wrap{padding-inline:24px}}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.btn:focus-visible,.toplinks a:focus-visible,summary:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px}
+.btn:focus-visible,summary:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px}
 .page{max-width:none;padding-block:56px 12px}
 .page h1{max-width:22ch}
 .page .lead,.page .sec>p,.page .sec>ul,.page .sec>ol,.page details{max-width:72ch}
@@ -233,7 +241,9 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 <nav class="toplinks" aria-label="Site">
 <a class="hide-sm" href="/sales-coach.html">Sales Coach</a><a class="hide-sm" href="/interview-coach.html">Interview Coach</a><a class="hide-sm" href="/pricing.html">Plans</a>
 <a class="cta" href="tel:+19452626224"><span class="hide-sm">Talk to us </span>(945) 26-COACH</a>
-</nav></div></header>
+</nav></div>
+<nav class="mnav" aria-label="Site links"><a href="/sales-coach.html">Sales Coach</a><a href="/interview-coach.html">Interview Coach</a><a href="/pricing.html">Plans</a></nav>
+</header>
 
 <main class="wrap">
 <div class="page">
@@ -249,7 +259,7 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 <footer>
     <span>VoiceReason.AI · Pyrigen Incorporated · Texas, USA</span>
     <span>Questions? <a href="mailto:hello@voicereason.ai">hello@voicereason.ai</a> or <b id="num">(945) 262-6224</b><button class="copy" type="button" id="copy">Copy number</button></span>
-    <nav aria-label="Legal"><a href="https://app.voicereason.ai/terms">Terms</a><a href="https://app.voicereason.ai/privacy">Privacy</a><a href="https://www.voicereason.ai/recording.html">Recording and consent</a></nav>
+    <nav aria-label="Legal"><a href="https://app.voicereason.ai/terms">Terms</a><a href="https://app.voicereason.ai/privacy">Privacy</a><a href="https://app.voicereason.ai/privacy#p3">Recording and consent</a></nav>
   </footer>
 </main>
 <script>

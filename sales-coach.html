@@ -77,28 +77,33 @@ html{scroll-padding-top:84px}
 @media(max-width:480px){.nav-cta{display:none}.navsheet-links{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.nav-ind,.top,.top .wrap{transition:none}.nav-new::after{animation:none}}
 </style>
+<style id="vr-head">
+/* vr-head: shared top bar, matched to index.html, with a phone link row */
+.top{position:sticky;top:0;z-index:20;background:rgba(11,11,18,.94);backdrop-filter:blur(10px);border-bottom:1px solid #26243A}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px;max-width:1120px;margin:0 auto;padding-inline:16px}
+@media (min-width:700px){.top .wrap{padding-inline:24px}}
+.top .brand{display:inline-flex;align-items:center;gap:10px;color:#ECEAF6;text-decoration:none;font:700 17px 'Archivo',ui-sans-serif,system-ui,sans-serif}
+.top .mark{width:26px;height:26px;display:grid;place-items:center;background:none;border-radius:0;margin:0;padding:0}
+.top .mark svg{width:16px;height:16px}
+.toplinks{display:flex;gap:4px;align-items:center}
+.toplinks a{font:500 14px 'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;color:#C9C6DC;text-decoration:none;padding:6px 11px;border-radius:999px}
+.toplinks a:hover,.toplinks a[aria-current],.mnav a:hover,.mnav a[aria-current]{color:#ECEAF6;background:#14141F}
+.toplinks .cta{white-space:nowrap;background:#9B7BFF;color:#0B0B12!important;font-weight:600!important}
+.toplinks a:focus-visible,.mnav a:focus-visible{outline:3px solid #B9A3FF;outline-offset:2px}
+.mnav{display:none}
+@media (max-width:640px){.toplinks .hide-sm{display:none}.top .brand{font-size:15px}
+.mnav{display:flex;justify-content:center;gap:2px;padding:0 10px 10px}
+.mnav a{font:500 14px 'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;color:#C9C6DC;text-decoration:none;padding:6px 11px;border-radius:999px;white-space:nowrap}}
+</style>
 </head>
 <body>
-<header class="top" id="siteTop">
-<div class="wrap">
-  <a class="mark" href="/"><svg viewBox="8 8 48 48" width="24" height="24" aria-hidden="true" focusable="false" style="vertical-align:-5px;margin-right:8px"><circle cx="32" cy="32" r="23" fill="#5A2CF0"/><polyline points="17,32 21,29 24,24 28,41 32,19 36,45 40,26 44,34 47,32" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>VoiceReason<span>.AI</span></a>
-  <nav class="navlinks" aria-label="Main">
-    <span class="nav-ind" aria-hidden="true"></span>
-    <a href="#debrief">The debrief</a><a href="#call">Hear a call</a><a href="#how">How it works</a><a href="#plans">Plans</a><a href="#faq">FAQ</a>
-  </nav>
-  <div class="nav-right">
-    <a class="btn btn-primary nav-cta" href="#call">Hear a real call</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navSheet" aria-label="Open menu"><span></span><span></span></button>
-  </div>
-</div>
-<div class="nav-progress" aria-hidden="true"><i></i></div>
-<div class="navsheet" id="navSheet" hidden>
-  <div class="navsheet-links">
-    <a href="#adoption">Adoption</a><a href="#debrief">The debrief</a><a href="#call">A real phone call</a><a href="#report">The report</a><a href="#how">How it works</a><a href="#who">Who it's for</a><a href="#plans">Plans</a><a href="#faq">FAQ</a>
-  </div>
-  <a class="btn btn-primary" href="#call">Hear a real phone call</a>
-  <a class="navsheet-tel" href="tel:+19452626224"><span class="live-dot" aria-hidden="true"></span>Talk to us (945) 26-COACH</a>
-</div>
+<header class="top"><div class="wrap">
+<a class="brand" href="/"><span class="mark" aria-hidden="true"><svg viewBox="8 8 48 48" width="26" height="26" aria-hidden="true" focusable="false"><defs><radialGradient id="vrg" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#8a63ff"/><stop offset=".6" stop-color="#5a2cf0"/><stop offset="1" stop-color="#3d1fb0"/></radialGradient></defs><circle cx="32" cy="32" r="23" fill="url(#vrg)"/><polyline points="17,32 21,29 24,24 28,41 32,19 36,45 40,26 44,34 47,32" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>VoiceReason.AI</a>
+<nav class="toplinks" aria-label="Site">
+<a class="hide-sm" href="/sales-coach.html" aria-current="page">Sales Coach</a><a class="hide-sm" href="/interview-coach.html">Interview Coach</a><a class="hide-sm" href="/pricing.html">Plans</a>
+<a class="cta" href="tel:+19452626224"><span class="hide-sm">Talk to us </span>(945) 26-COACH</a>
+</nav></div>
+<nav class="mnav" aria-label="Site links"><a href="/sales-coach.html" aria-current="page">Sales Coach</a><a href="/interview-coach.html">Interview Coach</a><a href="/pricing.html">Plans</a></nav>
 </header>
 
 <section class="hero" style="border-top:none"><div class="wrap stack">
@@ -879,7 +884,7 @@ html{scroll-padding-top:84px}
     <details><summary>What counts as a seat?</summary><p>One seat is one person who makes practice calls, and one access code. Your own manager login does not consume a seat. If you have eight people, you need eight seats.</p></details>
     <details><summary>Does my team have to log in to anything?</summary><p>No. That is the point. Your team members do not create an account, do not download anything and do not need a smartphone. They dial a number and give an access code. Their feedback arrives by email, at the address you give us when you set up their seat.</p></details>
     <details><summary>Is the buyer a real person?</summary><p>No. The buyer is software using a synthetic voice, and so is the coach.</p></details>
-    <details><summary>Is the call recorded, and is that legal?</summary><p>Practice calls are recorded, and the line tells you so. The full detail is on the <a href="/recording.html">recording and consent</a> page.</p></details>
+    <details><summary>Is the call recorded, and is that legal?</summary><p>Practice calls are recorded, and the line tells you so. The full detail is on the <a href="https://app.voicereason.ai/privacy#p3">recording and consent</a> page.</p></details>
     <details><summary>How is this different from the other practice tools?</summary><p>Every tool in this category ends a call by handing over a written scorecard. We built the part that comes after: a coach that talks the call through with the team member while it is still fresh, instead of emailing them a score to read later.</p></details>
     <details><summary>Does the coach use up my practice minutes?</summary><p>Yes. Coaching time uses the same minutes as the practice call and counts against the same 60 minute call limit on the Practice + Coach plan.</p></details>
     <details><summary>What does it score them on, and is that fair?</summary><p>Discovery, qualification, how objections were handled, and whether the call ended with a real next step. It gives each person their own read rather than a single number.</p></details>
@@ -902,9 +907,9 @@ html{scroll-padding-top:84px}
   <div class="fcol"><p class="eyebrow">Product</p>
     <a href="/">Home</a><a href="/interview-coach.html">Interview Coach</a><a href="/sales-coach.html#call">A real phone call</a><a href="/sales-coach.html#report">The report</a><a href="/sales-coach.html#how">How it works</a><a href="/sales-coach.html#plans">Plans</a><a href="/pricing.html">Pricing</a><a href="/use-cases.html">Use cases</a><a href="/compare.html">Compare tools</a><a href="/sales-coach.html#faq">FAQ</a></div>
   <div class="fcol"><p class="eyebrow">Contact</p>
-    <a href="mailto:hello@voicereason.ai">hello@voicereason.ai</a><a href="mailto:privacy@voicereason.ai">privacy@voicereason.ai</a></div>
+    <a href="mailto:hello@voicereason.ai">hello@voicereason.ai</a></div>
   <div class="fcol"><p class="eyebrow">Legal</p>
-    <a href="https://app.voicereason.ai/terms">Terms of service</a><a href="https://app.voicereason.ai/privacy">Privacy</a><a href="/recording.html">Recording and consent</a></div>
+    <a href="https://app.voicereason.ai/terms">Terms of service</a><a href="https://app.voicereason.ai/privacy">Privacy</a><a href="https://app.voicereason.ai/privacy#p3">Recording and consent</a></div>
 </div></footer>
 
 
