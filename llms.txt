@@ -29,7 +29,7 @@ VoiceReason.AI is made by Pyrigen Incorporated.
 - [Pricing](https://www.voicereason.ai/pricing.html): both plans, what a seat is, shared minutes, and pricing questions.
 - [Use cases](https://www.voicereason.ai/use-cases.html): sales, field and in-home sales, customer service, remote teams and new hires.
 - [Compare](https://www.voicereason.ai/compare.html): VoiceReason vs Hyperbound vs Cold Call Gym.
-- [Recording and consent](https://www.voicereason.ai/recording.html): how practice calls are recorded and what callers are told.
+- [Recording and consent](https://app.voicereason.ai/privacy#p3): how practice calls are recorded and what callers are told.
 - [Terms of service](https://app.voicereason.ai/terms)
 - [Privacy policy](https://app.voicereason.ai/privacy)
 

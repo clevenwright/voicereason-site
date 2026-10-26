@@ -192,18 +192,57 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 <meta name="twitter:title" content="A first-week plan for new sales hires with one hour a day | VoiceReason">
 <meta name="twitter:description" content="A free first-week plan for new sales or service hires when you only have an hour a day: what to learn, which calls to practice, and how to check readiness, using phone practice calls.">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "What should new hires do in their first week if I can only give them an hour a day?", "description": "A free first-week plan for new sales or service hires when you only have an hour a day: what to learn, which calls to practice, and how to check readiness, using phone practice calls.", "url": "https://www.voicereason.ai/first-week-plan-new-hires.html", "author": {"@type": "Organization", "name": "VoiceReason.AI"}, "publisher": {"@type": "Organization", "name": "VoiceReason.AI", "url": "https://www.voicereason.ai/"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What should three new sales reps do in their first week if I can only give them an hour a day?", "acceptedAnswer": {"@type": "Answer", "text": "Spend your hour each day on what only you can teach: the offer, good first-call questions, how you talk about price, a tough call that went well, and a review of the week. Have them spend their own practice time on phone practice calls for each of those, and read the written reports together."}}, {"@type": "Question", "name": "Do I need to listen to every practice call?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every call and its report are on your Calls page, so you can open the ones you want."}}, {"@type": "Question", "name": "Can new hires practice from anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. They call one number from their own phone and say their six-digit access code. No app, no download and no login."}}, {"@type": "Question", "name": "Is the customer on the call a real person?", "acceptedAnswer": {"@type": "Answer", "text": "No. The customer is an AI voice that sounds like a real person and stays in character."}}]}]</script>
+<style id="vr-head">
+/* vr-head: shared top bar, matched to index.html, with a phone link row */
+.top{position:sticky;top:0;z-index:20;background:rgba(11,11,18,.94);backdrop-filter:blur(10px);border-bottom:1px solid #26243A}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px;max-width:1120px;margin:0 auto;padding-inline:16px}
+@media (min-width:700px){.top .wrap{padding-inline:24px}}
+.top .brand{display:inline-flex;align-items:center;gap:10px;color:#ECEAF6;text-decoration:none;font:700 17px 'Archivo',ui-sans-serif,system-ui,sans-serif}
+.top .mark{width:26px;height:26px;display:grid;place-items:center;background:none;border-radius:0;margin:0;padding:0}
+.top .mark svg{width:16px;height:16px}
+.toplinks{display:flex;gap:4px;align-items:center}
+.toplinks a{font:500 14px 'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;color:#C9C6DC;text-decoration:none;padding:6px 11px;border-radius:999px}
+.toplinks a:hover,.toplinks a[aria-current],.mnav a:hover,.mnav a[aria-current]{color:#ECEAF6;background:#14141F}
+.toplinks .cta{white-space:nowrap;background:#9B7BFF;color:#0B0B12!important;font-weight:600!important}
+.toplinks a:focus-visible,.mnav a:focus-visible{outline:3px solid #B9A3FF;outline-offset:2px}
+.mnav{display:none}
+@media (max-width:640px){.toplinks .hide-sm{display:none}.top .brand{font-size:15px}
+.mnav{display:flex;justify-content:center;gap:2px;padding:0 10px 10px}
+.mnav a{font:500 14px 'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;color:#C9C6DC;text-decoration:none;padding:6px 11px;border-radius:999px;white-space:nowrap}}
+</style>
+<style id="vr-brand">
+/* vr-brand: home container, cards and buttons on content pages */
+.wrap{max-width:1120px;margin:0 auto;padding-inline:16px}
+@media (min-width:700px){.wrap{padding-inline:24px}}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:focus-visible,summary:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px}
+.page{max-width:none;padding-block:56px 12px}
+.page h1{max-width:22ch}
+.page .lead,.page .sec>p,.page .sec>ul,.page .sec>ol,.page details{max-width:72ch}
+.page .sec{margin-top:64px}
+.page .sec>h2{font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:800;margin-bottom:14px}
+.page .sec>ul{list-style:none;padding-left:0;display:grid;gap:10px}
+.page .sec>ul>li{position:relative;padding-left:26px}
+.page .sec>ul>li::before{content:"";position:absolute;left:4px;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.page .sec>ol{padding-left:22px;display:grid;gap:10px}
+.page .sec>ol>li::marker{color:var(--accent);font-family:var(--display);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-top:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h3{font-size:20px}
+.card p{margin:0;color:var(--ink-2)}
+.seeplans{margin-top:28px}
+</style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="https://www.voicereason.ai/"><span class="mark" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M2 8h1.5M5 5v6M8 3v10M11 5v6M14 8h-1.5" stroke="#0B0B12" stroke-width="1.8" stroke-linecap="round"/></svg></span>VoiceReason.AI</a>
-    <nav class="toplinks" aria-label="Site">
-      <a class="hide-sm" href="https://www.voicereason.ai/#plans">Plans</a>
-      <a class="hide-sm" href="onboarding.html">Getting started</a>
-      <a class="cta" href="tel:+19452626224"><span class="hide-sm">Talk to us </span>(945) 26-COACH</a>
-    </nav>
-  </div>
+<header class="top"><div class="wrap">
+<a class="brand" href="/"><span class="mark" aria-hidden="true"><svg viewBox="8 8 48 48" width="26" height="26" aria-hidden="true" focusable="false"><defs><radialGradient id="vrg" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#8a63ff"/><stop offset=".6" stop-color="#5a2cf0"/><stop offset="1" stop-color="#3d1fb0"/></radialGradient></defs><circle cx="32" cy="32" r="23" fill="url(#vrg)"/><polyline points="17,32 21,29 24,24 28,41 32,19 36,45 40,26 44,34 47,32" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>VoiceReason.AI</a>
+<nav class="toplinks" aria-label="Site">
+<a class="hide-sm" href="/sales-coach.html">Sales Coach</a><a class="hide-sm" href="/interview-coach.html">Interview Coach</a><a class="hide-sm" href="/pricing.html">Plans</a>
+<a class="cta" href="tel:+19452626224"><span class="hide-sm">Talk to us </span>(945) 26-COACH</a>
+</nav></div>
+<nav class="mnav" aria-label="Site links"><a href="/sales-coach.html">Sales Coach</a><a href="/interview-coach.html">Interview Coach</a><a href="/pricing.html">Plans</a></nav>
 </header>
 
 <main class="wrap">
@@ -211,16 +250,16 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 <p class="eyebrow">Guide · First week</p>
 <h1>What should new hires do in their first week if I can only give them an hour a day?</h1>
 <p class="lead">You hired good people and you have a business to run. Here is one simple first week we suggest, in about an hour of your time a day. Change it to fit your team. Your new people spend the rest of their practice time on the phone, practicing the calls they will face, with a written report after each one.</p>
-<section class="sec"><h2>The plan</h2><div class="cards"><div class="card"><h3>Day 1 · Learn the offer</h3><p><b>Your hour:</b> walk them through what you sell, who buys it, and why customers pick you.<br><b>On their own:</b> one practice call where they simply introduce the business to a friendly customer.</p></div><div class="card"><h3>Day 2 · Ask good questions</h3><p><b>Your hour:</b> share the questions your best people ask on a first call.<br><b>On their own:</b> two or three discovery practice calls. Read the reports together the next morning.</p></div><div class="card"><h3>Day 3 · Handle price</h3><p><b>Your hour:</b> explain how you talk about price.<br><b>On their own:</b> practice calls with a customer who says the price is too high.</p></div><div class="card"><h3>Day 4 · The hard customer</h3><p><b>Your hour:</b> tell the story of a tough call that went well.<br><b>On their own:</b> practice calls with a busy or upset customer.</p></div><div class="card"><h3>Day 5 · Ask for the next step</h3><p><b>Your hour:</b> review the week's reports with each person.<br><b>On their own:</b> a full call from opening to next step. Pick one thing each person works on next week.</p></div></div></section><section class="sec"><h2>Why this plan</h2><p>Your hour goes to what only you can teach: the business, your customers and your standards. The repetition happens on the phone, where the job happens. The reports show you which calls each person ran and how they went, so your hour on Day 5 starts from what actually happened.</p></section><section class="sec"><h2>How the practice calls work</h2><ol><li><b>Describe the customer.</b> In a sentence or a page, say who your team talks to and what they push back on. Or start from one of ours.</li><li><b>Add your playbook if you have one.</b> Every report then measures the call against the way your team sells.</li><li><b>Your team member dials one number</b> from their own phone and says their six-digit access code. No app, no download, no login.</li><li><b>They talk to the customer.</b> An AI voice that sounds like a real person stays in character and pushes back like a real customer would.</li><li><b>They get a written report by email</b> after every call. On Practice + Coach, a coach also comes on the same call right after the practice call ends and talks it through with them.</li></ol></section>
+<section class="sec"><h2>The plan</h2><div class="cards"><div class="card"><h3>Day 1 · Learn the offer</h3><p><b>Your hour:</b> walk them through what you sell, who buys it, and why customers pick you.<br><b>On their own:</b> one practice call where they simply introduce the business to a friendly customer.</p></div><div class="card"><h3>Day 2 · Ask good questions</h3><p><b>Your hour:</b> share the questions your best people ask on a first call.<br><b>On their own:</b> two or three discovery practice calls. Read the reports together the next morning.</p></div><div class="card"><h3>Day 3 · Handle price</h3><p><b>Your hour:</b> explain how you talk about price.<br><b>On their own:</b> practice calls with a customer who says the price is too high.</p></div><div class="card"><h3>Day 4 · The hard customer</h3><p><b>Your hour:</b> tell the story of a tough call that went well.<br><b>On their own:</b> practice calls with a busy or upset customer.</p></div><div class="card"><h3>Day 5 · Ask for the next step</h3><p><b>Your hour:</b> review the week's reports with each person.<br><b>On their own:</b> a full call from opening to next step. Pick one thing each person works on next week.</p></div></div></section><div class="btns seeplans"><a class="btn primary" href="/pricing.html">See plans</a></div><section class="sec"><h2>Why this plan</h2><p>Your hour goes to what only you can teach: the business, your customers and your standards. The repetition happens on the phone, where the job happens. The reports show you which calls each person ran and how they went, so your hour on Day 5 starts from what actually happened.</p></section><section class="sec"><h2>How the practice calls work</h2><ol><li><b>Describe the customer.</b> In a sentence or a page, say who your team talks to and what they push back on. Or start from one of ours.</li><li><b>Add your playbook if you have one.</b> Every report then measures the call against the way your team sells.</li><li><b>Your team member dials one number</b> from their own phone and says their six-digit access code. No app, no download, no login.</li><li><b>They talk to the customer.</b> An AI voice that sounds like a real person stays in character and pushes back like a real customer would.</li><li><b>They get a written report by email</b> after every call. On Practice + Coach, a coach also comes on the same call right after the practice call ends and talks it through with them.</li></ol></section>
 <section class="sec"><h2>What it costs</h2><div class="cards"><div class="card"><h3>Practice</h3><p>$69 per seat a month, or $759 a year. 280 practice minutes per seat each month, up to 45 minutes on one call, and a written report after every call.</p></div><div class="card"><h3>Practice + Coach</h3><p>$129 per seat a month. Everything in Practice, plus 420 minutes per seat each month, up to 60 minutes on one call, and a live coach on the same phone call right after the practice call ends.</p></div></div><p class="note" style="margin-top:12px">All the seats on your plan share one pool of minutes. Minutes reset each month and do not roll over. <a href="pricing.html">See pricing</a></p></section>
 <section class="sec"><h2>Questions</h2><details><summary>What should three new sales reps do in their first week if I can only give them an hour a day?</summary><p>Spend your hour each day on what only you can teach: the offer, good first-call questions, how you talk about price, a tough call that went well, and a review of the week. Have them spend their own practice time on phone practice calls for each of those, and read the written reports together.</p></details><details><summary>Do I need to listen to every practice call?</summary><p>No. Every call and its report are on your Calls page, so you can open the ones you want.</p></details><details><summary>Can new hires practice from anywhere?</summary><p>Yes. They call one number from their own phone and say their six-digit access code. No app, no download and no login.</p></details><details><summary>Is the customer on the call a real person?</summary><p>No. The customer is an AI voice that sounds like a real person and stays in character.</p></details></section>
-<section class="sec"><div class="btns"><a class="btn" href="pricing.html">See plans and start</a><a class="btn" href="tel:+19452626224" style="background:transparent;color:var(--ink);border:1px solid var(--line-strong)">Questions? Call (945) 26-COACH</a></div></section>
+<section class="sec"><div class="btns"><a class="btn primary" href="/pricing.html">See plans and start</a><a class="btn" href="tel:+19452626224" style="background:transparent;color:var(--ink);border:1px solid var(--line-strong)">Questions? Call (945) 26-COACH</a></div></section>
 <section class="sec"><h2>More guides</h2><ul><li><a href="practice-before-real-customers.html">What new hires can practice before real customers</a></li><li><a href="practice-tough-calls-without-a-manager.html">Practice tough calls without a manager role-playing</a></li><li><a href="price-objection-practice.html">Practice the &quot;your price is too high&quot; call</a></li><li><a href="use-cases.html">Who uses VoiceReason</a></li></ul></section>
 </div>
 <footer>
     <span>VoiceReason.AI · Pyrigen Incorporated · Texas, USA</span>
     <span>Questions? <a href="mailto:hello@voicereason.ai">hello@voicereason.ai</a> or <b id="num">(945) 262-6224</b><button class="copy" type="button" id="copy">Copy number</button></span>
-    <nav aria-label="Legal"><a href="https://app.voicereason.ai/terms">Terms</a><a href="https://app.voicereason.ai/privacy">Privacy</a><a href="https://www.voicereason.ai/recording.html">Recording and consent</a></nav>
+    <nav aria-label="Legal"><a href="https://app.voicereason.ai/terms">Terms</a><a href="https://app.voicereason.ai/privacy">Privacy</a><a href="https://app.voicereason.ai/privacy#p3">Recording and consent</a></nav>
   </footer>
 </main>
 <script>
