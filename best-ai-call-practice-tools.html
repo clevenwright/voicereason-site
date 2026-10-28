@@ -271,7 +271,7 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 <table class="tbl">
 <thead><tr><th></th><th>How your team practices</th><th>Account before the first practice</th><th>After the call</th><th>Team price</th></tr></thead>
 <tbody>
-<tr><th>1. VoiceReason</th><td>A real phone call to one number, with an access code</td><td>No. The manager hands out access codes</td><td>Written report by email; on Practice + Coach, a coach on the same call right after</td><td>$69 or $129 per seat per month, published</td></tr>
+<tr><th>1. VoiceReason</th><td>A real phone call to one number, with an access code</td><td>No. The manager hands out access codes</td><td>Written report by email; on Practice + Coach, an AI coach on the same call right after</td><td>$69 or $129 per seat per month, published</td></tr>
 <tr><th>2. Cold Call Gym</th><td>A real phone call from any phone; also an iPhone app</td><td>No for the first call; sign in later to see full reports</td><td>A text message report right after; with an account, full reports, transcripts and real-time coaching tips</td><td>Team Pro $99 per seat per month, 3 seat minimum</td></tr>
 <tr><th>3. Hyperbound</th><td>Online, from their website</td><td>We did not find this on their public pages</td><td>Scorecards: prebuilt on the free plan, custom on paid plans</td><td>Not published; book a demo</td></tr>
 <tr><th>4. Second Nature</th><td>In a web browser, on a desktop, laptop or tablet</td><td>We did not find this on their public pages</td><td>Scores and an AI-written report, usually within 90 seconds</td><td>We did not find published prices; their site offers a demo</td></tr>
@@ -286,7 +286,7 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 
 <section class="sec">
 <h2>1. VoiceReason</h2>
-<p>Your team dials one number and practices with an AI voice that sounds like a real person. No app or laptop needed to practice, just a phone. After every call, a written report goes out by email, and on Practice + Coach, a coach comes on the same call right after to talk it through. Plans are $69 and $129 per seat per month, month to month.</p>
+<p>Your team dials one number and practices with an AI voice that sounds like a real person. No app or laptop needed to practice, just a phone. After every call, a written report goes out by email, and on Practice + Coach, an AI coach comes on the same call right after to talk it through. Plans are $69 and $129 per seat per month, month to month.</p>
 <p><b>Best for:</b> teams on the road or away from a desk, and any job where the conversation is the work. Job seekers: see <a href="/interview-coach.html">Interview Coach</a>.</p>
 </section>
 
@@ -362,7 +362,7 @@ const TIMES = {
 };
 const PLANS = {
   practice:"<b>Practice</b> · $69 per seat a month, or $759 a year (one month free). 280 practice minutes per seat each month, up to 45 minutes a call, and a written report after every call.",
-  coach:"<b>Practice + Coach</b> · $129 per seat a month. Everything in Practice, plus 420 minutes per seat each month, up to 60 minutes a call, and a live coach on the same phone call when the practice call ends."
+  coach:"<b>Practice + Coach</b> · $129 per seat a month. Everything in Practice, plus 420 minutes per seat each month, up to 60 minutes a call, and a live AI coach on the same phone call when the practice call ends."
 };
 const STEPS=[
  {k:"plan",t:"Pick a plan",who:"Manager",lede:"Choose Practice or Practice + Coach, pick how many seats you need, and check out by card.",
@@ -372,7 +372,7 @@ const STEPS=[
   you:["Describe who your people talk to: their job, their situation, what they push back on.","Add your website or a document if you want the buyer to know your market.","Pick how challenging the call should be."],
   next:["We build a buyer who reacts to what your person actually says.","The buyer speaks in an AI voice that sounds like a real person.","You can reuse a buyer across your whole team or give different people different buyers."]},
  {k:"team",t:"Set up your team",who:"Manager",lede:"Give each seat a person and a practice call that fits their job.",
-  you:["Add each person's name and the email where their reports should go.","Choose their buyer, scenario, level, playbook and coach.","Add a short research brief if you want them to prepare before they call."],
+  you:["Add each person's name and the email where their reports should go.","Choose their buyer, scenario, level, playbook and AI coach.","Add a short research brief if you want them to prepare before they call."],
   next:["Each seat gets its own six-digit access code.","Press Send to email the code, and the brief if you like, to that person. You can ask for a copy too.","Your people do not need an app or a login, just a phone."]},
  {k:"playbook",t:"Bring your playbook",who:"Manager, optional",lede:"Use our standard checklist, or bring your own sales or service playbook.",
   you:["Start from ours, or bring your playbook document on the Playbook page.","Read through the checklist it creates and adjust anything in your own material."],
@@ -382,21 +382,21 @@ const STEPS=[
   next:["Practice calls can then use your real products.","We will add more here when it is ready."]},
  {k:"dial",t:"Your person dials in",who:"Team member",lede:"From their own phone, wherever they work. A truck cab counts.",
   you:["Call the practice number.","Say the six-digit access code out loud."],
-  next:["The line says the call is recorded and asks for the code.","On Practice + Coach, they hear they can stay on for the coach afterwards.","Then the buyer picks up, ready for the scenario you chose."]},
+  next:["The line says the call is recorded and asks for the code.","On Practice + Coach, they hear they can stay on for the AI coach afterwards.","Then the buyer picks up, ready for the scenario you chose."]},
  {k:"call",t:"The conversation",who:"Team member",lede:"A buyer who reacts to what your person actually says, like a real call.",
   you:["Talk it through like a real call: open, ask questions, respond to what the buyer says, agree the next step.","Hang up when the conversation is done, or the buyer wraps it up."],
   next:["The call is recorded and turned into a transcript of what was said."],
   ex:{cap:"Example moment (sample company)",lines:[["buyer","Buyer","Honestly, we already have someone for this. Why would I switch?"],["member","Your team member","Fair question. What would have to be true for you to consider a second option?"],["buyer","Buyer","If it saved my crew a day a week, I'd listen."]]}},
- {k:"coach",t:"The coach comes on",who:"Team member",coachOnly:true,lede:"On Practice + Coach, a coach joins the same phone call right after the practice call ends.",
-  you:["Stay on the line when the practice call ends.","Talk it over with the coach and ask what to try next time."],
-  next:["The coach talks through what worked and one thing to work on, while the call is still fresh.","No new number to dial and nothing to click.","Coaching time counts toward the same monthly minutes."],
+ {k:"coach",t:"The AI coach comes on",who:"Team member",coachOnly:true,lede:"On Practice + Coach, an AI coach joins the same phone call right after the practice call ends.",
+  you:["Stay on the line when the practice call ends.","Talk it over with the AI coach and ask what to try next time."],
+  next:["The AI coach talks through what worked and one thing to work on, while the call is still fresh.","No new number to dial and nothing to click.","Coaching time counts toward the same monthly minutes."],
   ex:{cap:"Example moment (sample coaching)",lines:[["coachv","Coach","Nice job asking what would have to be true. Next time, ask how much time they lose today before you mention yours."]]}},
  {k:"report",t:"The report arrives",who:"Manager and team member",lede:"A written report lands in the inbox you chose for that seat.",
   you:["Open the email. No login needed to read it.","If you want, mark each line Right or Not right from the link in the report."],
-  next:["A headline and a short note from the coach.","What went well, and the one thing to work on next.","A checklist of the moments from your playbook, with a count of each kind of mark."],
+  next:["A headline and a short note from the AI coach.","What went well, and the one thing to work on next.","A checklist of the moments from your playbook, with a count of each kind of mark."],
   report:true},
  {k:"review",t:"Review and share",who:"Manager",lede:"Every call in one place, ready when you are.",
-  you:["Open the Calls page to see each report, read the transcript and play the audio while we keep it (see our Privacy Notice).","Search by name to see all of one person's practice calls.","Run the report again against a different playbook or coach.","Send a report to anyone who should see it."],
+  you:["Open the Calls page to see each report, read the transcript and play the audio while we keep it (see our Privacy Notice).","Search by name to see all of one person's practice calls.","Run the report again against a different playbook or AI coach.","Send a report to anyone who should see it."],
   next:["Every report you send is logged.","If someone disputes a mark, you can be emailed when it is decided."]}
 ];
 let plan="practice", cur=0;
