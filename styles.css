@@ -127,7 +127,7 @@ details p{margin-top:12px;color:var(--ink-2);font-size:.96rem;max-width:66ch}
 .err{color:var(--sig-needs);font-size:.86rem}
 
 
-/* ---- Colour pass, 26 Aug 2026 ----
+/* ---- Color pass, 26 Aug 2026 ----
    Brand violet #5A2CF0 with the mint #3AD29F as the positive signal.
    Boldness is spent in two places only: the CTA, and the report header band.
    Everything else stays quiet so those two carry maximum contrast. */
@@ -160,7 +160,7 @@ details p{margin-top:12px;color:var(--ink-2);font-size:.96rem;max-width:66ch}
 #access{background:var(--surface-2)}
 .card{border-top:2px solid var(--accent)}
 
-/* Score chips keep semantic colour independent of the brand accent. */
+/* Score chips keep semantic color independent of the brand accent. */
 .s-strong{border:1px solid color-mix(in srgb,var(--sig-strong) 30%,transparent)}
 .s-dev{border:1px solid color-mix(in srgb,var(--sig-dev) 30%,transparent)}
 .s-needs{border:1px solid color-mix(in srgb,var(--sig-needs) 30%,transparent)}
@@ -169,7 +169,7 @@ details p{margin-top:12px;color:var(--ink-2);font-size:.96rem;max-width:66ch}
    The report section now prints the real artefact: a named rulebook, a key,
    the deal-killer line, three counts, and every principle as a card holding its
    own questions with a mark and the reason underneath.
-   Semantic colour comes from the existing --sig-* tokens, so this follows light and
+   Semantic color comes from the existing --sig-* tokens, so this follows light and
    dark like the rest of the page, and keeps those tokens in use after the
    Strong / Developing / Needs work chips come out. */
 

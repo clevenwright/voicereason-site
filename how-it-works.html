@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>How VoiceReason works</title>
-<meta name="description" content="How VoiceReason works, step by step: pick a plan, build your buyer, set up your team, and your people practice real conversations on a real phone call.">
+<title>How VoiceReason.AI works</title>
+<meta name="description" content="How VoiceReason.AI works, step by step: pick a plan, build your buyer, set up your team, and your people practice real conversations on a real phone call.">
 <meta name="theme-color" content="#0B0B12">
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -163,8 +163,8 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VoiceReason.AI">
 <meta property="og:url" content="https://www.voicereason.ai/how-it-works.html">
-<meta property="og:title" content="How VoiceReason works">
-<meta property="og:description" content="How VoiceReason works, step by step: pick a plan, build your buyer, set up your team, and your people practice real conversations on a real phone call.">
+<meta property="og:title" content="How VoiceReason.AI works">
+<meta property="og:description" content="How VoiceReason.AI works, step by step: pick a plan, build your buyer, set up your team, and your people practice real conversations on a real phone call.">
 <meta property="og:image" content="https://www.voicereason.ai/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.voicereason.ai/assets/og.png">
@@ -220,12 +220,14 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
 </nav></div>
 <nav class="mnav" aria-label="Site links" style="flex-wrap:wrap"><a href="/sales-coach.html">Sales Coach</a><a href="/interview-coach.html">Interview Coach</a><a href="/pricing.html">Plans</a><a href="https://app.voicereason.ai/login">Sign in</a></nav>
 </header>
+<div class="vr-soon" role="note" style="background:#1b1830;border-bottom:1px solid #26243A;color:#d9d6f0;font:500 13px/1.45 'IBM Plex Sans',system-ui,sans-serif;text-align:center;padding:8px 16px">You can buy Sales Coach today. The AI coach on every plan, Interview Coach and a free trial are coming soon. <a href="/pricing.html" style="color:inherit;text-decoration:underline">See plans</a></div>
+
 
 <main class="wrap">
   <section class="hero">
     <div class="eyebrow">How it works</div>
-    <h1>Your people practice a real conversation on a real phone call.</h1>
-    <p>Every person on your team gets a phone number and a code. They dial in and talk to an AI buyer built from your world, in an AI voice that sounds like a real person. Then they get feedback on how it went. There is no app to install and no login for your team. It works for any job where the conversation is the work: sales, service, care and more.</p>
+    <h1>Your people practice a real conversation on a real phone call. Then a seasoned AI coach on the same call helps them get better.</h1>
+    <p>Every person on your team gets a phone number and a code. They dial in and talk to an AI buyer built from your world, in incredibly lifelike AI that sounds human. Then a live, expert AI coach comes on the same call, a seasoned, expert coach that listened to every word, works from our built-in playbook (or your own, if you load it), and tells you exactly what to do next, and a written report follows. The AI coach is on every plan. There is no app to install and no login for your team. It works for any job where the conversation is the work: sales, service, care and more.</p>
     <div class="facts">
       <span class="fact"><span class="dot"></span><span>Works from <b>any phone</b></span></span>
       <span class="fact"><span class="dot"></span><span><b>One login</b> for the manager</span></span>
@@ -242,10 +244,11 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
   </section>
 
   <div class="plans">
-    <span class="lbl">Show the journey for</span>
+    <span class="lbl">Every plan includes the AI coach. Minutes by plan:</span>
     <div class="toggle" role="group" aria-label="Plan">
-      <button type="button" id="plan-practice" aria-pressed="true">Practice</button>
-      <button type="button" id="plan-coach" aria-pressed="false">Practice + Coach</button>
+      <button type="button" id="plan-starter" aria-pressed="true">Starter</button>
+      <button type="button" id="plan-standard" aria-pressed="false">Standard</button>
+      <button type="button" id="plan-pro" aria-pressed="false">Pro</button>
     </div>
     <div class="plan-card" id="plan-card"></div>
   </div>
@@ -299,18 +302,19 @@ const TIMES = {
   playbook: {label:"0 to 10 min", lo:0, hi:10, setup:true, note:"No time at all with our standard checklist. 5 to 10 minutes to bring and review your own."},
   products: {label:"Coming soon"},
   dial:     {label:"Seconds"},
-  call:     {label:"7 to 15 min", note:"Up to 45 minutes on Practice and 60 on Practice + Coach, if the conversation needs it."},
+  call:     {label:"7 to 15 min", note:"A full practice call is often 7 to 15 minutes."},
   coach:    {label:"3 to 5 min"},
   report:   {label:"Within minutes"},
   review:   {label:"Any time"}
 };
 const PLANS = {
-  practice:"<b>Practice</b> · $69 per seat a month, or $759 a year (one month free). 280 practice minutes per seat each month, up to 45 minutes a call, and a written report after every call.",
-  coach:"<b>Practice + Coach</b> · $129 per seat a month. Everything in Practice, plus 420 minutes per seat each month, up to 60 minutes a call, and a live coach on the same phone call when the practice call ends."
+  starter:"<b>Starter</b> · Pricing coming soon. 90 practice minutes per seat each month. The live AI coach on the same call, a written report after every call.",
+  standard:"<b>Standard</b> · Pricing coming soon. 240 practice minutes per seat each month. The live AI coach on the same call, a written report after every call.",
+  pro:"<b>Pro</b> · Pricing coming soon. 480 practice minutes per seat each month. The live AI coach on the same call, a written report after every call."
 };
 const STEPS=[
- {k:"plan",t:"Pick a plan",who:"Manager",lede:"Choose Practice or Practice + Coach, pick how many seats you need, and check out by card.",
-  you:["Create your account with your email and a password. That is the only login anybody needs.","Pick Practice or Practice + Coach, and how many seats.","Pay securely by card at checkout."],
+ {k:"plan",t:"Pick a plan",who:"Manager",lede:"Starter, Standard and Pro are coming soon, and so is their pricing. Today you choose a plan and seats on the Plans page and pay by card.",
+  you:["Create your account with your email and a password. That is the only login anybody needs.","Choose a plan and how many seats on the Plans page. Starter, Standard and Pro are coming soon.","Pay securely by card."],
   next:["Your plan and seats switch on once payment goes through.","You get a welcome email.","Your Team page is ready to fill in."]},
  {k:"buyer",t:"Build your buyer",who:"Manager",lede:"Describe the customer your people face, in a sentence or a page. Or start from one of ours.",
   you:["Describe who your people talk to: their job, their situation, what they push back on.","Add your website or a document if you want the buyer to know your market.","Pick how challenging the call should be."],
@@ -318,7 +322,7 @@ const STEPS=[
  {k:"team",t:"Set up your team",who:"Manager",lede:"Give each seat a person and a practice call that fits their job.",
   you:["Add each person's name and the email where their reports should go.","Choose their buyer, scenario, level, playbook and coach.","Add a short research brief if you want them to prepare before they call."],
   next:["Each seat gets its own six-digit access code.","Press Send to email the code, and the brief if you like, to that person. You can ask for a copy too.","Your people do not need an app or a login, just a phone."]},
- {k:"playbook",t:"Bring your playbook",who:"Manager, optional",lede:"Use our standard checklist, or bring your own sales or service playbook.",
+ {k:"playbook",t:"Bring your playbook",who:"Manager, optional",lede:"We bring a built-in playbook. If you have your own sales or service playbook, you can load it. It is optional.",
   you:["Start from ours, or bring your playbook document on the Playbook page.","Read through the checklist it creates and adjust anything in your own material."],
   next:["Your document becomes a checklist of the moments that matter to you, each with what good looks like in your own words.","If a question is not something a phone call can show, we explain why and suggest a better one.","Every report from then on is measured against your checklist."]},
  {k:"products",t:"Tell us what you sell",who:"Manager",soon:true,lede:"A page where you list the products your team sells, and the facts they need to get right.",
@@ -326,12 +330,12 @@ const STEPS=[
   next:["Practice calls can then use your real products.","We will add more here when it is ready."]},
  {k:"dial",t:"Your person dials in",who:"Team member",lede:"From their own phone, wherever they work. A truck cab counts.",
   you:["Call the practice number.","Say the six-digit access code out loud."],
-  next:["The line says the call is recorded and asks for the code.","On Practice + Coach, they hear they can stay on for the coach afterwards.","Then the buyer picks up, ready for the scenario you chose."]},
+  next:["The line says the call is recorded and asks for the code.","On every plan, they hear they can stay on for the coach afterwards.","Then the buyer picks up, ready for the scenario you chose."]},
  {k:"call",t:"The conversation",who:"Team member",lede:"A buyer who reacts to what your person actually says, like a real call.",
   you:["Talk it through like a real call: open, ask questions, respond to what the buyer says, agree the next step.","Hang up when the conversation is done, or the buyer wraps it up."],
   next:["The call is recorded and turned into a transcript of what was said."],
   ex:{cap:"Example moment (sample company)",lines:[["buyer","Buyer","Honestly, we already have someone for this. Why would I switch?"],["member","Your team member","Fair question. What would have to be true for you to consider a second option?"],["buyer","Buyer","If it saved my crew a day a week, I'd listen."]]}},
- {k:"coach",t:"The coach comes on",who:"Team member",coachOnly:true,lede:"On Practice + Coach, a coach joins the same phone call right after the practice call ends.",
+ {k:"coach",t:"The AI coach comes on",who:"Team member",coachOnly:true,lede:"On every plan, an AI coach joins the same phone call right after the practice call ends: a seasoned, expert AI coach that listened to every word, works from our built-in playbook (or your own, if you load it), and tells you exactly what to do next.",
   you:["Stay on the line when the practice call ends.","Talk it over with the coach and ask what to try next time."],
   next:["The coach talks through what worked and one thing to work on, while the call is still fresh.","No new number to dial and nothing to click.","Coaching time counts toward the same monthly minutes."],
   ex:{cap:"Example moment (sample coaching)",lines:[["coachv","Coach","Nice job asking what would have to be true. Next time, ask how much time they lose today before you mention yours."]]}},
@@ -343,8 +347,8 @@ const STEPS=[
   you:["Open the Calls page to see each report, read the transcript and play the audio while we keep it (see our Privacy Notice).","Search by name to see all of one person's practice calls.","Run the report again against a different playbook or coach.","Send a report to anyone who should see it."],
   next:["Every report you send is logged.","If someone disputes a mark, you can be emailed when it is decided."]}
 ];
-let plan="practice", cur=0;
-try{const p=localStorage.getItem("vr-plan"); if(p==="coach"||p==="practice") plan=p;}catch(e){}
+let plan="starter", cur=0;
+try{const p=localStorage.getItem("vr-plan"); if(Object.prototype.hasOwnProperty.call(PLANS,p)) plan=p;}catch(e){}
 const line=document.getElementById("line"), panel=document.getElementById("panel");
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const clockSVG='<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.6V8l2.3 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
@@ -357,17 +361,16 @@ function drawSetup(){
   bar.innerHTML=parts.map(s=>`<span style="flex:${(TIMES[s.k].lo+TIMES[s.k].hi)/2||.6};background:${SETUPCOLORS[s.k]}" title="${esc(s.t)}"></span>`).join("");
   leg.innerHTML=parts.map(s=>`<span><i style="background:${SETUPCOLORS[s.k]}"></i>${esc(s.t)}: ${esc(TIMES[s.k].label)}</span>`).join("");
 }
-function visible(){return STEPS.map((s,i)=>i).filter(i=>plan==="coach"||!STEPS[i].coachOnly);}
+function visible(){return STEPS.map((s,i)=>i);}
 function render(focusPanel){
-  document.getElementById("plan-practice").setAttribute("aria-pressed",plan==="practice");
-  document.getElementById("plan-coach").setAttribute("aria-pressed",plan==="coach");
+  ["starter","standard","pro"].forEach(k=>document.getElementById("plan-"+k).setAttribute("aria-pressed",plan===k));
   document.getElementById("plan-card").innerHTML=PLANS[plan];
   const vis=visible(); if(!vis.includes(cur)) cur=vis.find(i=>i>cur)??vis[vis.length-1];
   line.innerHTML="";
   vis.forEach((i,n)=>{const s=STEPS[i];const li=document.createElement("li");
     li.className="stop"+(s.coachOnly?" coach":"")+(s.soon?" soon":"");
     if(i===cur) li.setAttribute("aria-current","step");
-    const tag=s.coachOnly?'<span class="tag coach">Practice + Coach</span>':s.soon?'<span class="tag soon">Coming soon</span>':'';
+    const tag=s.coachOnly?'<span class="tag coach">Every plan</span>':s.soon?'<span class="tag soon">Coming soon</span>':'';
     li.innerHTML=`<button type="button" aria-controls="panel"><span class="node">${n+1}</span><span class="label"><span class="t">${esc(s.t)}${tag}</span><span class="who">${esc(s.who)}</span></span>${s.soon?'':`<span class="mins">${esc(TIMES[s.k].label)}</span>`}</button>`;
     li.querySelector("button").addEventListener("click",()=>{cur=i;render(true);});line.appendChild(li);});
   const s=STEPS[cur], pos=vis.indexOf(cur), tm=TIMES[s.k];
@@ -391,10 +394,9 @@ function render(focusPanel){
   if(focusPanel && matchMedia("(max-width:860px)").matches){panel.scrollIntoView({behavior:"smooth",block:"start"});}
 }
 function setPlan(p){plan=p;try{localStorage.setItem("vr-plan",p);}catch(e){}render();}
-document.getElementById("plan-practice").onclick=()=>setPlan("practice");
-document.getElementById("plan-coach").onclick=()=>setPlan("coach");
+["starter","standard","pro"].forEach(k=>{document.getElementById("plan-"+k).onclick=()=>setPlan(k);});
 const h=(location.hash||"").slice(1); const hi=STEPS.findIndex(s=>s.k===h);
-if(hi>=0){cur=hi; if(STEPS[hi].coachOnly) plan="coach";}
+if(hi>=0){cur=hi;}
 document.getElementById("copy").onclick=async(e)=>{const t=document.getElementById("num").textContent;
   try{await navigator.clipboard.writeText(t);e.target.textContent="Copied";}catch(err){const r=document.createRange();r.selectNodeContents(document.getElementById("num"));const s=getSelection();s.removeAllRanges();s.addRange(r);e.target.textContent="Selected";}
   setTimeout(()=>e.target.textContent="Copy number",1800);};
