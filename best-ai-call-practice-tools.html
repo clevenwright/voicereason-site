@@ -247,8 +247,6 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 </nav></div>
 <nav class="mnav" aria-label="Site links" style="flex-wrap:wrap"><a href="/sales-coach.html">Sales Coach</a><a href="/interview-coach.html">Interview Coach</a><a href="/pricing.html">Plans</a><a href="https://app.voicereason.ai/login">Sign in</a></nav>
 </header>
-<div class="vr-soon" role="note" style="background:#1b1830;border-bottom:1px solid #26243A;color:#d9d6f0;font:500 13px/1.45 'IBM Plex Sans',system-ui,sans-serif;text-align:center;padding:8px 16px">You can buy Sales Coach today. The AI coach on every plan, Interview Coach and a free trial are coming soon. <a href="/pricing.html" style="color:inherit;text-decoration:underline">See plans</a></div>
-
 
 <main class="wrap">
 <div class="page">
@@ -273,7 +271,7 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 <table class="tbl">
 <thead><tr><th></th><th>How your team practices</th><th>Account before the first practice</th><th>After the call</th><th>Team price</th></tr></thead>
 <tbody>
-<tr><th>1. VoiceReason.AI</th><td>A real phone call to one number, with an access code</td><td>No. The manager hands out access codes</td><td>An AI coach on the same call right after, then a written report by email, on every plan</td><td>Starter, Standard and Pro: pricing coming soon. Today you can buy Sales Coach Practice ($69 per seat per month) or Practice + Coach ($129 per seat per month)</td></tr>
+<tr><th>1. VoiceReason.AI</th><td>A real phone call to one number, with an access code</td><td>No. The manager hands out access codes</td><td>An AI coach on the same call right after, then a written report by email, on every plan</td><td>$29, $69 or $129 per seat per month, published; the AI coach is on every plan</td></tr>
 <tr><th>2. Cold Call Gym</th><td>A real phone call from any phone; also an iPhone app</td><td>No for the first call; sign in later to see full reports</td><td>A text message report right after; with an account, full reports, transcripts and real-time coaching tips</td><td>Team Pro $99 per seat per month, 3 seat minimum</td></tr>
 <tr><th>3. Hyperbound</th><td>Online, from their website</td><td>We did not find this on their public pages</td><td>Scorecards: prebuilt on the free plan, custom on paid plans</td><td>Not published; book a demo</td></tr>
 <tr><th>4. Second Nature</th><td>In a web browser, on a desktop, laptop or tablet</td><td>We did not find this on their public pages</td><td>Scores and an AI-written report, usually within 90 seconds</td><td>We did not find published prices; their site offers a demo</td></tr>
@@ -288,7 +286,7 @@ summary{cursor:pointer;color:var(--ink);font-weight:600}
 
 <section class="sec">
 <h2>1. VoiceReason.AI</h2>
-<p>Your team dials one number and practices with an AI voice that sounds like a real person. No app or laptop needed to practice, just a phone. On every plan, an AI coach comes on the same call right after to talk it through, and a written report goes out by email after every call. Starter, Standard and Pro differ only by minutes, and their pricing is coming soon. Today you can buy Sales Coach Practice ($69 per seat per month) or Practice + Coach ($129 per seat per month).</p>
+<p>Your team dials one number and practices with an AI voice that sounds like a real person. No app or laptop needed to practice, just a phone. On every plan, an AI coach comes on the same call right after to talk it through, and a written report goes out by email after every call. Plans are $29, $69 and $129 per seat per month, month to month, and differ only by minutes.</p>
 <p><b>Best for:</b> teams on the road or away from a desk, and any job where the conversation is the work. Job seekers: see <a href="/interview-coach.html">Interview Coach</a>.</p>
 </section>
 
@@ -363,13 +361,13 @@ const TIMES = {
   review:   {label:"Any time"}
 };
 const PLANS = {
-  starter:"<b>Starter</b> · Pricing coming soon. 90 practice minutes per seat each month. The live AI coach on the same call, a written report after every call.",
-  standard:"<b>Standard</b> · Pricing coming soon. 240 practice minutes per seat each month. The live AI coach on the same call, a written report after every call.",
-  pro:"<b>Pro</b> · Pricing coming soon. 480 practice minutes per seat each month. The live AI coach on the same call, a written report after every call."
+  starter:"<b>Starter</b> · $29 per seat a month. 90 practice minutes per seat each month. The live AI coach on the same call, a written report after every call.",
+  standard:"<b>Standard</b> · $69 per seat a month. 240 practice minutes per seat each month. The live AI coach on the same call, a written report after every call.",
+  pro:"<b>Pro</b> · $129 per seat a month. 480 practice minutes per seat each month. The live AI coach on the same call, a written report after every call."
 };
 const STEPS=[
- {k:"plan",t:"Pick a plan",who:"Manager",lede:"Starter, Standard and Pro are coming soon, and so is their pricing. Today you choose a plan and seats on the Plans page and pay by card.",
-  you:["Create your account with your email and a password. That is the only login anybody needs.","Choose a plan and how many seats on the Plans page. Starter, Standard and Pro are coming soon.","Pay securely by card."],
+ {k:"plan",t:"Pick a plan",who:"Manager",lede:"Choose Starter, Standard or Pro, pick how many seats you need, and check out by card. Every plan includes the AI coach.",
+  you:["Create your account with your email and a password. That is the only login anybody needs.","Pick Starter, Standard or Pro, and how many seats.","Pay securely by card at checkout."],
   next:["Your plan and seats switch on once payment goes through.","You get a welcome email.","Your Team page is ready to fill in."]},
  {k:"buyer",t:"Build your buyer",who:"Manager",lede:"Describe the customer your people face, in a sentence or a page. Or start from one of ours.",
   you:["Describe who your people talk to: their job, their situation, what they push back on.","Add your website or a document if you want the buyer to know your market.","Pick how challenging the call should be."],
